@@ -1,25 +1,32 @@
-.spec {
-    width: 100%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    & > * {
-        width: 70%;
-        float: right;
-        box-sizing: border-box;
-    }
-
-    & > :first-child,
-    & > :first-child + ul {
-        width: calc(30% - 2em);
-        float: left;
-    }
-
-    & > :first-child {
-        display: none;
-    }
-
-    & > :first-child + ul {
-        clear: left;
-    }
-
+.prose.toc {
     overflow: auto;
+}
+
+.prose.toc > * {
+    width: calc(100% - 400px);
+    float: right;
+    box-sizing: border-box;
+}
+
+.prose.toc > :first-child,
+.prose.toc > :first-child + ul {
+    width: calc(400px - 2em);
+    float: left;
+}
+
+.prose.toc > :first-child {
+    display: none;
+}
+
+.prose.toc > :first-child + ul {
+    clear: left;
+    margin-top: 0;
+}
+
+.prose.toc > :first-child + ul + h2 {
+    margin-top: .25em;
 }
