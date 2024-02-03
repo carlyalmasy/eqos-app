@@ -1,0 +1,25 @@
+.spec {
+    width: 100%;
+
+    & > * {
+        width: 70%;
+        float: right;
+        box-sizing: border-box;
+    }
+
+    & > :first-child,
+    & > :first-child + ul {
+        width: calc(30% - 2em);
+        float: left;
+    }
+
+    & > :first-child {
+        display: none;
+    }
+
+    & > :first-child + ul {
+        clear: left;
+    }
+
+    overflow: auto;
+}

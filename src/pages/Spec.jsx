@@ -2,6 +2,7 @@ import React from 'react';
 import { signal } from '@preact/signals-react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
 import axios from 'axios';
 
 //
@@ -26,6 +27,8 @@ export default function Spec() {
   ;
 
   return (
-    <Markdown remarkPlugins={[remarkGfm]}>{data.value}</Markdown>
+    <article class="spec">
+      <Markdown remarkPlugins={[remarkGfm, remarkToc]}>{data.value}</Markdown>
+    </article>
   )
 }
