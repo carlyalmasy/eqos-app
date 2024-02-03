@@ -4,7 +4,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import axios from 'axios';
 
-const data = signal('Waiting...');
+const data = signal('');
 
 export default function Spec() {
   axios
