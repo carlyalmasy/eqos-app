@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import {signal} from '@preact/signals-react';
 import Markdown from '../components/Markdown';
 import axios from 'axios';

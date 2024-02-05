@@ -1,8 +1,7 @@
-import React from 'react';
-
-const today = new Date();
 
 export default function Footer() {
+  const today = new Date();
+
   return (
     <>
         <p>

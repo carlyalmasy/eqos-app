@@ -1,4 +1,3 @@
-import React from 'react';
 import { RedocStandalone } from 'redoc';
 
 const docsUrl = import.meta.env.VITE_CORE_URL + '/openapi.yml';

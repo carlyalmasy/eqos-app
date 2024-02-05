@@ -1,4 +1,3 @@
-import React from 'react';
 import Parser from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
