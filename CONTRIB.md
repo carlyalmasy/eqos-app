@@ -1,2 +1,4 @@
 ## Contributors
-- Carly Almasy calmasy@jff.org
+
+- Carly Almasy <calmasy@jff.org>
+- Matthew J. Sahagian <msahagian@jff.org>
