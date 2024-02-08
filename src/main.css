@@ -2,31 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-.prose.toc {
+
+/**
+ * Crazy specification stuff.
+ */
+
+.spec.toc {
     overflow: auto;
 }
 
-.prose.toc > * {
+.spec.toc > * {
     width: calc(100% - 400px);
     float: right;
     box-sizing: border-box;
 }
 
-.prose.toc > :first-child,
-.prose.toc > :first-child + ul {
+.spec.toc > :first-child,
+.spec.toc > :first-child + ul {
     width: calc(400px - 2em);
     float: left;
 }
 
-.prose.toc > :first-child {
+.spec.toc > :first-child {
     display: none;
 }
 
-.prose.toc > :first-child + ul {
+.spec.toc > :first-child + ul {
     clear: left;
     margin-top: 0;
 }
 
-.prose.toc > :first-child + ul + h2 {
+.spec.toc > :first-child + ul + h2 {
     margin-top: .25em;
 }
