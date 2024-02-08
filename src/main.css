@@ -1,6 +1,15 @@
 @tailwind base;
 
 @layer base {
+    html {
+        @apply bg-gray-200;
+    }
+
+    body {
+        @apply bg-white;
+    }
+
+
     h1 {
         @apply text-4xl;
     }
