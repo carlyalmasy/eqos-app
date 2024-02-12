@@ -10,5 +10,9 @@ export default [
     {
         "name": "API",
         "link": "/docs",
+    },
+    {
+        "name": "Specification",
+        "link": "/spec",
     }
 ];
