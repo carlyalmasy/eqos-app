@@ -26,8 +26,8 @@ export default function PageBar({items}) {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
+                    src="./assets/images/EQOSLogo.png"
+                    alt="EQOS"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
