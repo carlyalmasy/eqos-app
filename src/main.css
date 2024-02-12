@@ -56,27 +56,27 @@
 
     .spec {
         @apply overflow-auto;
-    }
 
-    .spec > * {
-        @apply box-border lg:float-right lg:w-[calc(100%-400px)];
-    }
+        > * {
+            @apply box-border lg:float-right lg:w-[calc(100%-400px)];
+        }
 
-    .spec > :first-child,
-    .spec > :first-child + ul {
-        @apply lg:float-left lg:w-[calc(400px-2em)];
-    }
+        > :first-child,
+        > :first-child + ul {
+            @apply lg:float-left lg:w-[calc(400px-2em)];
+        }
 
-    .spec > :first-child {
-        @apply hidden;
-    }
+        > :first-child {
+            @apply hidden;
+        }
 
-    .spec > :first-child + ul {
-        @apply hidden lg:block clear-left mt-0;
-    }
+        :first-child + ul {
+            @apply hidden lg:block clear-left mt-0;
 
-    .spec > :first-child + ul + h2 {
-        margin-top: .25em;
-    }
+            + h2 {
+                @apply mt-1;
+            }
+        }
 
+    }
 }
