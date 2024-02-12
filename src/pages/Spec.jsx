@@ -29,7 +29,7 @@ export default function Spec() {
   }, []);
 
   return (
-    <article className="spec toc">
+    <article className="spec">
       <Markdown toc={true}>
         {data.value}
       </Markdown>
