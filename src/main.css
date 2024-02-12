@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
     html {
@@ -9,53 +11,72 @@
         @apply bg-white;
     }
 
+    h1,h2,h3,h4,h5,h6 {
+        @apply mt-4 font-bold;
+    }
 
     h1 {
-        @apply text-4xl;
+        @apply text-6xl;
     }
 
     h2 {
-        @apply text-2xl;
+        @apply text-4xl;
     }
 
     h3 {
+        @apply text-2xl;
+    }
+
+    h4 {
         @apply text-xl;
+    }
+
+    h5 {
+        @apply text-lg italic;
+    }
+
+    h6 {
+        @apply text-lg font-normal italic;
+    }
+
+    p {
+        @apply my-2 leading-7;
+    }
+
+    blockquote {
+        @apply my-2 border-l-4 border-slate-300 pl-4;
     }
 }
 
-@tailwind components;
-@tailwind utilities;
+@layer components {
 
+    /**
+    * Crazy specification stuff.
+    */
 
-/**
- * Crazy specification stuff.
- */
+    .spec {
+        @apply overflow-auto;
+    }
 
-.spec.toc {
-    overflow: auto;
-}
+    .spec > * {
+        @apply box-border lg:float-right lg:w-[calc(100%-400px)];
+    }
 
-.spec.toc > * {
-    width: calc(100% - 400px);
-    float: right;
-    box-sizing: border-box;
-}
+    .spec > :first-child,
+    .spec > :first-child + ul {
+        @apply lg:float-left lg:w-[calc(400px-2em)];
+    }
 
-.spec.toc > :first-child,
-.spec.toc > :first-child + ul {
-    width: calc(400px - 2em);
-    float: left;
-}
+    .spec > :first-child {
+        @apply hidden;
+    }
 
-.spec.toc > :first-child {
-    display: none;
-}
+    .spec > :first-child + ul {
+        @apply hidden lg:block clear-left mt-0;
+    }
 
-.spec.toc > :first-child + ul {
-    clear: left;
-    margin-top: 0;
-}
+    .spec > :first-child + ul + h2 {
+        margin-top: .25em;
+    }
 
-.spec.toc > :first-child + ul + h2 {
-    margin-top: .25em;
 }
