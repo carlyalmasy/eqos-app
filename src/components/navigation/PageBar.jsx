@@ -2,6 +2,7 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import MobileItem from './MobileItem';
 import Item from './Item';
+import logo from '../../assets/images/EQOSLogo.png';
 
 export default function PageBar({items}) {
   return (
@@ -26,7 +27,7 @@ export default function PageBar({items}) {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="./assets/images/EQOSLogo.png"
+                    src={logo}
                     alt="EQOS"
                   />
                 </div>
