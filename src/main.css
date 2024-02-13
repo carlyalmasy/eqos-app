@@ -51,21 +51,29 @@
 @layer components {
 
     /**
-    * Crazy specification stuff.
-    */
+     * Specification Stuff
+     */
 
     .spec {
         @apply lg:grid gap-8 grid-cols-12 grid-rows-none;
 
         > :first-child {
             @apply hidden lg:block lg:col-span-4;
+
+            > h2 {
+                @apply hidden;
+            }
         }
 
         > :last-child {
             @apply lg:col-span-8;
+
+            > h2 {
+                @apply hidden;
+            }
         }
 
-        section > section {
+        section > section > section {
             @apply pl-6 border-l-[1px] border-slate-200 border-solid;
         }
 
