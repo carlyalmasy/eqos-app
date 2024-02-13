@@ -55,27 +55,18 @@
     */
 
     .spec {
-        @apply overflow-auto;
-
-        > * {
-            @apply box-border lg:float-right lg:w-[calc(100%-400px)];
-        }
-
-        > :first-child,
-        > :first-child + ul {
-            @apply lg:float-left lg:w-[calc(400px-2em)];
-        }
+        @apply lg:grid gap-8 grid-cols-12 grid-rows-none;
 
         > :first-child {
-            @apply hidden;
+            @apply hidden lg:block lg:col-span-4;
         }
 
-        :first-child + ul {
-            @apply hidden lg:block clear-left mt-0;
+        > :last-child {
+            @apply lg:col-span-8;
+        }
 
-            + h2 {
-                @apply mt-1;
-            }
+        section > section {
+            @apply pl-6 border-l-[1px] border-slate-200 border-solid;
         }
 
     }
