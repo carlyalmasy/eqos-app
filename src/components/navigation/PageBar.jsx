@@ -34,7 +34,7 @@ export default function PageBar({items}) {
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                     {
                         items.map(
-                            (item) => <Item name={item.name} link={item.link} />
+                            (item, i) => <Item key={i} name={item.name} link={item.link} />
                         )
                     }
                 </div>
@@ -46,7 +46,7 @@ export default function PageBar({items}) {
             <div className="space-y-1 pb-4 pt-2">
                 {
                     items.map(
-                        (item) => <MobileItem name={item.name} link={item.link} />
+                        (item, i) => <MobileItem key={i} name={item.name} link={item.link} />
                     )
                 }
             </div>

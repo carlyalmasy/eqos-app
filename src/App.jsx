@@ -14,7 +14,7 @@ function App({router}) {
   return (
     <Router>
       <Header />
-      <section classname="bg-white">
+      <section>
         <PageContainer>
           <Routes>
             <Route path="/" element={<Home />} />
