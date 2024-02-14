@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Credentials from './pages/Credentials';
 import Detail from './pages/Detail';
 import Resources from './pages/Resources';
-import Docs from './pages/Docs';
+import API from './pages/API';
 import Spec from './pages/Spec';
 
 function App({router}) {
@@ -21,7 +21,7 @@ function App({router}) {
             <Route path="/credentials" element={<Credentials />} />
             <Route path="/detail" element={<Detail />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/docs" element={<Docs />} />
+            <Route path="/api" element={<API />} />
             <Route path="/spec" element={<Spec />} />
           </Routes>
         </PageContainer>
