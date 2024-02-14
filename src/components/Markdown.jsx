@@ -10,14 +10,21 @@ import jsonLang from 'react-syntax-highlighter/dist/esm/languages/prism/json';
 SyntaxHighlighter.registerLanguage('json', jsonLang);
 
 export default function Markdown(props) {
-  return (
-    <Parser
-      remarkPlugins={[
+
+  const plugins = [
         remarkGfm,
         remarkHID,
-        remarkToc, // Must be after HID
+        ... (
+          props.toc // Position Matters
+            ? [[remarkToc, props.toc]]
+            : []
+        ),
         remarkSectionize,
-      ]}
+  ];
+
+  return (
+    <Parser
+      remarkPlugins={plugins}
       components={{
         code(props) {
           const {children, className, node, ...rest} = props

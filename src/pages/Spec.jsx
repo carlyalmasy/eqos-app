@@ -30,7 +30,7 @@ export default function Spec() {
 
   return (
     <article className="spec">
-      <Markdown toc={true}>
+      <Markdown toc={{skip: 'specification'}}>
         {data.value}
       </Markdown>
     </article>
