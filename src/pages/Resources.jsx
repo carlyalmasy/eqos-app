@@ -6,9 +6,9 @@ export default function Resources() {
         <>
         <div className="md:flex md:items-center md:justify-between">
             <div className="min-w-0 flex-1">
-            <Markdown>
+              <Markdown>
                 {ResourcesIntro}
-                </Markdown>
+              </Markdown>
             </div>
         </div>
       </>
