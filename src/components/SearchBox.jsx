@@ -1,4 +1,6 @@
-export default function DiscoveryShortcuts() {
+import OccupationSearch from "./OccupationSearch";
+
+export default function DiscoverCredentials() {
     return (
         <>
             <h4>

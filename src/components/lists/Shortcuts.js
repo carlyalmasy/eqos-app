@@ -1,6 +1,19 @@
-import OccupationSearch from "../components/OccupationSearch";
+const shortcuts = [
+    {
+        category: "In-Demand Occupations",
+        
+    },
+    {
+        category: "Most Popular Training Programs",
 
-export default function DiscoverCredentials() {
+    },
+    {
+        category: "Top Providers",
+
+    }
+]
+
+export default function DiscoveryShortcuts() {
     return (
         <>
             <h4>
@@ -50,7 +63,7 @@ export default function DiscoverCredentials() {
               </li>
             </ul>
             <h4>
-              Top Providers
+            Most Popular Training Programs
             </h4>
             <ul>
               <li className="flex">

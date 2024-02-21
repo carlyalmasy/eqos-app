@@ -3,6 +3,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import MobileItem from './MobileItem';
 import Item from './Item';
 import logo from '../../assets/images/EQOSLogo.png';
+import { useState } from 'react'
 
 export default function PageBar({items}) {
   return (

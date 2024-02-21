@@ -5,19 +5,19 @@ export default function Footer() {
   return (
     <footer className="bg-gray-200 mt-16">
       <PageContainer>
-        <div className="grid grid-cols-12 grid-rows-1 gap-4 text-sm text-gray-500 py-3">
-          <div>
+        <div className="max-w-7xl py-3 md:flex md:items-center md:justify-between text-sm text-gray-500">
+          <div className="flex justify-center space-x-6">
             <p>
               <a href="https://eqos.org/">EQOS.ORG</a>
             </p>
-          </div>
-          <div>
             <p>
               <a href="https://eqos.org/contact-us">CONTACT@EQOS.ORG</a>
             </p>
           </div>
-          <div className="col-span-10 text-right">
-            <p>&copy; 2023 - {today.getFullYear()} EQOS</p>
+          <div className="mt-8 md md:mt-0">
+            <p className="md:text-right sm:text-center">
+              &copy; {today.getFullYear()} EQOS
+            </p>
           </div>
         </div>
       </PageContainer>
