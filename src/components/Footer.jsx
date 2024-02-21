@@ -8,10 +8,16 @@ export default function Footer() {
         <div className="py-3 md:flex md:items-center md:justify-between text-sm text-gray-500 uppercase">
           <div className="flex justify-center space-x-6">
             <p>
-              <a href="https://eqos.org/">EQOS.org</a>
+              <a
+                className="hover:text-gray-700" 
+                href="https://eqos.org/"
+                >EQOS.org</a>
             </p>
             <p>
-              <a href="https://eqos.org/contact-us">contact@EQOS.org</a>
+              <a 
+                className="hover:text-gray-700"
+                href="https://eqos.org/contact-us"
+              >contact@EQOS.org</a>
             </p>
           </div>
           <div className="mt-8 md md:mt-0">

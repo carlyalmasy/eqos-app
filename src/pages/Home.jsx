@@ -20,25 +20,41 @@ export default function Home() {
             </Markdown>
           </div>
           <div className="md:col-span-6">
-            <div className="container p-6 mx-auto px-4 sm:px-6 lg:px-8 bg-slate-100 mt-6">
-            <Markdown>
-              {SearchIntro}
-            </Markdown>
-              <div class="flex">
-                <div class="flex-1">
+            <div className="container rounded-lg bg-cyan-50 drop-shadow-sm mt-6 mx-auto p-6 px-8">
+              <Markdown>
+                {SearchIntro}
+              </Markdown>
+              <div className="flex mb-4">
+                <div className="flex-1 align-middle">
+                  <div className="flex justify-between align-middle">
+                    <p className="text-gray-700">Occupation</p>
+                    <p className="text-gray-500 underline text-xs leading-7">
+                    <a href="" >SOC codes</a>
+                    </p>
+                  </div>
                   <OccupationSearch />
+                  <div className="flex justify-between align-middle">
+                    <p className="text-gray-700">Training Provider</p>
+                    <p className="text-gray-500 underline text-xs leading-7">
+                    <a href="" >Providers by State</a>
+                    </p>
+                  </div>                  
                   <OccupationSearch />
+                  <div className="flex justify-between align-middle">
+                    <p className="text-gray-700">Training Program Category</p>
+                    <p className="text-gray-500 underline text-xs leading-7">
+                    <a href="" >CIP4 codes</a>
+                    </p>
+                  </div>                        
                   <OccupationSearch />
                 </div>
-                <div class="flex-1">
+                <div className="flex-1 ml-10 content-between">
                   <Markdown>
                     {SearchContent}
                   </Markdown>
-                  <button
-                    type="button"
-                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    Go
+                  <button 
+                    class="w-full h-10 px-6 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">
+                    GO
                   </button>
                 </div>
               </div>
