@@ -39,7 +39,7 @@ export default function SearchBox() {
                 {SearchContent}
               </Markdown>
               <button 
-                class="w-full h-10 px-6 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">
+                class="w-full h-10 px-6 text-blue-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800">
                 GO
               </button>
             </div>

@@ -1,17 +1,7 @@
 import { useState } from 'react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Combobox } from '@headlessui/react'
-
-const items = [
-    {key: "41", name: "(isc)\u00b2"},
-    {key: "2086", name: "280 Group"},
-    {key: "175", name: "360training.com"},
-    {key: "2094", name: "3back"},
-    {key: "179", name: "3m"},
-    {key: "2107", name: "6 Sigma Management Llc"},
-    {key: "2112", name: "6sigma Services"},
-    {key: "2109", name: "6sigmastudy"},
-]
+import items from './lists/TopProviders.js'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -35,6 +25,7 @@ export default function SearchBar() {
         <Combobox.Input
           className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
           onChange={(event) => setQuery(event.target.value)}
+          placeholder="Select ..."
           displayValue={(item) => item?.name}
         />
         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
