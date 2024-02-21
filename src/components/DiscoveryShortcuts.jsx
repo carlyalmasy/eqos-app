@@ -9,7 +9,7 @@ export default function DiscoveryShortcuts() {
             <ul>
               <li className="flex">
                 <ShortcutsIcon />
-                Cyber Security
+                <a href=""> Security</a>
               </li>
               <li className="flex">
                 <ShortcutsIcon />

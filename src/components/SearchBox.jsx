@@ -1,77 +1,50 @@
-import OccupationSearch from "./OccupationSearch";
+import Markdown from '../components/Markdown.jsx';
+import SearchBar from "./SearchBar.jsx";
+import SearchIntro from "../topics/SearchIntro.md.js"
+import SearchContent from '../topics/SearchContent.md.js';
 
-export default function DiscoverCredentials() {
-    return (
-        <>
-            <h4>
-              In-Demand Occupations
-            </h4>
-            <ul>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                Cyber Security
-              </li>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                Healthcare
-              </li>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                Software Development
-              </li>
-            </ul>
-            <h4>
-              Most Popular Training Programs
-            </h4>
-            <ul>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                Project Management
-              </li>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                UX Design
-              </li>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                IT Support
-              </li>
-            </ul>
-            <h4>
-              Top Providers
-            </h4>
-            <ul>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                Udemy
-              </li>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                Coursera
-              </li>
-              <li className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-yellow-400">
-                  <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
-                </svg>
-                Microsoft
-              </li>
-            </ul>            
+export default function SearchBox() {
+  return (
+    <>
+      <div className="container rounded-lg bg-cyan-50 drop-shadow-sm mt-6 mx-auto p-6 px-8">
+          <Markdown>
+            {SearchIntro}
+          </Markdown>
+          <div className="flex mb-4">
+            <div className="flex-1 align-middle">
+              <div className="flex justify-between align-middle mt-2 mb-0">
+                <p className="text-gray-700 mb-1">Occupation</p>
+                <p className="text-gray-400 underline text-xs leading-7 mb-1">
+                <a href="" >SOC codes</a>
+                </p>
+              </div>
+              <SearchBar />
+              <div className="flex justify-between align-middle mt-2">
+                <p className="text-gray-700 mb-1">Training Provider</p>
+                <p className="text-gray-400 underline text-xs leading-7 mb-1">
+                <a href="" >Providers by State</a>
+                </p>
+              </div>                  
+              <SearchBar />
+              <div className="flex justify-between align-middle mt-2">
+                <p className="text-gray-700 mb-1">Training Program Category</p>
+                <p className="text-gray-400 underline text-xs leading-7 mb-1">
+                <a href="" >CIP4 codes</a>
+                </p>
+              </div>                        
+              <SearchBar />
+            </div>
+            <div className="flex-1 ml-10 content-between">
+              <Markdown>
+                {SearchContent}
+              </Markdown>
+              <button 
+                class="w-full h-10 px-6 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">
+                GO
+              </button>
+            </div>
+          </div>
+        </div>
       </>
     )
   }
