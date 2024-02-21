@@ -3,7 +3,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import MobileItem from './MobileItem';
 import Item from './Item';
 import logo from '../../assets/images/EQOSLogo.png';
-import { useState } from 'react'
 
 export default function PageBar({items}) {
   return (
@@ -34,7 +33,7 @@ export default function PageBar({items}) {
                     />
                   </a>
                 </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <div className="hidden sm:flex sm:space-x-8 ml-auto">
                     {
                         items.map(
                             (item, i) => <Item key={i} name={item.name} link={item.link} />

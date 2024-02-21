@@ -5,7 +5,9 @@ import navItems from "../topics/SiteNavigation";
 export default function Header() {
   return (
     <>
-      <header>
+      <header
+      className="shadow"
+      >
         <PageContainer>
           <PageBar items={navItems} />
         </PageContainer>
