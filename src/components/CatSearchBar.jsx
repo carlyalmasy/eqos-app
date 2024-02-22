@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Combobox } from '@headlessui/react'
-import items from './lists/TopProviders.js'
+import categories from './lists/Categories.js'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function SearchBar() {
+export default function CatSearchBar() {
   const [query, setQuery] = useState('')
   const [selectedItem, setSelectedItem] = useState(null)
 
   const filteredItems =
     query === ''
-      ? items
-      : items.filter((item) => {
+      ? categories
+      : categories.filter((item) => {
           return item.name.toLowerCase().includes(query.toLowerCase())
         })
 

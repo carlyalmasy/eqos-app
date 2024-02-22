@@ -1,7 +1,5 @@
 import Markdown from '../components/Markdown.jsx';
 import Intro from '../topics/Intro.md.js';
-import SearchIntro from '../topics/SearchIntro.md.js';
-import SearchContent from '../topics/SearchContent.md.js';
 import DataIntro from '../topics/DataIntro.md.js'
 import DataGrid from '../components/DataGrid.jsx';
 import ShortcutsIntro from '../topics/ShortcutsIntro.md.js'
