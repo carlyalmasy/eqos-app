@@ -3,6 +3,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import MobileItem from './MobileItem';
 import Item from './Item';
 import logo from '../../assets/images/EQOSLogo.png';
+import { NavLink } from 'react-router-dom';
 
 export default function PageBar({items}) {
   return (
@@ -25,13 +26,13 @@ export default function PageBar({items}) {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="/">
+                  <NavLink to="/">
                     <img
                       className="h-8 w-auto"
                       src={logo}
                       alt="EQOS"
                     />
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="hidden sm:flex sm:space-x-8 ml-auto">
                     {
@@ -43,7 +44,7 @@ export default function PageBar({items}) {
               </div>
             </div>
           </div>
-        
+
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-4 pt-2">
                 {

@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     extend: {},
-    colors: {
+/*  colors: {
       'platinum': {
         100: '#eef6f6',
         200: '#cee7e8',
@@ -22,7 +22,7 @@ export default {
         400: '#e5c230',
         500: '#cee7e8',
         600: '#faf3d6',
-      }, 
+      },
       'silver': {
         100: '#647d90',
         200: '#8196a7',
@@ -30,7 +30,8 @@ export default {
         400: '#cdd6dc',
         500: '#e7ebee',
         600: '#f3f5f7',
-      },      
-    },           
+      },
+    },
+*/
   },
 }

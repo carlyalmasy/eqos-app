@@ -1,30 +1,44 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Combobox } from '@headlessui/react'
-import categories from './lists/Categories.js'
+import bjoin from '../helpers/bjoin.js';
+import { computed, signal } from '@preact/signals-react';
+import axios from 'axios';
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+const filteredItems = signal({});
+const selectedItem = signal(null);
+const categories = signal({});
+const query = signal('');
 
-export default function CatSearchBar() {
-  const [query, setQuery] = useState('')
-  const [selectedItem, setSelectedItem] = useState(null)
+export default function CatSearchBar({type, collection}) {
+  const url = import.meta.env.VITE_CORE_URL + '/api/app/search/' + collection;
 
-  const filteredItems =
-    query === ''
-      ? categories
-      : categories.filter((item) => {
-          return item.name.toLowerCase().includes(query.toLowerCase())
-        })
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((response) => {
+        categories.value = response.data;
+        filteredItems.value = response.data;
+      });
+  }, []);
+
+  // const filteredItems = computed(() => {
+  //   query.value === ''
+  //     ? categories.value
+  //     : categories.value.filter((item) => {
+  //         return item.name.toLowerCase().includes(query.value.toLowerCase())
+  //       })
+
+  // });
 
   return (
-    <Combobox as="div" value={selectedItem} onChange={setSelectedItem}>
+    <Combobox as="div" value={selectedItem.value} onChange={() => { selectedItem.value = selected }}>
+      { filteredItems.length }
       {/* <Combobox.Label className="block text-sm font-medium leading-6 text-gray-900"></Combobox.Label> */}
       <div className="relative">
         <Combobox.Input
           className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-          onChange={(event) => setQuery(event.target.value)}
+//          onChange={(event) = { query.value = event.target.value }}
           placeholder="Select ..."
           displayValue={(item) => item?.name}
         />
@@ -34,12 +48,12 @@ export default function CatSearchBar() {
 
         {filteredItems.length > 0 && (
           <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            {filteredItems.map((item) => (
+            {filteredItems.map((name, value) => (
               <Combobox.Option
-                key={item.id}
-                value={item}
+                key={value}
+                value={value}
                 className={({ active }) =>
-                  classNames(
+                  bjoin(
                     'relative cursor-default select-none py-2 pl-8 pr-4',
                     active ? 'bg-blue-600 text-white' : 'text-gray-900'
                   )
@@ -47,11 +61,11 @@ export default function CatSearchBar() {
               >
                 {({ active, selected }) => (
                   <>
-                    <span className={classNames('block truncate', selected && 'font-semibold')}>{item.name}</span>
+                    <span className={bjoin('block truncate', selected && 'font-semibold')}>{name}</span>
 
                     {selected && (
                       <span
-                        className={classNames(
+                        className={bjoin(
                           'absolute inset-y-0 left-0 flex items-center pl-1.5',
                           active ? 'text-white' : 'text-blue-600'
                         )}
