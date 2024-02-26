@@ -1,10 +1,8 @@
 import Markdown from '../components/Markdown.jsx';
-import OccupationsSearchBar from './OccupationsSearchBar.jsx';
-import CatSearchBar from "./CatSearchBar.jsx";
-import ProviderSearchBar from './ProviderSearchBar.jsx';
 import SearchIntro from "../topics/SearchIntro.md.js"
 import SearchContent from '../topics/SearchContent.md.js';
 import Label from '../components/forms/Label.jsx';
+import SearchSelect from './forms/inputs/SearchSelect.jsx';
 
 export default function SearchBox() {
   return (
@@ -16,13 +14,13 @@ export default function SearchBox() {
           <div className="flex mb-4">
             <div className="flex-1 align-middle">
               <Label text="Occupation" helpText="SOC codes" />
-              <OccupationsSearchBar />
+              <SearchSelect type="occupation" collection="occupations" />
 
               <Label text="Training Provider" />
-              <ProviderSearchBar />
+              <SearchSelect type="provider" collection="providers" />
 
               <Label text="Training Program Category" helpText="CIP4 codes" />
-              <CatSearchBar type="category" collection="categories" />
+              <SearchSelect type="category" collection="categories" />
             </div>
             <div className="flex-1 ml-10 content-between">
               <Markdown>

@@ -1,19 +1,17 @@
 import { useEffect } from 'react';
-import { signal, computed } from '@preact/signals-react';
+import { useSignal, useComputed } from '@preact/signals-react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Combobox } from '@headlessui/react'
-import bjoin from '../helpers/bjoin.js';
-
+import bjoin from '../../../utilities/bjoin';
 import axios from 'axios';
 
-const items = signal([]);
-const query = signal('');
-const selectedItem  = signal(null);
-
-export default function SearchBar({type, collection}) {
+export default function SearchSelect({type, collection}) {
   const url = import.meta.env.VITE_CORE_URL + '/api/app/search/' + collection;
+  const items = useSignal([]);
+  const query = useSignal('');
+  const selectedItem  = useSignal(null);
 
-  const filteredItems = computed(() => {
+  const filteredItems = useComputed(() => {
     return query.value == ''
       ? items.value
       : items.value.filter((item) => {
