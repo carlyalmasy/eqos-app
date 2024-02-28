@@ -7,7 +7,7 @@ import SearchSelect from './forms/inputs/SearchSelect.jsx';
 export default function SearchBox() {
   return (
     <>
-      <div className="container rounded-lg bg-cyan-50 drop-shadow-sm mt-6 mx-auto p-6 px-8">
+      <div className="container rounded-lg bg-platinum-100 drop-shadow-sm mt-6 mx-auto p-6 px-8">
           <Markdown>
             {SearchIntro}
           </Markdown>
@@ -16,7 +16,7 @@ export default function SearchBox() {
               <Label text="Occupation" helpText="SOC codes" />
               <SearchSelect type="occupation" collection="occupations" />
 
-              <Label text="Training Provider" />
+              <Label text="Training Provider" helpText="test"  />
               <SearchSelect type="provider" collection="providers" />
 
               <Label text="Training Program Category" helpText="CIP4 codes" />
@@ -27,7 +27,7 @@ export default function SearchBox() {
                 {SearchContent}
               </Markdown>
               <button
-                className="w-full h-10 px-6 text-blue-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800">
+                className="w-full h-10 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-lg focus:shadow-outline hover:bg-eqos-500">
                 GO
               </button>
             </div>

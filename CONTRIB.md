@@ -72,3 +72,18 @@ const foo = useComputed(() => {
 
 > NOTE: This can be placed either outside the component for global scope or in the component for component scope.
 
+### Credentials Scoring
+
+| Tier       | Min   | Max   |
+| ---------- | ----- | ----- |
+| Bronze-1   | 0.00  | 0.50  |
+| Bronze-2   | 0.51  | 1.00  |
+| Silver-1   | 1.01  | 1.50  |
+| Silver-2   | 1.51  | 2.00  |
+| Silver-3   | 2.01  | 2.50  |
+| Gold-1     | 2.51  | 3.00  |
+| Gold-2     | 3.01  | 3.50  |
+| Gold-3     | 3.51  | 4.00  |
+| Platinum-1 | 4.01  | 4.50  |
+| Platinum-2 | 4.51  | 5.00  |
+| Null       | null  | null  |

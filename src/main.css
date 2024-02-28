@@ -4,7 +4,7 @@
 
 @layer base {
     html {
-        @apply bg-gray-200;
+        @apply bg-neutrals-dark-200;
     }
 
     body {
@@ -40,11 +40,11 @@
     }
 
     p {
-        @apply my-2 leading-7;
+        @apply my-2 leading-7 text-neutrals-dark-100;
     }
 
     blockquote {
-        @apply my-2 border-l-4 border-slate-300 pl-4;
+        @apply my-2 border-l-4 border-neutrals-dark-300 pl-4;
     }
 }
 
@@ -74,7 +74,7 @@
         }
 
         section > section > section {
-            @apply pl-6 border-l-[1px] border-slate-200 border-solid;
+            @apply pl-6 border-l-[1px] border-neutrals-dark-200 border-solid;
         }
 
     }

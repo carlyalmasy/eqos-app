@@ -5,7 +5,7 @@ export default function Item({name, link}) {
     <>
       <NavLink
         to={link}
-        className="text-gray-500 hover:text-gray-700 aria-[current=page]:text-gray-800 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm uppercase font-semibold"
+        className="text-neutrals-dark-100 hover:text-eqos-600 aria-[current=page]:text-eqos-600 inline-flex items-center border-transparent px-1 pt-1 text-sm uppercase font-semibold"
       >
         {name}
       </NavLink>
