@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PageContainer from './layouts/PageContainer';
+import PageHeight from './layouts/PageHeight';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,6 +17,7 @@ function App({router}) {
       <Header />
       <section>
         <PageContainer>
+        <PageHeight>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/credentials" element={<Credentials />} />
@@ -24,6 +26,7 @@ function App({router}) {
             <Route path="/api" element={<API />} />
             <Route path="/spec" element={<Spec />} />
           </Routes>
+        </PageHeight>
         </PageContainer>
       </section>
       <Footer />
