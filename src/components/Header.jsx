@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
       <header
-      className="shadow"
+      className="shadow sticky top-0 bg-white z-[999]"
       >
         <PageContainer>
           <PageBar items={navItems} />

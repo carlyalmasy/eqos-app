@@ -49,7 +49,7 @@ export default function Credentials() {
         </div>
         <div>
           <Grid split="3" className="auto-rows">
-            <div className="container rounded-lg bg-white drop-shadow-md">
+            <div className="container rounded-lg bg-white drop-shadow-md z-0">
               <div className="grid grid-cols-12 grid-rows-1">
                   <div className="col-span-6 p-6">
                     <div className="text-center relative mb-6">
