@@ -5,7 +5,7 @@ import { Combobox } from '@headlessui/react'
 import bjoin from '../../../utilities/bjoin';
 import axios from 'axios';
 
-export default function SearchSelect({type, collection}) {
+export default function SearchSelect({collection}) {
   const url = import.meta.env.VITE_CORE_URL + '/api/app/search/' + collection;
   const items = useSignal([]);
   const query = useSignal('');
