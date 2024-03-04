@@ -3,10 +3,10 @@ import SearchIntro from '../topics/SearchIntro.md.js';
 import SearchContent from '../topics/SearchContent.md.js';
 import Label from '../components/forms/Label.jsx';
 import SearchSelect from '../components/forms/inputs/SearchSelect.jsx';
-import CredentialsGrid from '../components/CredentialsGrid.jsx';
 import SearchResults from '../components/SearchResults.jsx';
+import Grid from '../components/layout/Grid.jsx';
 
-export default function Credentials() {
+export default function Credentials({children}) {
     return (
         <>
         <div className="md:flex md:items-center">

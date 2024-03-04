@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { useSignal } from '@preact/signals-react';
-// import bjoin from "../utilities/bjoin";
 import axios from 'axios';
-import CredentialsGrid from './CredentialsGrid';
+import CredentialsCard from './CredentialsCard';
 
 
 export default function SearchResults( ) {
-    const url = import.meta.env.VITE_CORE_URL + '/api/app/search?occupation=110';
+    const url = import.meta.env.VITE_CORE_URL + '/api/app/search?occupation=110&l=200';
     const items = useSignal([]);
 
     useEffect(() => {
@@ -22,7 +21,7 @@ export default function SearchResults( ) {
       return (
         <div>
             {items?.value?.data?.map((data)=>(
-                <CredentialsGrid key={data.id} data={data}/>
+                <CredentialsCard key={data.id} data={data}/>
             ))}
         </div>
       )
