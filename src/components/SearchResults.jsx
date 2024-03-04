@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSignal } from '@preact/signals-react';
 import axios from 'axios';
 import CredentialsCard from './CredentialsCard';
+import Grid from './layout/Grid';
 
 
 export default function SearchResults( ) {
@@ -12,17 +13,17 @@ export default function SearchResults( ) {
       axios
       .get(url)
       .then((response) => {
-        items.value = response.data;
+        items.value = response.data.data;
       });
     }, []);
 
-    console.log("====>", items.value);
-
       return (
-        <div>
-            {items?.value?.data?.map((data)=>(
-                <CredentialsCard key={data.id} data={data}/>
-            ))}
-        </div>
+        <Grid split="3" className="auto-rows">
+            {
+                items.value.map((data) => (
+                    <CredentialsCard key={data.id} data={data}/>
+                ))
+            }
+        </Grid>
       )
     }

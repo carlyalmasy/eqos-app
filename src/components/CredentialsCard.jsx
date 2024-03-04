@@ -51,7 +51,6 @@ export default function CredentialsCard({ data }) {
 
   return (
     <>
-      <Grid split="3" className="auto-rows">
         <div className="container rounded-lg bg-white drop-shadow-md z-0">
           <div className="grid grid-cols-12 grid-rows-1">
             <div className="col-span-6 p-6">
@@ -116,7 +115,7 @@ export default function CredentialsCard({ data }) {
                         <span
                             className="text-neutrals-dark-600 leading-tight mt-1"
                             key={index}>
-                            {(index ? ', ' : '') + el?.text} 
+                            {(index ? ', ' : '') + el?.text}
                         </span>
                       ))
                     ) : (
@@ -130,8 +129,6 @@ export default function CredentialsCard({ data }) {
             </div>
           </div>
         </div>
-        <></>
-      </Grid>
     </>
   );
 }
