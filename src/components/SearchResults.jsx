@@ -7,7 +7,7 @@ import React from "react";
 import Pagination from "./pagination";
 
 export default function SearchResults() {
-    const url = import.meta.env.VITE_CORE_URL + "/api/app/search?occupation=110&l=50";
+    const url = import.meta.env.VITE_CORE_URL + "/api/app/search?occupation=110&l=30";
     const items = useSignal([]);
 
     const [data, setData] = useState([]);
@@ -33,12 +33,13 @@ export default function SearchResults() {
     const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
     const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
     const nPages = Math.ceil(data.length / recordsPerPage);
+    console.log(currentRecords)
 
     return (
         <>
             <Grid split="3" className="auto-rows-fr">
                 {items.value.map((data) => (
-                    <CredentialsCard key={data.id} data={data} />
+                    <CredentialsCard key={data.id} data={data}/>
                 ))}
             </Grid>
             <div className="mt-10">

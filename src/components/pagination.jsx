@@ -35,7 +35,7 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
                     <p className="text-sm text-gray-700">
                         Showing <span className="font-medium">1</span> to{" "}
                         <span className="font-medium">10</span> of{" "}
-                        <span className="font-medium">97</span> results
+                        <span className="font-medium"></span> results
                     </p>
                 </div>
                 <div>
@@ -52,9 +52,9 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
                             <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
                         </a>
                         {pageNumbers.map((pgNumber) => (
-                            <li className="flex">
+                            <li className="flex" key={pgNumber}>
                                 <NavLink
-                                    key={pgNumber}
+                                    aria-current={`page-item ${currentPage == pgNumber && "page"}`}
                                     onClick={() => setCurrentPage(pgNumber)}
                                     className={`page-item ${
                                         currentPage == pgNumber
@@ -62,7 +62,7 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
                                             : "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
                                     } `}
                                     to="#"
-                                    aria-current="page"
+
                                 >
                                     {pgNumber}
                                 </NavLink>

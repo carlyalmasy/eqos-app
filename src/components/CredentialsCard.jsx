@@ -41,28 +41,6 @@ export default function CredentialsCard({ data }) {
     return "unrated";
   }, [data]);
 
-  const cardColor = React.useMemo(() => {
-    const overallScore = data.scores.overall;
-
-    if (overallScore === null ) return "#52606d";
-    if (overallScore <= 1.0) return "#e2a87b";
-    if (overallScore >= 1.01 && overallScore <= 2.5) return "#cdd6dc";
-    if (overallScore >= 2.51 && overallScore <= 4.0) return "#e5c230";
-    if (overallScore >= 4.01) return "#add6d8";
-    return "#52606d";
-  }, [data]);
-
-  const cardBackgroundColor = React.useMemo(() => {
-    const overallScore = data.scores.overall;
-
-    if (overallScore === null ) return "#f9fafb";
-    if (overallScore <= 1.0) return "#f8e9de";
-    if (overallScore >= 1.01 && overallScore <= 2.5) return "#f3f5f7";
-    if (overallScore >= 2.51 && overallScore <= 4.0) return "#faf3d6";
-    if (overallScore >= 4.01) return "#eef6f6";
-    return "#f9fafb";
-  }, [data]);
-
   const overallQuality = React.useMemo(() => {
     const overallScore = data.scores.overall;
 
@@ -83,8 +61,8 @@ export default function CredentialsCard({ data }) {
                 />
                 <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-1/6">
                   <p
-                    className="uppercase font-bold mb-0 leading-tight text-sm"
-                    style={{color: cardColor}}
+                    className={bjoin("uppercase font-bold mb-0 leading-tight text-sm text-" + overallRating + "-300" // text-platinum-300 text-gold-300 text-silver-300 text-bronze-300 text-unrated-300
+                )}
                   >
                     {overallRating}
                   </p>
@@ -102,8 +80,9 @@ export default function CredentialsCard({ data }) {
                     </p>
                     <div className="border border-neutrals-light-500 w-[100%]">
                       <div
-                        className="h-[2px]"
-                        style={{backgroundColor: cardColor, width: `calc(100% * (${data.scores.details[header]})/5)`}}
+                        className={bjoin("h-[2px] bg-" + overallRating + "-300" // bg-platinum-300 bg-gold-300 bg-silver-300 bg-bronze-300 bg-unrated-300
+                )}
+                        style={{width: `calc(100% * (${data.scores.details[header]})/5)`}}
                       ></div>
                     </div>
                   </React.Fragment>
@@ -111,15 +90,14 @@ export default function CredentialsCard({ data }) {
               </div>
             </div>
             <div
-                style={{ backgroundColor: cardBackgroundColor }}
-                className="col-span-7 col-start-6 p-6"
+                className={bjoin("col-span-6 col-start-7 p-6 bg-" + overallRating + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
+                )}
             >
-              {Object.keys(data.header).map((header, i) => {
+              {Object.keys(data.header).map((header, i, index) => {
                 const value = data.header[header];
-
                 return (
                   <React.Fragment key={`Header_${i}_${header}`}>
-                    <p className="mb-0">{header}</p>
+                    <p className={index === 0 ? "text-2sx" : "mb-0"}>{header}</p>
                     {Array.isArray(value) ? (
                       value.map((el, index) => (
                         <span
