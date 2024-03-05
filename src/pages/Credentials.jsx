@@ -4,9 +4,10 @@ import SearchContent from '../topics/SearchContent.md.js';
 import Label from '../components/forms/Label.jsx';
 import SearchSelect from '../components/forms/inputs/SearchSelect.jsx';
 import SearchResults from '../components/SearchResults.jsx';
-import Grid from '../components/layout/Grid.jsx';
+
 
 export default function Credentials({children}) {
+
     return (
         <>
         <div className="md:flex md:items-center">
@@ -19,7 +20,7 @@ export default function Credentials({children}) {
                 </Markdown>
             </div>
         </div>
-        <div className="grid grid-cols-12 gap-4 items-end">
+        <div className="grid grid-cols-12 gap-6  items-end">
             <div className="col-span-3">
               <Label text="Occupation" helpText="SOC codes" />
               <SearchSelect type="occupation" collection="occupations" />
@@ -47,7 +48,7 @@ export default function Credentials({children}) {
             Key Account Manager, Compliance Administrative Assistant, Field Sales Trainer, Director of Advocay, Talent Producer
           </p>
         </div>
-       
+
         <div>
             <SearchResults />
         </div>
