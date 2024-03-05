@@ -11,7 +11,6 @@ import platinumOne from "../assets/images/gauges/platinum-1.svg";
 import platinumTwo from "../assets/images/gauges/platinum-2.svg";
 import unrated from "../assets/images/gauges/unrated.svg";
 import bjoin from "../utilities/bjoin";
-import Grid from "./layout/Grid";
 
 export default function CredentialsCard({ data }) {
   const ratingImageSource = React.useMemo(() => {
@@ -34,12 +33,14 @@ export default function CredentialsCard({ data }) {
   const overallRating = React.useMemo(() => {
     const overallScore = data?.scores.overall;
 
-    if (overallScore === null ) return "unrated";
-    if (overallScore <= 1.0) return "bronze";
-    if (overallScore >= 1.01 && overallScore <= 2.5) return "silver";
-    if (overallScore >= 2.51 && overallScore <= 4.0) return "gold";
-    if (overallScore >= 4.01) return "platinum";
-    return "Unrated";
+    if (overallScore) {
+        if (overallScore <= 1.0) return "bronze";
+        if (overallScore >= 1.01 && overallScore <= 2.5) return "silver";
+        if (overallScore >= 2.51 && overallScore <= 4.0) return "gold";
+        if (overallScore >= 4.01) return "platinum";
+    }
+
+    return "unrated";
   }, [data]);
 
   const OverallQuality = React.useMemo(() => {
@@ -63,9 +64,8 @@ export default function CredentialsCard({ data }) {
                 <div className="absolute top-2/4 left-2/4 -translate-x-2/4 translate-y-1/4">
                   <p
                     className={bjoin(
-                      "uppercase font-bold mb-0 leading-tight text-sm text-" +
-                        overallRating +
-                        "-500"
+                      "uppercase font-bold mb-0 leading-tight text-sm",
+                      "text-" + overallRating + "-500", // text-platinum-500 text-gold-500 text-silver-500 text-bronze-500 text-unrated-500
                     )}
                   >
                     {overallRating}
@@ -84,14 +84,10 @@ export default function CredentialsCard({ data }) {
                     </p>
                     <div className="border border-neutrals-light-500 w-[100%]">
                       <div
+                        style={{width: Math.round((data?.scores?.details[header] / 5) * 100) + '%' }}
                         className={bjoin(
-                          "bg-" +
-                            overallRating +
-                            "-300 h-[2px] w-[" +
-                            Math.round(
-                              (data?.scores?.details[header] / 5) * 100
-                            ) +
-                            "%]"
+                            "h-[2px]",
+                            "bg-" + overallRating + "-300", // bg-platinum-300 bg-gold-300 bg-silver-300 bg-bronze-300 bg-unrated-300
                         )}
                       ></div>
                     </div>
@@ -101,7 +97,8 @@ export default function CredentialsCard({ data }) {
             </div>
             <div
               className={bjoin(
-                "col-span-6 col-start-7 p-6 bg-" + overallRating + "-100"
+                "col-span-6 col-start-7 p-6",
+                "bg-" + overallRating + "-100", // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
               )}
             >
               {Object.keys(data.header).map((header, i) => {

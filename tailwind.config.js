@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./indx.html",
+    "./index.html",
     "./src/**/*.{js,jsx}"
   ],
   theme: {
@@ -54,13 +54,13 @@ export default {
         400: '#cdd6dc',
         500: '#cbd2d9',
         600: '#9aa5b1',
-      },   
+      },
       'eqos': {
         400: '#367dbf',
-        500: '#1464ad', 
-        600: '#095292',               
+        500: '#1464ad',
+        600: '#095292',
       },
       'white': '#fff',
     },
   }
-}  
+}
