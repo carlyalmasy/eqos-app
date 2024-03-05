@@ -14,7 +14,7 @@ export default function SearchResults() {
     const [loading, setLoading] = useState(true);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [recordsPerPage] = useState(9);
+    const recordsPerPage = useSignal(9);
 
     useEffect(() => {
         axios
