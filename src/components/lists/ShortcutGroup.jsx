@@ -6,9 +6,9 @@ export default function ShortcutGroup({icon, groups}) {
         {
           groups.map((group, i) => {
             return (
-              <div key={ i }>
+              <div className="mb-6" key={ i }>
                 <h4>{ group.title }</h4>
-                <ul>
+                <ul className="text-neutrals-dark-100">
                   {
                     group.items.map((item, i) => {
                       return (

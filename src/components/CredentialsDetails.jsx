@@ -1,19 +1,19 @@
 import bjoin from "../utilities/bjoin";
 import React from "react";
 
-
 export default function CredentialsDetails({ data }) {
-    const overallRating = React.useMemo(() => {
+
+    const overallRating = () => {
       const overallScore = data?.scores.overall;
-  
+
       if (overallScore === null ) return "unrated";
       if (overallScore <= 1.0) return "bronze";
       if (overallScore >= 1.01 && overallScore <= 2.5) return "silver";
       if (overallScore >= 2.51 && overallScore <= 4.0) return "gold";
       if (overallScore >= 4.01) return "platinum";
       return "Unrated";
-    }, [data]);
-  
+    }
+
     return (
       <>
         <div
@@ -33,7 +33,7 @@ export default function CredentialsDetails({ data }) {
                     key={el?.text}
                     className="text-neutrals-dark-600 leading-tight mt-1"
                 >
-                    {el?.text} 
+                    {el?.text}
                 </span>
                 ))
             ) : (
