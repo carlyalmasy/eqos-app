@@ -7,6 +7,42 @@ import { update } from 'lodash';
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
+//
+// Update the selection value in state (triggering search)
+//
+
+const updateSelection = function(state, query, type, value) {
+    let params = {...state.value}; // forces clone
+
+    if (value) {
+        params[type] = value;
+    } else {
+        delete params[type];
+    }
+
+    state.value = params;
+    query.value = '';
+};
+
+
+//
+// Update the query value (triggering fuzzy search)
+//
+
+const updateQuery = function(state, query, type, value) {
+    if (value.length == 0) {
+        let params = {...state.value};
+
+        delete params[type];
+
+        state.value = params;
+    }
+
+    query.value = value;
+}
+
+
+
 export default function SearchSelect({type, collection, state}) {
     const url    = '/api/app/search/' + collection;
     const items  = useSignal([]);
@@ -40,7 +76,7 @@ export default function SearchSelect({type, collection, state}) {
     });
 
     //
-    // Get the name of the selected item
+    // Get the the selected item
     //
 
     const selected = useComputed(() => {
@@ -55,42 +91,12 @@ export default function SearchSelect({type, collection, state}) {
         return {};
     });
 
-    //
-    //
-    //
-
-    const updateSelection = function(value) {
-        let params = {...state.value}; // forces clone
-
-        if (value) {
-            params[type] = value;
-        } else {
-            delete params[type];
-        }
-
-        state.value = params;
-        query.value = '';
-    };
-
-
-    const updateQuery = function(value) {
-        if (value.length == 0) {
-            let params = {...state.value};
-
-            delete params[type];
-
-            state.value = params;
-        }
-
-        query.value = value;
-    }
-
     return (
-        <Combobox as="div" value={ selected.value.id ?? null} onChange={ (value) => { updateSelection(value) } }>
+        <Combobox as="div" value={ selected.value.id ?? null} onChange={ (value) => { updateSelection(state, query, type, value) } }>
             <div className="relative">
                 <Combobox.Input
                     className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-neutrals-dark-600 shadow-sm ring-1 ring-inset ring-neutrals-dark-300 focus:ring-2 focus:ring-inset focus:ring-eqos-600 sm:text-sm sm:leading-6"
-                    onChange={ (event) => { updateQuery(event.target.value) } }
+                    onChange={ (event) => { updateQuery(state, query, type, event.target.value) } }
                     placeholder="Start Typing..."
                     displayValue={ () => selected.value.name ?? '' }
                 />
