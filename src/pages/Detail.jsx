@@ -1,8 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { useSignal } from "@preact/signals-react";
+import { useEffect } from "react";
 import Grid from "../components/layout/Grid";
 import DetailSummary from "../components/DetailSummary";
+import ScoreGauge from "../components/ScoreGauge";
 
-export default function Detail() {
+export default function Detail({data}) {
+
+    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
+    const items = useSignal([]);
+
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response) => {
+                items.value = response.data.data;
+            })
+    }, []);
+
     return (
         <>
             <div className="grid grid-cols-12 grid-rows-1 gap-4 my-20">
@@ -11,9 +25,7 @@ export default function Detail() {
                 </div>
                 <div className="col-span-4 col-start-9">
                     <div className="mb-6">
-                        <img
-                            src="https://placehold.co/600x800"
-                        />
+                        <ScoreGauge data={items} />
                     </div>
                     <a
                         href="#"
