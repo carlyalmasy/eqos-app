@@ -49,7 +49,11 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
 
     return (
         <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-            <div className="flex flex-1 justify-between sm:hidden">
+            <div className={
+                totalItems == 0
+                ? "invisible"
+                : "flex flex-1 justify-between sm:hidden"}
+            >
                 <a
                     onClick={goToPrevPage}
                     className={
@@ -79,7 +83,12 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                         <span className="font-medium">{totalItems}</span> results
                     </p>
                 </div>
-                <div>
+                <div className={
+                        totalItems == 0
+                        ? "invisible"
+                        : ""
+                    }
+                >
                     <nav
                         className="isolate inline-flex -space-x-px rounded-md shadow-sm"
                         aria-label="Pagination"

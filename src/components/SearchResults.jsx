@@ -24,8 +24,6 @@ export default function SearchResults() {
             })
     });
 
-    const totalItems = meta.value.total;
-
     const nPages = useComputed(() => {
         if (meta.value.total) {
             return Math.ceil(meta.value.total / meta.value.limit);
@@ -39,8 +37,13 @@ export default function SearchResults() {
     });
 
     const firstPgResult = useComputed(() => {
-        return (lastPgResult - items.value.length) + 1;
+        if (totalItems !== 0) {
+            return (lastPgResult - items.value.length) + 1;
+        }
+        return 0;
     });
+
+    const totalItems = meta.value.total;
 
     return (
         <>
