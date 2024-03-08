@@ -10,12 +10,12 @@ import platinumOne from "../assets/images/gauges/platinum-1.svg";
 import platinumTwo from "../assets/images/gauges/platinum-2.svg";
 import unrated from "../assets/images/gauges/unrated.svg";
 import bjoin from "../utilities/bjoin";
-import { overallQuality, overallRating, ratingImageSource } from "../utilities/RatingFunctions";
+// import { overallQuality, overallRating, ratingImageSource } from "../utilities/RatingFunctions";
 
 export default function ScoreGauge({ data }) {
 
     const overallRating = () => {
-        const overallScore = data.scores.overall;
+        const overallScore = data?.scores?.overall;
         if (overallScore === null ) return "unrated";
         if (overallScore <= 1.0) return "bronze";
         if (overallScore >= 1.01 && overallScore <= 2.5) return "silver";
@@ -25,13 +25,13 @@ export default function ScoreGauge({ data }) {
       }
 
       const overallQuality  = () => {
-        const overallScore = data.scores.overall;
+        const overallScore = data?.scores?.overall;
         if (overallScore === null ) return "";
         return "Overall Quality";
       }
 
       const ratingImageSource = () => {
-        const overallScore = data.scores.overall;
+        const overallScore = data?.scores?.overall;
         if (overallScore === null) return unrated;
         if (overallScore <= 0.5) return bronzeOne;
         if (overallScore >= 0.51 && overallScore <= 1.0) return bronzeTwo;
@@ -49,7 +49,12 @@ export default function ScoreGauge({ data }) {
     return (
         <div className="text-center relative mb-6">
             <img className="w-[100%] height-auto" src={ratingImageSource()} alt={overallRating()} />
-            <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-1/6">
+            <div className={
+                overallRating() === "unrated"
+                ? "absolute left-2/4 -translate-x-2/4 top-3/4 -translate-y-1/4"
+                : "absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-1/6"
+                }
+            >
                 <p
                     className={bjoin(
                         "uppercase font-bold mb-0 leading-tight text-sm",

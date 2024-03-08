@@ -47,9 +47,9 @@ export default function SearchResults() {
 
     return (
         <>
-            <Grid split="3" className="auto-rows-fr">
-                {items.value.map((currentItem) => (
-                    <CredentialsCard key={currentItem.id} data={currentItem}/>
+            <Grid split="3">
+                {items.value.map((data) => (
+                    <CredentialsCard key={ data.id } data={ data }/>
                 ))}
             </Grid>
             <div className="mt-10">

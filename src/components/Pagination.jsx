@@ -1,4 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
+import SearchResultsInfo from "./SearchResultsInfo.jsx";
 
 export default function Pagination({ nPages, currentPage, totalItems, lastPgResult, firstPgResult }) {
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
@@ -64,6 +65,11 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                 >
                     Previous
                 </a>
+                <SearchResultsInfo
+                    firstPgResult={firstPgResult}
+                    lastPgResult={lastPgResult}
+                    totalItems={totalItems}
+                />
                 <a
                     onClick={goToNextPage}
                     className={
@@ -77,11 +83,11 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
             </div>
             <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
                 <div>
-                    <p className="text-sm text-neutrals-dark-400">
-                        Showing <span className="font-medium">{firstPgResult}</span> to{" "}
-                        <span className="font-medium">{lastPgResult}</span> of{" "}
-                        <span className="font-medium">{totalItems}</span> results
-                    </p>
+                    <SearchResultsInfo
+                        firstPgResult={firstPgResult}
+                        lastPgResult={lastPgResult}
+                        totalItems={totalItems}
+                    />
                 </div>
                 <div className={
                         totalItems == 0

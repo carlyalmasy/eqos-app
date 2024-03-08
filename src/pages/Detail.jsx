@@ -1,10 +1,11 @@
 import { useSignal } from "@preact/signals-react";
 import { useEffect } from "react";
+import axios from "axios";
 import Grid from "../components/layout/Grid";
 import DetailSummary from "../components/DetailSummary";
 import ScoreGauge from "../components/ScoreGauge";
 
-export default function Detail({data}) {
+export default function Detail() {
 
     const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
     const items = useSignal([]);

@@ -63,7 +63,7 @@ export default {
             'white': '#fff',
           },
         fontSize: {
-            '2xs': '.67rem',
+            '2xs': '.66rem',
         },
     },
   }

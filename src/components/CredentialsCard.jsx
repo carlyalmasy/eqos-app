@@ -18,19 +18,19 @@ export default function CredentialsCard({ data }) {
 
   return (
     <>
-        <div className="container rounded-lg bg-white drop-shadow-md z-0">
+        <div className="min-h-full container rounded-lg bg-white drop-shadow-md z-0 flex">
           <div className="grid grid-cols-12 grid-rows-1">
             <div className="col-span-5 p-6">
-                <ScoreGauge data={data} />
+                <ScoreGauge data={ data } />
                 <ScoreBar data={ data }/>
             </div>
             <div
                 className={bjoin(
-                    "col-span-7 col-start-6 p-6",
+                    "min-h-full col-span-7 col-start-6 p-6",
                     "bg-" + overallRating() + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
                 )}
             >
-            <CredentialsInfo data={data} />
+                <CredentialsInfo data={ data } />
             </div>
           </div>
         </div>
