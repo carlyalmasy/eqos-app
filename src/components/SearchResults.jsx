@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useComputed, useSignal, useSignalEffect } from "@preact/signals-react";
 import axios from "axios";
 import CredentialsCard from "./CredentialsCard";
@@ -8,7 +7,6 @@ import Pagination from "./Pagination";
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
 export default function SearchResults() {
-    const url = import.meta.env.VITE_CORE_URL + "/api/app/search?occupation=110";
     const items = useSignal([]);
     const meta = useSignal({});
     const currentPage = useSignal(1);
@@ -26,12 +24,22 @@ export default function SearchResults() {
             })
     });
 
+    const totalItems = meta.value.total;
+
     const nPages = useComputed(() => {
         if (meta.value.total) {
             return Math.ceil(meta.value.total / meta.value.limit);
         }
 
         return 0;
+    });
+
+    const lastPgResult = useComputed(() => {
+        return (meta.value.limit * (currentPage.value - 1 )) + items.value.length;
+    });
+
+    const firstPgResult = useComputed(() => {
+        return (lastPgResult - items.value.length) + 1;
     });
 
     return (
@@ -45,6 +53,9 @@ export default function SearchResults() {
                 <Pagination
                     nPages={nPages}
                     currentPage={currentPage}
+                    totalItems={totalItems}
+                    lastPgResult={lastPgResult}
+                    firstPgResult={firstPgResult}
                 />
             </div>
         </>
