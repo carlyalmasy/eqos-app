@@ -4,7 +4,7 @@ import React from "react";
 export default function CredentialsDetails({ data }) {
 
     const overallRating = () => {
-      const overallScore = data?.scores.overall;
+      const overallScore = data?.scores?.overall;
 
       if (overallScore === null ) return "unrated";
       if (overallScore <= 1.0) return "bronze";
@@ -21,8 +21,8 @@ export default function CredentialsDetails({ data }) {
         "col-span-6 col-start-7 p-6 bg-" + overallRating + "-100"
         )}
         >
-        {Object.keys(data.header).map((header, i) => {
-        const value = data.header[header];
+        {Object.keys(data?.header).map((header, i) => {
+        const value = data?.header[header];
 
         return (
             <React.Fragment key={`Header_${i}_${header}`}>

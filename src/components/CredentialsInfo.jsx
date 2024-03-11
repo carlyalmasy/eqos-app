@@ -3,7 +3,7 @@ import React from "react";
 export default function CredentialsInfo({ data }) {
     return (
         <div>
-            {Object.keys(data.header).map((header, i, index) => {
+            {Object.keys(data?.header).map((header, i, index) => {
                 const value = data.header[header];
                 return (
                     <React.Fragment key={`Header_${i}_${header}`}>

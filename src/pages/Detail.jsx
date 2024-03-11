@@ -4,6 +4,9 @@ import axios from "axios";
 import Grid from "../components/layout/Grid";
 import DetailSummary from "../components/DetailSummary";
 import ScoreGauge from "../components/ScoreGauge";
+import Card from "../components/Card";
+import ScoreBarGroup from "../components/ScoreBarGroup";
+import DetailListGroup from "../components/lists/DetailListGroup";
 
 export default function Detail() {
 
@@ -14,43 +17,34 @@ export default function Detail() {
         axios
             .get(url)
             .then((response) => {
-                items.value = response.data.data;
+                items.value = response.data;
             })
     }, []);
 
     return (
         <>
             <div className="grid grid-cols-12 grid-rows-1 gap-4 my-20">
-                <div className="col-span-8">
+                <div className="col-span-9">
                     <DetailSummary />
                 </div>
-                <div className="col-span-4 col-start-9">
-                    <div className="mb-6">
-                        <ScoreGauge data={items} />
+                <div className="col-span-3 col-start-10">
+                        <div className="mb-6">
+                            <ScoreGauge data={items} />
+                            {/* <ScoreBarGroup data={items} /> */}
+                        </div>
+                    <div className="mt-6 text-center">
+                        <a
+                            href="#"
+                            className="text-eqos-400 underline pt-4"
+                        >
+                            How does EQOS determine the quality score?
+                        </a>
                     </div>
-                    <a
-                        href="#"
-                        className="text-eqos-400 underline pt-4"
-                    >
-                        How does EQOS determine the quality score?
-                    </a>
                 </div>
             </div>
             <Grid split="2">
-                <div>
-                    <div className="container bg-platinum-100 h-10 rounded-full flex justify-center">
-                        <p className="text-neutrals-dark-600 text-lg leading-6">Top 10 Aligned Skills</p>
-                    </div>
-                    <div className="ml-10 mt-4">
-                        <ol className="list-decimal text-xl">
-                            <li>Medical Prescription</li>
-                        </ol>
-                    </div>
-                </div>
-                <div>
-                    <div className="container bg-platinum-100">
-                    </div>
-                </div>
+                <DetailListGroup />
+                <DetailListGroup />
             </Grid>
         </>
     )

@@ -1,6 +1,6 @@
 import bjoin from "../utilities/bjoin";
 
-export default function ScoreBar( {data} ) {
+export default function ScoreBar({ data }) {
 
     const overallRating = () => {
         const overallScore = data?.scores?.overall;
