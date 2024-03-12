@@ -3,7 +3,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Combobox } from '@headlessui/react'
 import bjoin from '../../../utilities/bjoin';
 import axios from 'axios';
-import { update } from 'lodash';
+import debug from '../../../utilities/debug';
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -11,13 +11,13 @@ const baseUrl = import.meta.env.VITE_CORE_URL;
 // Update the selection value in state (triggering search)
 //
 
-const updateSelection = function(state, query, type, value) {
+const updateSelection = function(state, query, name, value) {
     let params = {...state.value}; // forces clone
 
     if (value) {
-        params[type] = value;
+        params[name] = value;
     } else {
-        delete params[type];
+        delete params[name];
     }
 
     state.value = params;
@@ -29,11 +29,11 @@ const updateSelection = function(state, query, type, value) {
 // Update the query value (triggering fuzzy search)
 //
 
-const updateQuery = function(state, query, type, value) {
+const updateQuery = function(state, query, name, value) {
     if (value.length == 0) {
         let params = {...state.value};
 
-        delete params[type];
+        delete params[name];
 
         state.value = params;
     }
@@ -43,10 +43,10 @@ const updateQuery = function(state, query, type, value) {
 
 
 
-export default function SearchSelect({type, collection, state}) {
-    const url    = '/api/app/search/' + collection;
-    const items  = useSignal([]);
-    const query  = useSignal('');
+export default function SearchSelect({name, collection, state}) {
+    const url   = '/api/app/search/' + collection;
+    const items = useSignal([]);
+    const query = useSignal('');
 
     //
     // On change to state or query, get new options
@@ -56,7 +56,7 @@ export default function SearchSelect({type, collection, state}) {
         const params = new URLSearchParams();
 
         for (let key in state.value) {
-            if (key == type) {
+            if (key == name) {
                 continue;
             }
 
@@ -66,6 +66,8 @@ export default function SearchSelect({type, collection, state}) {
         if (query.value.length) {
             params.set('fuzzy', query.value);
         }
+
+        debug('Getting ' + collection);
 
         axios
             .get(new URL(url + (params.size ? '?' + params : ''), baseUrl))
@@ -80,9 +82,9 @@ export default function SearchSelect({type, collection, state}) {
     //
 
     const selected = useComputed(() => {
-        if (items.value && type in state.value) {
+        if (items.value && name in state.value) {
             for (const item of items.value) {
-                if (item.id == state.value[type]) {
+                if (item.id == state.value[name]) {
                     return item;
                 }
             }
@@ -92,11 +94,11 @@ export default function SearchSelect({type, collection, state}) {
     });
 
     return (
-        <Combobox as="div" value={ selected.value.id ?? null} onChange={ (value) => { updateSelection(state, query, type, value) } }>
+        <Combobox as="div" value={ selected.value.id ?? null} name={ name } onChange={ (value) => { updateSelection(state, query, name, value) } }>
             <div className="relative">
                 <Combobox.Input
                     className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-neutrals-dark-600 shadow-sm ring-1 ring-inset ring-neutrals-dark-300 focus:ring-2 focus:ring-inset focus:ring-eqos-600 sm:text-sm sm:leading-6"
-                    onChange={ (event) => { updateQuery(state, query, type, event.target.value) } }
+                    onChange={ (event) => { updateQuery(state, query, name, event.target.value) } }
                     placeholder="Start Typing..."
                     displayValue={ () => selected.value.name ?? '' }
                 />

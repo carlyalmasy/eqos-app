@@ -21,7 +21,7 @@ export default function Home() {
             </Markdown>
           </div>
           <div className="md:col-span-6">
-            <SearchBox />
+            <SearchBox action="/credentials" />
           </div>
           <div className="md:col-span-8">
             <Markdown>

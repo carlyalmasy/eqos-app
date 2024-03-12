@@ -3,26 +3,42 @@ import axios from "axios";
 import CredentialsCard from "../credentials/CredentialsCard";
 import Grid from "../layout/Grid";
 import Pagination from "../../layouts/Pagination";
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import debug from "../../utilities/debug";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
 export default function SearchResults() {
-    const items = useSignal([]);
-    const meta = useSignal({});
+    const items       = useSignal([]);
+    const meta        = useSignal({});
     const currentPage = useSignal(1);
 
+    const [
+        params,
+        setParams
+    ] = useSearchParams();
+
     useSignalEffect(() => {
-        const params = new URLSearchParams(window.location.search);
+        if (params.get('p') != currentPage.value) {
+            debug('Setting page parameter');
+            params.set('p', currentPage.value);
+            setParams(params);
+        }
+    });
 
-        params.set('p', currentPage.value);
 
+    useEffect(() => {
+        debug('Getting results');
         axios
             .get(new URL('/api/app/search?' + params, baseUrl))
             .then((response) => {
-                items.value = response.data.data;
-                meta.value  = response.data.meta;
+                items.value       = response.data.data;
+                meta.value        = response.data.meta;
+                currentPage.value = meta.value.page;
             })
-    });
+        ;
+    }, [params]);
 
     const nPages = useComputed(() => {
         if (meta.value.total) {
@@ -40,6 +56,7 @@ export default function SearchResults() {
         if (totalItems !== 0) {
             return (lastPgResult - items.value.length) + 1;
         }
+
         return 0;
     });
 

@@ -1,5 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import SearchResultsInfo from "../components/search/SearchResultsInfo.jsx";
+import { Fragment } from "react";
 
 export default function Pagination({ nPages, currentPage, totalItems, lastPgResult, firstPgResult }) {
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
@@ -113,13 +114,13 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                         {
                             pageSets.map(
                                 (pageSet, idx) => (
-                                    <>
+                                    <Fragment key={ idx }>
                                         {
                                             pageSet.map(
                                                 (page) => (
-                                                    <li className="flex" key={page}>
+                                                    <li className="flex" key={ page }>
                                                         <a
-                                                            aria-current={currentPage == page && "page"}
+                                                            aria-current={currentPage.value == page && "page"}
                                                             onClick={() => {
                                                                 (currentPage.value = page.valueOf());
                                                                 scrollToTop();}}
@@ -138,13 +139,13 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                                         {
                                             pageSets.length - 1 > idx
                                             ? (
-                                                <span key={idx * 10000} className="cursor-default relative inline-flex items-center px-4 py-2 text-sm font-semibold text-neutrals-dark-400 ring-1 ring-inset ring-neutrals-light-400 focus:outline-offset-0">
+                                                <span className="cursor-default relative inline-flex items-center px-4 py-2 text-sm font-semibold text-neutrals-dark-400 ring-1 ring-inset ring-neutrals-light-400 focus:outline-offset-0">
                                                     ...
                                                 </span>
                                             )
                                             : ''
                                         }
-                                    </>
+                                    </Fragment>
                                 )
                             )
                         }
