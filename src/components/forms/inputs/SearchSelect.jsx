@@ -56,10 +56,6 @@ export default function SearchSelect({name, collection, state}) {
         const params = new URLSearchParams();
 
         for (let key in state.value) {
-            if (key == name) {
-                continue;
-            }
-
             params.set(key, state.value[key]);
         }
 
