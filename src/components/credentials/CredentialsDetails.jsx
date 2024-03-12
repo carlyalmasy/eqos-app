@@ -1,4 +1,4 @@
-import bjoin from "../utilities/bjoin";
+import bjoin from "../../utilities/bjoin";
 import React from "react";
 
 export default function CredentialsDetails({ data }) {

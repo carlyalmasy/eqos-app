@@ -1,4 +1,4 @@
-import bjoin from "../utilities/bjoin";
+import bjoin from "../../utilities/bjoin";
 
 export default function ScoreBar({ data }) {
 

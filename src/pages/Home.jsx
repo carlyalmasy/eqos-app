@@ -1,7 +1,7 @@
 import Markdown from '../components/Markdown.jsx';
 import Intro from '../topics/Intro.md.js';
 import DataIntro from '../topics/DataIntro.md.js';
-import SearchBox from '../components/SearchBox.jsx';
+import SearchBox from '../components/search/SearchBox.jsx';
 
 // Discovery Shorcuts Deps
 

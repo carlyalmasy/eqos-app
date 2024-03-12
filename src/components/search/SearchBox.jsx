@@ -1,8 +1,8 @@
-import Markdown from '../components/Markdown.jsx';
-import SearchIntro from "../topics/SearchIntro.md.js"
-import SearchContent from '../topics/SearchContent.md.js';
-import Label from '../components/forms/Label.jsx';
-import SearchSelect from './forms/inputs/SearchSelect.jsx';
+import Markdown from '../Markdown.jsx';
+import SearchIntro from "../../topics/SearchIntro.md.js"
+import SearchContent from '../../topics/SearchContent.md.js';
+import Label from '../forms/Label.jsx';
+import SearchSelect from '../forms/inputs/SearchSelect.jsx';
 import { useSignal, useSignalEffect } from '@preact/signals-react';
 import { useEffect } from 'react';
 

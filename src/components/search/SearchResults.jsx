@@ -1,8 +1,8 @@
 import { useComputed, useSignal, useSignalEffect } from "@preact/signals-react";
 import axios from "axios";
-import CredentialsCard from "./CredentialsCard";
-import Grid from "./layout/Grid";
-import Pagination from "./Pagination";
+import CredentialsCard from "../credentials/CredentialsCard";
+import Grid from "../layout/Grid";
+import Pagination from "../../layouts/Pagination";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 

@@ -1,15 +1,15 @@
-import bronzeOne from "../assets/images/gauges/bronze-1.svg";
-import bronzeTwo from "../assets/images/gauges/bronze-2.svg";
-import silverOne from "../assets/images/gauges/silver-1.svg";
-import silverTwo from "../assets/images/gauges/silver-2.svg";
-import silverThree from "../assets/images/gauges/silver-3.svg";
-import goldOne from "../assets/images/gauges/gold-1.svg";
-import goldTwo from "../assets/images/gauges/gold-2.svg";
-import goldThree from "../assets/images/gauges/gold-3.svg";
-import platinumOne from "../assets/images/gauges/platinum-1.svg";
-import platinumTwo from "../assets/images/gauges/platinum-2.svg";
-import unrated from "../assets/images/gauges/unrated.svg";
-import bjoin from "../utilities/bjoin";
+import bronzeOne from "../../assets/images/gauges/bronze-1.svg"
+import bronzeTwo from "../../assets/images/gauges/bronze-2.svg";
+import silverOne from "../../assets/images/gauges/silver-1.svg";
+import silverTwo from "../../assets/images/gauges/silver-2.svg";
+import silverThree from "../../assets/images/gauges/silver-3.svg";
+import goldOne from "../../assets/images/gauges/gold-1.svg";
+import goldTwo from "../../assets/images/gauges/gold-2.svg";
+import goldThree from "../../assets/images/gauges/gold-3.svg";
+import platinumOne from "../../assets/images/gauges/platinum-1.svg";
+import platinumTwo from "../../assets/images/gauges/platinum-2.svg";
+import unrated from "../../assets/images/gauges/unrated.svg";
+import bjoin from "../../utilities/bjoin";
 // import { overallQuality, overallRating, ratingImageSource } from "../utilities/RatingFunctions";
 
 export default function ScoreGauge({ data }) {

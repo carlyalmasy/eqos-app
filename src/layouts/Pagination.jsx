@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import SearchResultsInfo from "./SearchResultsInfo.jsx";
+import SearchResultsInfo from "../components/search/SearchResultsInfo.jsx";
 
 export default function Pagination({ nPages, currentPage, totalItems, lastPgResult, firstPgResult }) {
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1);

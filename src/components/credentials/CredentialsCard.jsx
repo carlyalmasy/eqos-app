@@ -1,8 +1,9 @@
 import React from "react";
-import bjoin from "../utilities/bjoin";
-import ScoreBar from "./ScoreBarGroup";
-import ScoreGauge from "./ScoreGauge";
+import bjoin from "../../utilities/bjoin";
+import ScoreBar from "../score/ScoreBarGroup";
+import ScoreGauge from "../score/ScoreGauge";
 import CredentialsInfo from "./CredentialsInfo";
+import Card from "../Card";
 
 export default function CredentialsCard({ data }) {
 
@@ -18,7 +19,7 @@ export default function CredentialsCard({ data }) {
 
   return (
     <>
-        <div className="min-h-full container rounded-lg bg-white drop-shadow-md z-0 flex">
+        <Card>
           <div className="grid grid-cols-12 grid-rows-1">
             <div className="col-span-5 p-6">
                 <ScoreGauge data={ data } />
@@ -33,7 +34,7 @@ export default function CredentialsCard({ data }) {
                 <CredentialsInfo data={ data } />
             </div>
           </div>
-        </div>
+        </Card>
     </>
   );
 }

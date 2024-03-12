@@ -2,23 +2,20 @@ import { useSignal } from "@preact/signals-react";
 import { useEffect } from "react";
 import axios from "axios";
 import Grid from "../components/layout/Grid";
-import DetailSummary from "../components/DetailSummary";
-import ScoreGauge from "../components/ScoreGauge";
+import DetailSummary from "../components/detail/DetailSummary";
+import ScoreGauge from "../components/score/ScoreGauge";
 import Card from "../components/Card";
-import ScoreBarGroup from "../components/ScoreBarGroup";
-import DetailListGroup from "../components/lists/DetailListGroup";
+import ScoreBarGroup from "../components/score/ScoreBarGroup";
+import DetailListGroup from "../components/detail/DetailListGroup";
 
 export default function Detail() {
-
     const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
     const items = useSignal([]);
 
     useEffect(() => {
-        axios
-            .get(url)
-            .then((response) => {
-                items.value = response.data;
-            })
+        axios.get(url).then((response) => {
+            items.value = response.data;
+        });
     }, []);
 
     return (
@@ -28,15 +25,16 @@ export default function Detail() {
                     <DetailSummary />
                 </div>
                 <div className="col-span-3 col-start-10">
+                    <Card>
+                        {" "}
                         <div className="mb-6">
                             <ScoreGauge data={items} />
                             {/* <ScoreBarGroup data={items} /> */}
                         </div>
+                    </Card>
+
                     <div className="mt-6 text-center">
-                        <a
-                            href="#"
-                            className="text-eqos-400 underline pt-4"
-                        >
+                        <a href="#" className="text-eqos-400 underline pt-4">
                             How does EQOS determine the quality score?
                         </a>
                     </div>
@@ -47,5 +45,5 @@ export default function Detail() {
                 <DetailListGroup />
             </Grid>
         </>
-    )
+    );
 }

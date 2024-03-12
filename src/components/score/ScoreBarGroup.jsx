@@ -1,5 +1,5 @@
 import React from "react";
-import bjoin from "../utilities/bjoin";
+import bjoin from "../../utilities/bjoin";
 
 export default function ScoreBarGroup({ data }) {
 
