@@ -27,7 +27,6 @@ export default function SearchResults() {
         }
     });
 
-
     useEffect(() => {
         debug('Getting results');
         axios

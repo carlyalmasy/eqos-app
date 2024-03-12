@@ -2,7 +2,7 @@ import Markdown from '../Markdown.jsx';
 import SearchIntro from "../../topics/SearchIntro.md.js"
 import SearchContent from '../../topics/SearchContent.md.js';
 import Label from '../forms/Label.jsx';
-import SearchSelect from '../forms/inputs/SearchSelect.jsx';
+import SearchSelect from './SearchSelect.jsx';
 import { useSignal } from '@preact/signals-react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useLayoutEffect } from 'react';
