@@ -6,6 +6,7 @@ import Pagination from "../../layouts/Pagination";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import debug from "../../utilities/debug";
+import { useLayoutEffect } from "react";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -38,6 +39,10 @@ export default function SearchResults() {
             })
         ;
     }, [params]);
+
+    useLayoutEffect(() => {
+        currentPage.value = params.get('p');
+    }, []);
 
     const nPages = useComputed(() => {
         if (meta.value.total) {

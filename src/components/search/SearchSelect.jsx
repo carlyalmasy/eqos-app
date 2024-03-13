@@ -4,6 +4,7 @@ import { Combobox } from '@headlessui/react'
 import bjoin from '../../utilities/bjoin';
 import debug from '../../utilities/debug';
 import axios from 'axios';
+import _ from 'lodash';
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -41,12 +42,20 @@ const updateQuery = function(state, query, name, value) {
     query.value = value;
 }
 
-
-
 export default function SearchSelect({name, collection, state}) {
-    const url   = '/api/app/search/' + collection;
-    const items = useSignal([]);
-    const query = useSignal('');
+    const items      = useSignal([]);
+    const query      = useSignal('');
+    const getResults = _.debounce(function(params) {
+        const url = '/api/app/search/' + collection;
+
+        debug('Getting ' + collection);
+        axios
+            .get(new URL(url + (params.size ? '?' + params : ''), baseUrl))
+            .then((response) => {
+                items.value = response.data;
+            })
+        ;
+    }, 500);
 
     //
     // On change to state or query, get new options
@@ -63,14 +72,7 @@ export default function SearchSelect({name, collection, state}) {
             params.set('fuzzy', query.value);
         }
 
-        debug('Getting ' + collection);
-
-        axios
-            .get(new URL(url + (params.size ? '?' + params : ''), baseUrl))
-            .then((response) => {
-                items.value = response.data;
-            })
-        ;
+        getResults(params);
     });
 
     //
