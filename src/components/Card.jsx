@@ -1,6 +1,12 @@
-export default function Card({children}) {
+import bjoin from "../utilities/bjoin"
+
+export default function Card({ children, color }) {
     return (
-        <div className="min-h-full container rounded-lg bg-white drop-shadow-md z-0 flex justify-center">
+        <div className={bjoin(
+            "min-h-full container rounded-lg drop-shadow-md flex justify-center",
+            "bg-" + color
+            )}
+        >
             {children}
         </div>
     )

@@ -38,7 +38,7 @@ export default function CredentialsDetails({ data }) {
                 ))
             ) : (
                 <p className="text-neutrals-dark-600 leading-tight mt-1">
-                {value?.text}
+                {value.text}
                 </p>
             )}
             </React.Fragment>
