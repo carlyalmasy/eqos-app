@@ -5,7 +5,7 @@ export default function Credentials() {
     return (
         <>
             <SearchBox action="/credentials" />
-            <div>
+            <div className='mt-12'>
                 <SearchResults />
             </div>
         </>

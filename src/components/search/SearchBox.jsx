@@ -50,7 +50,7 @@ export default function SearchBox({ action }) {
 
     return (
         <>
-            <form onSubmit={ onSubmit } action={ action } className="container rounded-lg bg-platinum-100 drop-shadow-sm mt-6 mx-auto p-6 px-8">
+            <form onSubmit={ onSubmit } action={ action }>
                 <Markdown>
                     {SearchIntro}
                 </Markdown>
