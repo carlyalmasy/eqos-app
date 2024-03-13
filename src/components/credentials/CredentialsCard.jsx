@@ -19,7 +19,7 @@ export default function CredentialsCard({ data }) {
 
   return (
     <>
-        <Card>
+        <Card color="white">
           <div className="grid grid-cols-12 grid-rows-1">
             <div className="col-span-5 p-6">
                 <ScoreGauge data={ data } />

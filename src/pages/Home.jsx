@@ -1,6 +1,7 @@
 import Markdown from "../components/Markdown.jsx";
 import Intro from "../topics/Intro.md.js";
 import DataIntro from "../topics/DataIntro.md.js";
+import Card from "../components/Card.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
 
 // Discovery Shorcuts Deps
@@ -18,10 +19,12 @@ export default function Home() {
                 <div className="md:col-span-6 mt-6">
                     <Markdown>{Intro}</Markdown>
                 </div>
-                <div className="md:col-span-6">
-                    <div className="container rounded-lg bg-platinum-100 drop-shadow-sm mt-6 mx-auto p-6 px-8">
-                        <SearchBox action="/credentials" />
-                    </div>
+                <div className="md:col-span-6 mt-10">
+                    <Card color="platinum-100">
+                        <div className="p-6 px-8">
+                            <SearchBox action="/credentials" />
+                        </div>
+                    </Card>
                 </div>
                 <div className="md:col-span-8">
                     <Markdown>{DataIntro}</Markdown>
