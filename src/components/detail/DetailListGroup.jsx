@@ -6,7 +6,7 @@ export default function DetailListGroup({ items }) {
     return (
         <>
             <Grid split="2">
-                <div>
+                {/* <div>
                     <div className="container bg-platinum-100 h-10 rounded-full flex justify-center">
                         <p className="text-neutrals-dark-600 text-lg leading-6">
                             Top 5 Aligned Skills
@@ -47,9 +47,9 @@ export default function DetailListGroup({ items }) {
                         <li>Process Engineers</li>
                         <li>Manufacturing Process Engineers</li>
                     </ol>
-                </div>
+                </div> */}
 
-                {/* {Object.keys(items?.value).map((data, i, index) => {
+                {Object.keys(items?.value).map((data, i, index) => {
                     return (
                         <>
                             <div key={i}>
@@ -61,7 +61,7 @@ export default function DetailListGroup({ items }) {
                             </div>
                         </>
                     );
-                })} */}
+                })}
             </Grid>
         </>
     );
