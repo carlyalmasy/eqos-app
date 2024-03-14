@@ -1,3 +1,5 @@
-export default function DetailInfo({ text }) {
-    return <p className="text-2xl text-neutrals-dark-600">{ text }</p>;
+export default function DetailInfo({ children }) {
+    return <p className="text-2xl text-neutrals-dark-600">
+        { children }
+    </p>;
 }

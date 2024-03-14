@@ -1,50 +1,78 @@
 import { useSignal } from "@preact/signals-react";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import axios from "axios";
 import debug from "../utilities/debug";
-import DetailSummary from "../components/detail/DetailSummary";
+import DetailEyebrow from "../components/detail/DetailEyebrow";
+import DetailName from "../components/detail/DetailName";
+import DetailInfo from "../components/detail/DetailInfo";
 import Card from "../components/Card";
 import ScoreGauge from "../components/score/ScoreGauge";
 import ScoreBarGroup from "../components/score/ScoreBarGroup";
 import DetailListGroup from "../components/detail/DetailListGroup";
+import DetailBlock from "../components/detail/DetailBlock";
+import DetailHeader from "../components/detail/DetailHeader";
 
 export default function Detail() {
-    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
-    const items = useSignal([]);
+    const url  = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
+    const item = useSignal({});
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         debug("Getting result");
         axios.get(url).then((response) => {
-            items.value = response.data;
+            item.value = response.data;
+            console.log(response.data);
         });
     }, []);
 
+    if (!Object.keys(item.value).length) {
+        return <></>;
+    }
+
     return (
         <>
-            {Object.keys(items?.value).map((item) => {
-                return (
-                    <div key={item}>
-                    </div>
-                );
-            })}
-            <div className="grid grid-cols-12 grid-rows-1 gap-4 my-20">
-                <div className="col-span-9">
-                    <DetailSummary />
+            <DetailHeader>
+                <div className="mr-36">
+                    <DetailBlock>
+                        <DetailEyebrow>
+                            { item.value.overview.type }
+                        </DetailEyebrow>
+                        <DetailName>
+                            { item.value.overview.name }
+                        </DetailName>
+                    </DetailBlock>
+                    { item.value.overview.description &&
+                        <DetailBlock>
+                            <DetailEyebrow>
+                                { 'Description' }
+                            </DetailEyebrow>
+                            <DetailInfo>
+                                { item.value.overview.description }
+                            </DetailInfo>
+                        </DetailBlock>
+                    }
+                    <DetailBlock>
+                        <DetailEyebrow>
+                            { 'Provider' }
+                        </DetailEyebrow>
+                        <DetailInfo>
+                            { item.value.overview?.provider.name }
+                        </DetailInfo>
+                    </DetailBlock>
                 </div>
-                <div className="col-span-3 col-start-10">
+
+                <>
                     <Card color={"white"}>
-                            {/* <ScoreGauge data={ data } /> */}
-                            {/* <ScoreBarGroup data={ data } /> */}
+                        <ScoreGauge data={ item.value } />
+                        <ScoreBarGroup data={ item.value } />
                     </Card>
                     <div className="mt-6 text-center">
                         <a href="#" className="text-eqos-400 underline pt-4">
                             How does EQOS determine the quality score?
                         </a>
                     </div>
-                </div>
-            </div>
+                </>
+            </DetailHeader>
             <div className="mt-28">
-                <DetailListGroup items={ items } />
             </div>
         </>
     );
