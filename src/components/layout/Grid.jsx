@@ -1,9 +1,11 @@
 import bjoin from "../../utilities/bjoin";
 
-export default function Grid({split, children}) {
+export default function Grid({split, children, gapSize}) {
     return (
         <>
-            <div className="grid md:grid-cols-12 gap-6 mt-6">
+            <div className={bjoin(
+                "grid md:grid-cols-12 mt-6 gap-" + gapSize
+            )}>
                 {
                     children.map((child, key) => {
                         return (

@@ -6,6 +6,7 @@ import DetailEyebrow from "../components/detail/DetailEyebrow";
 import DetailName from "../components/detail/DetailName";
 import DetailInfo from "../components/detail/DetailInfo";
 import Card from "../components/Card";
+import Grid from "../components/layout/Grid";
 import ScoreGauge from "../components/score/ScoreGauge";
 import ScoreBarGroup from "../components/score/ScoreBarGroup";
 import DetailListGroup from "../components/detail/DetailListGroup";
@@ -13,14 +14,13 @@ import DetailBlock from "../components/detail/DetailBlock";
 import DetailHeader from "../components/detail/DetailHeader";
 
 export default function Detail() {
-    const url  = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
+    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
     const item = useSignal({});
 
     useLayoutEffect(() => {
         debug("Getting result");
         axios.get(url).then((response) => {
             item.value = response.data;
-            console.log(response.data);
         });
     }, []);
 
@@ -33,37 +33,27 @@ export default function Detail() {
             <DetailHeader>
                 <div className="mr-36">
                     <DetailBlock>
-                        <DetailEyebrow>
-                            { item.value.overview.type }
-                        </DetailEyebrow>
-                        <DetailName>
-                            { item.value.overview.name }
-                        </DetailName>
+                        <DetailEyebrow>{item.value.overview.type}</DetailEyebrow>
+                        <DetailName>{item.value.overview.name}</DetailName>
                     </DetailBlock>
-                    { item.value.overview.description &&
+                    {item.value.overview.description && (
                         <DetailBlock>
-                            <DetailEyebrow>
-                                { 'Description' }
-                            </DetailEyebrow>
-                            <DetailInfo>
-                                { item.value.overview.description }
-                            </DetailInfo>
+                            <DetailEyebrow>{"Description"}</DetailEyebrow>
+                            <DetailInfo>{item.value.overview.description}</DetailInfo>
                         </DetailBlock>
-                    }
+                    )}
                     <DetailBlock>
-                        <DetailEyebrow>
-                            { 'Provider' }
-                        </DetailEyebrow>
-                        <DetailInfo>
-                            { item.value.overview?.provider.name }
-                        </DetailInfo>
+                        <DetailEyebrow>{"Provider"}</DetailEyebrow>
+                        <DetailInfo>{item.value.overview.provider.name}</DetailInfo>
                     </DetailBlock>
                 </div>
 
                 <>
                     <Card color={"white"}>
-                        <ScoreGauge data={ item.value } />
-                        <ScoreBarGroup data={ item.value } />
+                        <div className="grid content-center py-3 px-9">
+                            <ScoreGauge data={item.value} textSize="3xl" subtextSize="xl" />
+                            <ScoreBarGroup data={item.value} barHeight="6px" />
+                        </div>
                     </Card>
                     <div className="mt-6 text-center">
                         <a href="#" className="text-eqos-400 underline pt-4">
@@ -73,6 +63,35 @@ export default function Detail() {
                 </>
             </DetailHeader>
             <div className="mt-28">
+                <Grid split="2" gapSize="8">
+                    {Object.keys(item.value.alignments).map((alignment) => {
+                        const title = item.value.alignments[alignment];
+                        return (
+                            <div>
+                                <div
+                                    key={alignment}
+                                    className="container bg-platinum-100 h-10 rounded-full flex justify-center"
+                                >
+                                    <p className="text-neutrals-dark-600 text-lg leading-6">
+                                        {title.title}
+                                    </p>
+                                </div>
+                                <ol className="list-decimal list-inside my-4 ml-10">
+                                    {Object.keys(title.items).map((listItem, i) => {
+                                        const text = title.items[listItem];
+                                        return (
+                                            <li
+                                                className="text-xl leading-relaxed"
+                                                key={i}>
+                                                {text.text}
+                                            </li>
+                                        );
+                                    })}
+                                </ol>
+                            </div>
+                        );
+                    })}
+                </Grid>
             </div>
         </>
     );

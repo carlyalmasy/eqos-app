@@ -68,7 +68,7 @@ export default function SearchResults() {
 
     return (
         <>
-            <Grid split="3">
+            <Grid split="3" gapSize="6">
                 {items.value.map((data) => (
                     <CredentialsCard key={ data.id } data={ data }/>
                 ))}

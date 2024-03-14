@@ -28,7 +28,7 @@ export default function Home() {
                 </div>
                 <div className="md:col-span-8">
                     <Markdown>{DataIntro}</Markdown>
-                    <Grid split="2">
+                    <Grid split="2" gapSize="6">
                         <img src="https://placehold.co/600x335?text=1" />
                         <img src="https://placehold.co/600x335?text=2" />
                         <img src="https://placehold.co/600x335?text=3" />

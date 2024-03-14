@@ -2,7 +2,7 @@ import React from "react";
 import bjoin from "../../utilities/bjoin";
 import { overallRating } from "../../utilities/RatingFunctions";
 
-export default function ScoreBarGroup({ data }) {
+export default function ScoreBarGroup({ data, barHeight }) {
     return (
         <div>
         {Object.keys(data?.scores?.details).map((header, i) => (
@@ -24,7 +24,7 @@ export default function ScoreBarGroup({ data }) {
             <div className="border border-neutrals-light-500 w-[100%]">
             <div
                 className={bjoin(
-                    "h-[2px]",
+                    "h-[" + barHeight + "]",
                     "bg-" + overallRating(data) + "-300" // bg-platinum-300 bg-gold-300 bg-silver-300 bg-bronze-300 bg-unrated-300
                 )}
                 style={{width: `calc(100% * (${data?.scores?.details[header]})/5)`}}

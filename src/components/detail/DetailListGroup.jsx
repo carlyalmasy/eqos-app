@@ -5,7 +5,7 @@ import Grid from "../layout/Grid";
 export default function DetailListGroup({ items }) {
     return (
         <>
-            <Grid split="2">
+            <Grid split="2" gapSize="6">
                 {Object.keys(items?.value).map((data, i) => {
                     return (
                         <>
