@@ -1,5 +1,7 @@
-import React from "react";
-
-export default function DetailName(data) {
-    return <p className="text-lg">{data.detailHeader}</p>;
+export default function DetailName({ name }) {
+    return (
+        <p className="text-5xl text-neutrals-dark-600 font-semibold">
+            { name }
+        </p>
+    );
 }
