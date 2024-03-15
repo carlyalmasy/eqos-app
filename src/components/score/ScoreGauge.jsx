@@ -19,7 +19,7 @@ export default function ScoreGauge({ data, textSize, subtextSize }) {
                 <p
                     className={bjoin(
                         "uppercase font-bold mb-0 leading-tight",
-                        "text-" + textSize,
+                        "text-" + textSize, // text-2xs
                         "text-" + overallRating(data) + "-300" // text-platinum-300 text-gold-300 text-silver-300 text-bronze-300 text-unrated-300
                     )}
                 >

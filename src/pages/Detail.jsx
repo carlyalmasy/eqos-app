@@ -9,12 +9,11 @@ import Card from "../components/Card";
 import Grid from "../components/layout/Grid";
 import ScoreGauge from "../components/score/ScoreGauge";
 import ScoreBarGroup from "../components/score/ScoreBarGroup";
-import DetailListGroup from "../components/detail/DetailListGroup";
 import DetailBlock from "../components/detail/DetailBlock";
 import DetailHeader from "../components/detail/DetailHeader";
 
 export default function Detail() {
-    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/510955";
+    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/384697";
     const item = useSignal({});
 
     useLayoutEffect(() => {
@@ -66,6 +65,7 @@ export default function Detail() {
                 <Grid split="2" gapSize="8">
                     {Object.keys(item.value.alignments).map((alignment) => {
                         const title = item.value.alignments[alignment];
+                        {console.log(alignment)}
                         return (
                             <div>
                                 <div

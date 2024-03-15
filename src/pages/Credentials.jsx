@@ -2,6 +2,7 @@ import SearchResults from "../components/search/SearchResults.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
 import Markdown from "react-markdown";
 import CredentialsIntro from "../topics/CredentialsIntro.md.js";
+import Modal from "../components/Modal.jsx";
 
 export default function Credentials() {
     return (
@@ -13,6 +14,7 @@ export default function Credentials() {
             <div className="mt-12">
                 <SearchResults />
             </div>
+            <Modal />
         </>
     );
 }
