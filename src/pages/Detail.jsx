@@ -31,7 +31,7 @@ export default function Detail() {
 
     return (
         <>
-            <DetailHeader>
+            <Grid className="my-20" split="9/3">
                 <div className="mr-36">
                     <DetailBlock>
                         <DetailEyebrow>{item.value.overview.type}</DetailEyebrow>
@@ -62,7 +62,7 @@ export default function Detail() {
                         </a>
                     </div>
                 </>
-            </DetailHeader>
+            </Grid>
             <div className="mt-28">
                 <Grid split="2" gapSize="8">
                     {Object.keys(item.value.alignments).map((alignment) => {
