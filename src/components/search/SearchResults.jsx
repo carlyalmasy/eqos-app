@@ -70,7 +70,7 @@ export default function SearchResults() {
         <>
             <Grid split="3" gapSize="6">
                 {items.value.map((data) => (
-                    <CredentialsCard key={ data.id } data={ data }/>
+                    <CredentialsCard key={ data.id } data={ data } id={data.id}/>
                 ))}
             </Grid>
             <div className="mt-10">

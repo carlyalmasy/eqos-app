@@ -17,7 +17,7 @@ export default [
         ],
     },
     {
-        title: "Most Popular Training Programs",
+        title: "Most Popular Credentials",
         items: [
           {
             title: "Project Management",

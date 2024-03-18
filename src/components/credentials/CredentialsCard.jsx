@@ -11,7 +11,7 @@ export default function CredentialsCard({ data }) {
         <>
             <Card color="white">
                 <div
-                    // onClick={toggleModal}
+                    // onClick=
                     className="grid grid-cols-12 grid-rows-1 hover:bg-neutrals-light-100/75"
                 >
                     <div className="col-span-5 p-6">

@@ -93,7 +93,7 @@ export default function SearchBox({ action }) {
                                 ? "col-span-3 col-start-4"
                                 : ""}
                         >
-                            <Label text="Training Program Category" helpText="CIP4 codes" />
+                            <Label text="Credential Category" helpText="CIP4 codes" />
                             <SearchSelect
                                 name="category"
                                 collection="categories"

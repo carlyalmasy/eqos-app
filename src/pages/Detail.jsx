@@ -13,13 +13,15 @@ import DetailBlock from "../components/detail/DetailBlock";
 import DetailHeader from "../components/detail/DetailHeader";
 
 export default function Detail() {
-    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/384697";
+    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/89521";
     const item = useSignal({});
 
     useLayoutEffect(() => {
         debug("Getting result");
-        axios.get(url).then((response) => {
-            item.value = response.data;
+        axios
+            .get(url)
+            .then((response) => {
+                item.value = response.data;
         });
     }, []);
 
@@ -65,7 +67,6 @@ export default function Detail() {
                 <Grid split="2" gapSize="8">
                     {Object.keys(item.value.alignments).map((alignment) => {
                         const title = item.value.alignments[alignment];
-                        {console.log(alignment)}
                         return (
                             <div>
                                 <div
