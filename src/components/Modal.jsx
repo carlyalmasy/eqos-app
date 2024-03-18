@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import Detail from '../pages/Detail'
 
 export default function Modal() {
   const [openModal, setOpenModal] = useState(false)
@@ -41,6 +42,9 @@ export default function Modal() {
                     <span className="sr-only">Close</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
+                </div>
+                <div>
+                    <Detail />
                 </div>
               </Dialog.Panel>
             </Transition.Child>
