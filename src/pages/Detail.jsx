@@ -10,7 +10,6 @@ import Grid from "../components/layout/Grid";
 import ScoreGauge from "../components/score/ScoreGauge";
 import ScoreBarGroup from "../components/score/ScoreBarGroup";
 import DetailBlock from "../components/detail/DetailBlock";
-import DetailHeader from "../components/detail/DetailHeader";
 
 export default function Detail() {
     const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/89521";
