@@ -17,7 +17,6 @@ function App({router}) {
       <Header />
       <section>
         <PageContainer>
-        {/* <PageHeight> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/credentials" element={<Credentials />} />
@@ -26,7 +25,6 @@ function App({router}) {
             <Route path="/api" element={<API />} />
             <Route path="/spec" element={<Spec />} />
           </Routes>
-        {/* </PageHeight> */}
         </PageContainer>
       </section>
       <Footer />

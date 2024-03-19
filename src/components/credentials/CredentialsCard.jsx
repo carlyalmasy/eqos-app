@@ -9,7 +9,7 @@ import { overallRating } from "../../utilities/RatingFunctions";
 export default function CredentialsCard({ data }) {
 
         function handleClick() {
-          alert('You clicked me!');
+          alert(data.id + "\n" + data.scores.overall);
         }
 
     return (
