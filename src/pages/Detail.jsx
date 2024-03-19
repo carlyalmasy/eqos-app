@@ -1,4 +1,4 @@
-import { useSignal, useSignalEffect } from "@preact/signals-react";
+import { useSignal } from "@preact/signals-react";
 import { useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -30,8 +30,6 @@ export default function Detail() {
     if (!Object.keys(item.value).length) {
         return <></>;
     }
-
-    console.log(item.value.id)
 
     return (
         <>
