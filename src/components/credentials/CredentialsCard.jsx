@@ -7,11 +7,16 @@ import Card from "../Card";
 import { overallRating } from "../../utilities/RatingFunctions";
 
 export default function CredentialsCard({ data }) {
+
+        function handleClick() {
+          alert('You clicked me!');
+        }
+
     return (
         <>
             <Card color="white">
                 <div
-                    // onClick=
+                    onClick={handleClick}
                     className="grid grid-cols-12 grid-rows-1 hover:bg-neutrals-light-100/75"
                 >
                     <div className="col-span-5 p-6">

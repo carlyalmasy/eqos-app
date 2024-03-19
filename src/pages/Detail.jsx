@@ -1,5 +1,6 @@
-import { useSignal } from "@preact/signals-react";
+import { useSignal, useSignalEffect } from "@preact/signals-react";
 import { useLayoutEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import debug from "../utilities/debug";
 import DetailEyebrow from "../components/detail/DetailEyebrow";
@@ -11,27 +12,31 @@ import ScoreGauge from "../components/score/ScoreGauge";
 import ScoreBarGroup from "../components/score/ScoreBarGroup";
 import DetailBlock from "../components/detail/DetailBlock";
 
+const baseUrl = import.meta.env.VITE_CORE_URL;
+
 export default function Detail() {
-    const url = import.meta.env.VITE_CORE_URL + "/api/app/detail/credentials/89521";
     const item = useSignal({});
+    const { id } = useParams();
 
     useLayoutEffect(() => {
         debug("Getting result");
         axios
-            .get(url)
+            .get(new URL('/api/app/detail/credentials/' + id, baseUrl))
             .then((response) => {
                 item.value = response.data;
         });
-    }, []);
+    }, [id]);
 
     if (!Object.keys(item.value).length) {
         return <></>;
     }
 
+    console.log(item.value.id)
+
     return (
         <>
-            <Grid className="my-20" split="9/3">
-                <div className="mr-36">
+            <Grid className="my-20" split="8/4" gapSize="2">
+                <div className="mr-32">
                     <DetailBlock>
                         <DetailEyebrow>{item.value.overview.type}</DetailEyebrow>
                         <DetailName>{item.value.overview.name}</DetailName>
@@ -43,7 +48,7 @@ export default function Detail() {
                         </DetailBlock>
                     )}
                     <DetailBlock>
-                        <DetailEyebrow>{"Provider"}</DetailEyebrow>
+                        <DetailEyebrow>{"Training Provider"}</DetailEyebrow>
                         <DetailInfo>{item.value.overview.provider.name}</DetailInfo>
                     </DetailBlock>
                 </div>
