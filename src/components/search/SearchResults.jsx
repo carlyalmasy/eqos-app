@@ -3,45 +3,53 @@ import axios from "axios";
 import CredentialsCard from "../credentials/CredentialsCard";
 import Grid from "../layout/Grid";
 import Pagination from "../../layouts/Pagination";
-import { useSearchParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
 import debug from "../../utilities/debug";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
+import Modal from "../Modal.jsx"
+import DetailContent from "../detail/DetailContent";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
 export default function SearchResults() {
-    const items       = useSignal([]);
-    const meta        = useSignal({});
+    const items = useSignal([]);
+    const meta = useSignal({});
     const currentPage = useSignal(1);
+    const item = useSignal({});
+    const { id } = useParams();
 
-    const [
-        params,
-        setParams
-    ] = useSearchParams();
+    const [params, setParams] = useSearchParams();
 
     useSignalEffect(() => {
-        if (params.get('p') != currentPage.value) {
-            debug('Setting page parameter');
-            params.set('p', currentPage.value);
+        if (params.get("p") != currentPage.value) {
+            debug("Setting page parameter");
+            params.set("p", currentPage.value);
             setParams(params);
         }
     });
 
     useEffect(() => {
-        debug('Getting results');
+        debug("Getting result");
         axios
-            .get(new URL('/api/app/search?' + params, baseUrl))
+            .get(new URL("/api/app/detail/credentials/" + id, baseUrl))
             .then((response) => {
-                items.value       = response.data.data;
-                meta.value        = response.data.meta;
+                item.value = response.data;
+        });
+    }, [id]);
+
+    useEffect(() => {
+        debug("Getting results");
+        axios
+            .get(new URL("/api/app/search?" + params, baseUrl))
+            .then((response) => {
+                items.value = response.data.data;
+                meta.value = response.data.meta;
                 currentPage.value = meta.value.page;
-            })
-        ;
+        });
     }, [params]);
 
     useLayoutEffect(() => {
-        currentPage.value = params.get('p');
+        currentPage.value = params.get("p");
     }, []);
 
     const nPages = useComputed(() => {
@@ -53,12 +61,12 @@ export default function SearchResults() {
     });
 
     const lastPgResult = useComputed(() => {
-        return (meta.value.limit * (currentPage.value - 1 )) + items.value.length;
+        return meta.value.limit * (currentPage.value - 1) + items.value.length;
     });
 
     const firstPgResult = useComputed(() => {
         if (totalItems !== 0) {
-            return (lastPgResult - items.value.length) + 1;
+            return lastPgResult - items.value.length + 1;
         }
 
         return 0;
@@ -66,11 +74,20 @@ export default function SearchResults() {
 
     const totalItems = meta.value.total;
 
+    const data = item.value;
+
+    const [itemID, setItemID] = useState(null);
+
+    function handleClick() {
+        setItemID(data.id);
+        openModal(true);
+    }
+
     return (
         <>
             <Grid split="3" gapSize="6">
                 {items.value.map((data) => (
-                    <CredentialsCard key={ data.id } data={ data } id={data.id}/>
+                    <CredentialsCard key={data.id} data={data} id={data.id} />
                 ))}
             </Grid>
             <div className="mt-10">
@@ -80,6 +97,16 @@ export default function SearchResults() {
                     totalItems={totalItems}
                     lastPgResult={lastPgResult}
                     firstPgResult={firstPgResult}
+                />
+            </div>
+            <div>
+                <Modal
+                    openModal={false}
+                    content={
+                    <DetailContent
+                        data={data}
+                        split="8/4"/>
+                    }
                 />
             </div>
         </>

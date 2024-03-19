@@ -1,5 +1,5 @@
 import { useSignal } from "@preact/signals-react";
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DetailContent from "../components/detail/DetailContent";
 import axios from "axios";
@@ -11,10 +11,12 @@ export default function Detail() {
     const item = useSignal({});
     const { id } = useParams();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         debug("Getting result");
-        axios.get(new URL("/api/app/detail/credentials/" + id, baseUrl)).then((response) => {
-            item.value = response.data;
+        axios
+            .get(new URL("/api/app/detail/credentials/" + id, baseUrl))
+            .then((response) => {
+                item.value = response.data;
         });
     }, [id]);
 

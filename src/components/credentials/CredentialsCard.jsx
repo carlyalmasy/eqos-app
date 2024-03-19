@@ -1,22 +1,28 @@
-import React from "react";
+import { useState } from "react";
 import bjoin from "../../utilities/bjoin";
 import ScoreBarGroup from "../score/ScoreBarGroup";
 import ScoreGauge from "../score/ScoreGauge";
 import CredentialsInfo from "./CredentialsInfo";
 import Card from "../Card";
 import { overallRating } from "../../utilities/RatingFunctions";
+import handleClick from "../search/SearchResults";
 
-export default function CredentialsCard({ data }) {
+export default function CredentialsCard({ data, handleClick }) {
 
-        function handleClick() {
-          alert(data.id + "\n" + data.scores.overall);
-        }
+    const [itemID, setItemID] = useState(null);
+
+
+    function handleClick() {
+        setItemID(data.id);
+        // openModal(true);
+        console.log(data.id);
+    }
 
     return (
         <>
             <Card color="white">
                 <div
-                    onClick={handleClick}
+                    onClick={ handleClick }
                     className="grid grid-cols-12 grid-rows-1 hover:bg-neutrals-light-100/75"
                 >
                     <div className="col-span-5 p-6">
