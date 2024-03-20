@@ -12,7 +12,7 @@ export default function Detail() {
     const { id } = useParams();
 
     useEffect(() => {
-        debug("Getting result");
+        debug("Getting credential details");
         axios
             .get(new URL("/api/app/detail/credentials/" + id, baseUrl))
             .then((response) => {

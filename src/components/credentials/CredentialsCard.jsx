@@ -7,22 +7,17 @@ import Card from "../Card";
 import { overallRating } from "../../utilities/RatingFunctions";
 import handleClick from "../search/SearchResults";
 
-export default function CredentialsCard({ data, handleClick }) {
-
-    const [itemID, setItemID] = useState(null);
-
+export default function CredentialsCard({ data, getItemID }) {
 
     function handleClick() {
-        setItemID(data.id);
-        // openModal(true);
-        console.log(data.id);
+
     }
 
     return (
         <>
             <Card color="white">
                 <div
-                    onClick={ handleClick }
+                    onClick={() => setOpenModal(true)}
                     className="grid grid-cols-12 grid-rows-1 hover:bg-neutrals-light-100/75"
                 >
                     <div className="col-span-5 p-6">

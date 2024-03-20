@@ -1,12 +1,12 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-export default function Modal({ content, openModal, setItemID }) {
+export default function Modal({ content, openModal }) {
 
   return (
     <Transition.Root show={openModal} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setItemID}>
+      <Dialog as="div" className="relative z-10" onClose={setOpenModal}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -35,7 +35,7 @@ export default function Modal({ content, openModal, setItemID }) {
                   <button
                     type="button"
                     className="rounded-md bg-white text-neutrals-dark-300 hover:text-neutrals-dark-500 focus:outline-none"
-                    onClick={() => setItemID(false)}
+                    onClick={() => setOpenModal(false)}
                   >
                     <span className="sr-only">Close</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />

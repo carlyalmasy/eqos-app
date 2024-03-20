@@ -12,13 +12,19 @@ import DetailContent from "../detail/DetailContent";
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
 export default function SearchResults() {
+    //credentials cards
     const items = useSignal([]);
     const meta = useSignal({});
     const currentPage = useSignal(1);
+
+    const [params, setParams] = useSearchParams();
+
+    //detail modals
     const item = useSignal({});
     const { id } = useParams();
 
-    const [params, setParams] = useSearchParams();
+    const [getItemID, setGetItemID] = useState(null);
+    const [openModal, setOpenModal] = useState(false);
 
     useSignalEffect(() => {
         if (params.get("p") != currentPage.value) {
@@ -27,15 +33,6 @@ export default function SearchResults() {
             setParams(params);
         }
     });
-
-    useEffect(() => {
-        debug("Getting result");
-        axios
-            .get(new URL("/api/app/detail/credentials/" + id, baseUrl))
-            .then((response) => {
-                item.value = response.data;
-        });
-    }, [id]);
 
     useEffect(() => {
         debug("Getting results");
@@ -47,6 +44,15 @@ export default function SearchResults() {
                 currentPage.value = meta.value.page;
         });
     }, [params]);
+
+    useEffect(() => {
+        debug("Getting credential details");
+        axios
+            .get(new URL("/api/app/detail/credentials/" + id, baseUrl))
+            .then((response) => {
+                item.value = response.data;
+        });
+    }, [id]);
 
     useLayoutEffect(() => {
         currentPage.value = params.get("p");
@@ -76,18 +82,11 @@ export default function SearchResults() {
 
     const data = item.value;
 
-    const [itemID, setItemID] = useState(null);
-
-    function handleClick() {
-        setItemID(data.id);
-        openModal(true);
-    }
-
     return (
         <>
             <Grid split="3" gapSize="6">
                 {items.value.map((data) => (
-                    <CredentialsCard key={data.id} data={data} id={data.id} />
+                    <CredentialsCard key={data.id} data={data} id={data.id} getItemID="null" />
                 ))}
             </Grid>
             <div className="mt-10">
