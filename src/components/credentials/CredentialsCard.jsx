@@ -1,23 +1,15 @@
-import { useState } from "react";
 import bjoin from "../../utilities/bjoin";
 import ScoreBarGroup from "../score/ScoreBarGroup";
 import ScoreGauge from "../score/ScoreGauge";
 import CredentialsInfo from "./CredentialsInfo";
 import Card from "../Card";
 import { overallRating } from "../../utilities/RatingFunctions";
-import handleClick from "../search/SearchResults";
 
-export default function CredentialsCard({ data, getItemID }) {
-
-    function handleClick() {
-
-    }
-
+export default function CredentialsCard({ data }) {
     return (
         <>
             <Card color="white">
                 <div
-                    onClick={() => setOpenModal(true)}
                     className="grid grid-cols-12 grid-rows-1 hover:bg-neutrals-light-100/75"
                 >
                     <div className="col-span-5 p-6">

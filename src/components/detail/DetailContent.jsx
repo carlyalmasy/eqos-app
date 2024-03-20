@@ -6,33 +6,54 @@ import Grid from "../layout/Grid";
 import ScoreGauge from "../score/ScoreGauge";
 import ScoreBarGroup from "../score/ScoreBarGroup";
 import DetailBlock from "./DetailBlock";
+import { useSignal, useSignalEffect } from "@preact/signals-react";
+import debug from "../../utilities/debug";
+import axios from "axios";
 
-export default function DetailContent({ data, split }) {
+const baseUrl = import.meta.env.VITE_CORE_URL;
+
+export default function DetailContent({ itemId, split }) {
+    const data = useSignal({});
+
+    useSignalEffect(() => {
+        debug('Getting credential details');
+
+        axios
+            .get(new URL("/api/app/detail/credentials/" + itemId, baseUrl))
+            .then((response) => {
+                data.value = response.data;
+        });
+    })
+
+    if (!Object.keys(data.value).length) {
+        return <></>;
+    }
+
     return (
         <>
             <Grid className="my-20" split={split} gapSize="2">
                 <div className="mr-32">
                     <DetailBlock>
-                        <DetailEyebrow>{data.overview.type}</DetailEyebrow>
-                        <DetailName>{data.overview.name}</DetailName>
+                        <DetailEyebrow>{data.value.overview.type}</DetailEyebrow>
+                        <DetailName>{data.value.overview.name}</DetailName>
                     </DetailBlock>
-                    {data.overview.description && (
+                    {data.value.overview.description && (
                         <DetailBlock>
                             <DetailEyebrow>{"Description"}</DetailEyebrow>
-                            <DetailInfo>{data.overview.description}</DetailInfo>
+                            <DetailInfo>{data.value.overview.description}</DetailInfo>
                         </DetailBlock>
                     )}
                     <DetailBlock>
                         <DetailEyebrow>{"Training Provider"}</DetailEyebrow>
-                        <DetailInfo>{data.overview.provider.name}</DetailInfo>
+                        <DetailInfo>{data.value.overview.provider.name}</DetailInfo>
                     </DetailBlock>
                 </div>
 
                 <>
                     <Card color={"white"}>
                         <div className="grid content-center py-3 px-9">
-                            <ScoreGauge data={data} textSize="3xl" subtextSize="xl" />
-                            <ScoreBarGroup data={data} barHeight="6px" />
+                            <ScoreGauge data={data.value} textSize="3xl" subtextSize="xl" />
+                            <ScoreBarGroup data={data.value} barHeight="6px" />
                         </div>
                     </Card>
                     <div className="mt-6 text-center">
@@ -44,14 +65,11 @@ export default function DetailContent({ data, split }) {
             </Grid>
             <div className="mt-28">
                 <Grid split="2" gapSize="8">
-                    {Object.keys(data.alignments).map((alignment) => {
-                        const title = data.alignments[alignment];
+                    {Object.keys(data.value.alignments).map((alignment) => {
+                        const title = data.value.alignments[alignment];
                         return (
-                            <div>
-                                <div
-                                    key={alignment}
-                                    className="container bg-platinum-100 h-10 rounded-full flex justify-center"
-                                >
+                            <div key={alignment}>
+                                <div className="container bg-platinum-100 h-10 rounded-full flex justify-center">
                                     <p className="text-neutrals-dark-600 text-lg leading-6">
                                         {title.title}
                                     </p>

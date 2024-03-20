@@ -3,7 +3,7 @@ import axios from "axios";
 import CredentialsCard from "../credentials/CredentialsCard";
 import Grid from "../layout/Grid";
 import Pagination from "../../layouts/Pagination";
-import { useParams, useSearchParams } from "react-router-dom";
+import { NavLink, useParams, useSearchParams } from "react-router-dom";
 import debug from "../../utilities/debug";
 import { useEffect, useLayoutEffect, useState } from "react";
 import Modal from "../Modal.jsx"
@@ -11,7 +11,7 @@ import DetailContent from "../detail/DetailContent";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
-export default function SearchResults() {
+export default function SearchResults({ onSelect }) {
     //credentials cards
     const items = useSignal([]);
     const meta = useSignal({});
@@ -80,14 +80,16 @@ export default function SearchResults() {
 
     const totalItems = meta.value.total;
 
-    const data = item.value;
-
     return (
         <>
             <Grid split="3" gapSize="6">
-                {items.value.map((data) => (
-                    <CredentialsCard key={data.id} data={data} id={data.id} getItemID="null" />
-                ))}
+                {items.value.map(
+                    (data) => (
+                        <NavLink key={data.id} to={ '/credentials/' + data.id } onClick={ (e) => onSelect(e, data) }>
+                            <CredentialsCard data={data} id={data.id} getItemID="null" />
+                        </NavLink>
+                    )
+                )}
             </Grid>
             <div className="mt-10">
                 <Pagination
@@ -96,16 +98,6 @@ export default function SearchResults() {
                     totalItems={totalItems}
                     lastPgResult={lastPgResult}
                     firstPgResult={firstPgResult}
-                />
-            </div>
-            <div>
-                <Modal
-                    openModal={false}
-                    content={
-                    <DetailContent
-                        data={data}
-                        split="8/4"/>
-                    }
                 />
             </div>
         </>
