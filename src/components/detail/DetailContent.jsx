@@ -74,7 +74,7 @@ export default function DetailContent({ itemId, split }) {
                                         {title.title}
                                     </p>
                                 </div>
-                                <ol className="list-decimal list-inside my-4 ml-10">
+                                <ol className="list-decimal list-outside my-4 ml-16">
                                     {Object.keys(title.items).map((listItem, i) => {
                                         const text = title.items[listItem];
                                         return (
