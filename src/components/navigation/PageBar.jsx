@@ -33,6 +33,7 @@ export default function PageBar({items}) {
                       alt="EQOS"
                     />
                   </NavLink>
+                  <span className='mt-0 pl-10 font-semibold text-xl text-eqos-400 uppercase'>EQOS Quality Signal</span>
                 </div>
                 <div className="hidden sm:flex sm:space-x-8 ml-auto">
                     {

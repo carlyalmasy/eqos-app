@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -65,6 +67,9 @@ export default {
         fontSize: {
             '2xs': '.66rem',
         },
+        fontFamily: {
+            sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+          },
     },
   }
 }
