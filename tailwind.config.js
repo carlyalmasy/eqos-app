@@ -65,7 +65,7 @@ export default {
             'white': '#fff',
           },
         fontSize: {
-            '2xs': '.66rem',
+            '2xs': '.625rem',
         },
         fontFamily: {
             sans: ['Inter var', ...defaultTheme.fontFamily.sans],

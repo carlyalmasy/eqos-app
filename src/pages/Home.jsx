@@ -15,7 +15,7 @@ import Grid from "../components/layout/Grid.jsx";
 export default function Home() {
     return (
         <>
-            <div className="grid md:grid-cols-12 grid-rows-none gap-16">
+            <div className="grid lg:grid-cols-12 grid-rows-none gap-4">
                 <div className="md:col-span-6 mt-6">
                     <Markdown>{Intro}</Markdown>
                 </div>
