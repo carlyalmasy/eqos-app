@@ -1,7 +1,7 @@
 export default function PageHeight(props) {
     return (
       <>
-        <div className="h-lvh">
+        <div className="h-screen">
           {props.children}
         </div>
       </>

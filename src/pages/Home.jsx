@@ -16,12 +16,12 @@ export default function Home() {
     return (
         <>
             <div className="grid lg:grid-cols-12 grid-rows-none gap-4">
-                <div className="md:col-span-6 mt-6">
+                <div className="md:col-span-6 mt-8 mr-12 flex shrink-1">
                     <Markdown>{Intro}</Markdown>
                 </div>
-                <div className="md:col-span-6 mt-10">
+                <div className="md:col-span-6 mt-12">
                     <Card color="platinum-100">
-                        <div className="p-6 px-8">
+                        <div className="p-8 px-8">
                             <SearchBox action="/credentials" />
                         </div>
                     </Card>
@@ -35,7 +35,7 @@ export default function Home() {
                         <img src="https://placehold.co/600x335?text=4" />
                     </Grid>
                 </div>
-                <div className="md:col-span-4">
+                <div className="md:col-span-4 ml-12">
                     <Markdown>{ShortcutsIntro}</Markdown>
                     <ShortcutGroup icon={ShortcutsIcon} groups={DiscoveryShortcuts} />
                 </div>
