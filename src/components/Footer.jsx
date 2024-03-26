@@ -9,13 +9,13 @@ export default function Footer() {
           <div className="flex justify-center space-x-6">
             <p>
               <a
-                className="hover:text-neutrals-dark-600" 
+                className="hover:text-neutrals-dark-600"
                 href="https://eqos.org/"
                 target="_blank"
                 >EQOS.org</a>
             </p>
             <p>
-              <a 
+              <a
                 className="hover:text-neutrals-dark-600"
                 href=""
                 target="_blank"
@@ -33,4 +33,3 @@ export default function Footer() {
   );
 }
 
-    

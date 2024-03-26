@@ -6,7 +6,6 @@ import Pagination from "../../layouts/Pagination";
 import { NavLink, useParams, useSearchParams } from "react-router-dom";
 import debug from "../../utilities/debug";
 import { useEffect, useLayoutEffect, useState } from "react";
-import PageHeight from "../../layouts/PageHeight.jsx";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -77,28 +76,26 @@ export default function SearchResults({ onSelect }) {
 
     return (
         <>
-            <PageHeight>
-                <Grid split="3" gapSize="6">
-                    {items.value.map((data) => (
-                        <NavLink
-                            key={data.id}
-                            to={"/credentials/" + data.id}
-                            onClick={(e) => onSelect(e, data)}
-                        >
-                            <CredentialsCard data={data} id={data.id} getItemID="null" />
-                        </NavLink>
-                    ))}
-                </Grid>
-                <div className="mt-10">
-                    <Pagination
-                        nPages={nPages}
-                        currentPage={currentPage}
-                        totalItems={totalItems}
-                        lastPgResult={lastPgResult}
-                        firstPgResult={firstPgResult}
-                    />
-                </div>
-            </PageHeight>
+            <Grid split="3" gapSize="6">
+                {items.value.map((data) => (
+                    <NavLink
+                        key={data.id}
+                        to={"/credentials/" + data.id}
+                        onClick={(e) => onSelect(e, data)}
+                    >
+                        <CredentialsCard data={data} id={data.id} getItemID="null" />
+                    </NavLink>
+                ))}
+            </Grid>
+            <div className="mt-10">
+                <Pagination
+                    nPages={nPages}
+                    currentPage={currentPage}
+                    totalItems={totalItems}
+                    lastPgResult={lastPgResult}
+                    firstPgResult={firstPgResult}
+                />
+            </div>
         </>
     );
 }

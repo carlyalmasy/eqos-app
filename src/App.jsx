@@ -9,6 +9,7 @@ import Detail from './pages/Detail';
 import Resources from './pages/Resources';
 import API from './pages/API';
 import Spec from './pages/Spec';
+import NotFound from './pages/404';
 
 function App({router}) {
   return (
@@ -23,6 +24,7 @@ function App({router}) {
             <Route path="/resources" element={<Resources />} />
             <Route path="/api" element={<API />} />
             <Route path="/spec" element={<Spec />} />
+            <Route path='*' element={<NotFound />}/>
           </Routes>
         </PageContainer>
       </section>

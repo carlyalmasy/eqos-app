@@ -5,7 +5,6 @@ import CredentialsIntro from "../topics/CredentialsIntro.md.js";
 import Modal from "../components/Modal.jsx";
 import DetailContent from "../components/detail/DetailContent.jsx";
 import { useSignal } from "@preact/signals-react";
-import PageHeight from "../layouts/PageHeight.jsx";
 
 export default function Credentials({}) {
     const selectedItem = useSignal(null);
@@ -21,20 +20,18 @@ export default function Credentials({}) {
 
     return (
         <>
-            <PageHeight>
-                <div className="my-10">
-                    <Markdown>{CredentialsIntro}</Markdown>
-                </div>
-                <SearchBox action="/credentials" />
-                <div className="mt-12">
-                    <SearchResults onSelect={onSelect} />
-                </div>
-                {selectedItem.value && (
-                    <Modal isActive={true} closeModal={onClose}>
-                        <DetailContent itemId={selectedItem.value} split="8/4" />
-                    </Modal>
-                )}
-            </PageHeight>
+            <div className="my-10">
+                <Markdown>{CredentialsIntro}</Markdown>
+            </div>
+            <SearchBox action="/credentials" />
+            <div className="mt-12">
+                <SearchResults onSelect={onSelect} />
+            </div>
+            {selectedItem.value && (
+                <Modal isActive={true} closeModal={onClose}>
+                    <DetailContent itemId={selectedItem.value} split="8/4" />
+                </Modal>
+            )}
         </>
     );
 }
