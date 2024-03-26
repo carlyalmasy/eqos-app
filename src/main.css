@@ -4,7 +4,7 @@
 
 @layer base {
     html {
-        @apply bg-neutrals-dark-100;
+        @apply bg-white;
     }
 
     body {

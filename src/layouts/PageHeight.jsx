@@ -1,7 +1,7 @@
 export default function PageHeight(props) {
     return (
       <>
-        <div className="h-screen">
+        <div style={{height: 'calc(100vh - 64px)'}}>
           {props.children}
         </div>
       </>

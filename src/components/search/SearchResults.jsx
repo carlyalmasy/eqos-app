@@ -6,8 +6,7 @@ import Pagination from "../../layouts/Pagination";
 import { NavLink, useParams, useSearchParams } from "react-router-dom";
 import debug from "../../utilities/debug";
 import { useEffect, useLayoutEffect, useState } from "react";
-import Modal from "../Modal.jsx"
-import DetailContent from "../detail/DetailContent";
+import PageHeight from "../../layouts/PageHeight.jsx";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -36,21 +35,17 @@ export default function SearchResults({ onSelect }) {
 
     useEffect(() => {
         debug("Getting results");
-        axios
-            .get(new URL("/api/app/search?" + params, baseUrl))
-            .then((response) => {
-                items.value = response.data.data;
-                meta.value = response.data.meta;
-                currentPage.value = meta.value.page;
+        axios.get(new URL("/api/app/search?" + params, baseUrl)).then((response) => {
+            items.value = response.data.data;
+            meta.value = response.data.meta;
+            currentPage.value = meta.value.page;
         });
     }, [params]);
 
     useEffect(() => {
         debug("Getting credential details");
-        axios
-            .get(new URL("/api/app/detail/credentials/" + id, baseUrl))
-            .then((response) => {
-                item.value = response.data;
+        axios.get(new URL("/api/app/detail/credentials/" + id, baseUrl)).then((response) => {
+            item.value = response.data;
         });
     }, [id]);
 
@@ -82,24 +77,28 @@ export default function SearchResults({ onSelect }) {
 
     return (
         <>
-            <Grid split="3" gapSize="6">
-                {items.value.map(
-                    (data) => (
-                        <NavLink key={data.id} to={ '/credentials/' + data.id } onClick={ (e) => onSelect(e, data) }>
+            <PageHeight>
+                <Grid split="3" gapSize="6">
+                    {items.value.map((data) => (
+                        <NavLink
+                            key={data.id}
+                            to={"/credentials/" + data.id}
+                            onClick={(e) => onSelect(e, data)}
+                        >
                             <CredentialsCard data={data} id={data.id} getItemID="null" />
                         </NavLink>
-                    )
-                )}
-            </Grid>
-            <div className="mt-10">
-                <Pagination
-                    nPages={nPages}
-                    currentPage={currentPage}
-                    totalItems={totalItems}
-                    lastPgResult={lastPgResult}
-                    firstPgResult={firstPgResult}
-                />
-            </div>
+                    ))}
+                </Grid>
+                <div className="mt-10">
+                    <Pagination
+                        nPages={nPages}
+                        currentPage={currentPage}
+                        totalItems={totalItems}
+                        lastPgResult={lastPgResult}
+                        firstPgResult={firstPgResult}
+                    />
+                </div>
+            </PageHeight>
         </>
     );
 }

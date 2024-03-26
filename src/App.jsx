@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PageContainer from './layouts/PageContainer';
-import PageHeight from './layouts/PageHeight';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';

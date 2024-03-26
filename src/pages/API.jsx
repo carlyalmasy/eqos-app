@@ -1,11 +1,14 @@
-import { RedocStandalone } from 'redoc';
+import { RedocStandalone } from "redoc";
+import PageHeight from "../layouts/PageHeight";
 
-const docsUrl = import.meta.env.VITE_CORE_URL + '/openapi.yml';
+const docsUrl = import.meta.env.VITE_CORE_URL + "/openapi.yml";
 
 export default function API() {
-  return (
-    <>
-      <RedocStandalone specUrl={docsUrl} />
-    </>
-  )
+    return (
+        <>
+            <PageHeight>
+                <RedocStandalone specUrl={docsUrl} />
+            </PageHeight>
+        </>
+    );
 }
