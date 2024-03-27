@@ -10,8 +10,9 @@ import Resources from './pages/Resources';
 import API from './pages/API';
 import Spec from './pages/Spec';
 import NotFound from './pages/404';
+import KitchenSink from './pages/KitchenSink';
 
-function App({router}) {
+function App() {
   return (
     <Router>
       <Header />
@@ -19,6 +20,7 @@ function App({router}) {
         <PageContainer>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/kitchen-sink" element={<KitchenSink />} />
             <Route path="/credentials" element={<Credentials />} />
             <Route path="/credentials/:id" element={<Detail />} />
             <Route path="/resources" element={<Resources />} />

@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import SearchResultsInfo from "../components/search/SearchResultsInfo.jsx";
 import { Fragment } from "react";
+import debug from "../utilities/debug.js";
 
 export default function Pagination({ nPages, currentPage, totalItems, lastPgResult, firstPgResult }) {
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
@@ -36,16 +37,19 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
     }
 
     function scrollToTop() {
-        window.scrollTo(0, 0)
+        debug("Unfocus");
+        document.activeElement.blur();
+        debug("Scroll to Top");
+        window.scrollTo(0, 0);
     }
 
     const goToPrevPage = () => {
-        currentPage !== 1 && currentPage.value--;
+        currentPage.value !== 1 && currentPage.value--;
         scrollToTop();
     };
 
     const goToNextPage = () => {
-        currentPage !== nPages.value && currentPage.value++;;
+        currentPage.value !== nPages.value && currentPage.value++;;
         scrollToTop();
     }
 
@@ -122,8 +126,9 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                                                         <a
                                                             aria-current={currentPage.value == page && "page"}
                                                             onClick={() => {
-                                                                (currentPage.value = page.valueOf());
-                                                                scrollToTop();}}
+                                                                currentPage.value != page.valueOf() && (currentPage.value = page.valueOf());
+                                                                scrollToTop();
+                                                            }}
                                                             className={
                                                                 currentPage == page
                                                                     ? "cursor-pointer relative z-10 inline-flex items-center bg-eqos-400 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eqos-600"
