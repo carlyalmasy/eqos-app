@@ -1,10 +1,10 @@
-import { useSignal, useComputed, useSignalEffect, signal } from '@preact/signals-react';
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-import { Combobox, Transition } from '@headlessui/react'
-import bjoin from '../../utilities/bjoin';
-import debug from '../../utilities/debug';
-import axios from 'axios';
-import _ from 'lodash';
+import { useSignal, useComputed, useSignalEffect, signal } from "@preact/signals-react";
+import { CheckIcon, ChevronUpDownIcon, XCircleIcon } from "@heroicons/react/20/solid";
+import { Combobox, Transition } from "@headlessui/react";
+import bjoin from "../../utilities/bjoin";
+import debug from "../../utilities/debug";
+import axios from "axios";
+import _ from "lodash";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -12,8 +12,8 @@ const baseUrl = import.meta.env.VITE_CORE_URL;
 // Update the selection value in state (triggering search)
 //
 
-const updateSelection = function(state, query, name, value) {
-    let params = {...state.value}; // forces clone
+const updateSelection = function (state, query, name, value) {
+    let params = { ...state.value }; // forces clone
 
     if (value) {
         params[name] = value;
@@ -22,17 +22,16 @@ const updateSelection = function(state, query, name, value) {
     }
 
     state.value = params;
-    query.value = '';
+    query.value = "";
 };
-
 
 //
 // Update the query value (triggering fuzzy search)
 //
 
-const updateQuery = function(state, query, name, value) {
+const updateQuery = function (state, query, name, value) {
     if (value.length == 0) {
-        let params = {...state.value};
+        let params = { ...state.value };
 
         delete params[name];
 
@@ -40,21 +39,18 @@ const updateQuery = function(state, query, name, value) {
     }
 
     query.value = value;
-}
+};
 
-export default function SearchSelect({name, collection, state}) {
-    const items      = useSignal([]);
-    const query      = useSignal('');
-    const getResults = _.debounce(function(params) {
-        const url = '/api/app/search/' + collection;
+export default function SearchSelect({ name, collection, state }) {
+    const items = useSignal([]);
+    const query = useSignal("");
+    const getResults = _.debounce(function (params) {
+        const url = "/api/app/search/" + collection;
 
-        debug('Getting ' + collection);
-        axios
-            .get(new URL(url + (params.size ? '?' + params : ''), baseUrl))
-            .then((response) => {
-                items.value = response.data;
-            })
-        ;
+        debug("Getting " + collection);
+        axios.get(new URL(url + (params.size ? "?" + params : ""), baseUrl)).then((response) => {
+            items.value = response.data;
+        });
     }, 500);
 
     //
@@ -69,7 +65,7 @@ export default function SearchSelect({name, collection, state}) {
         }
 
         if (query.value.length) {
-            params.set('fuzzy', query.value);
+            params.set("fuzzy", query.value);
         }
 
         getResults(params);
@@ -92,20 +88,32 @@ export default function SearchSelect({name, collection, state}) {
     });
 
     return (
-        <Combobox as="div" value={ selected.value.id ?? null} name={ name } onChange={ (value) => { updateSelection(state, query, name, value) } } nullable>
-            <div className="relative">
+        <Combobox
+            as="div"
+            className="relative"
+            value={selected.value.id ?? null}
+            name={name}
+            onChange={(value) => {
+                updateSelection(state, query, name, value)
+            }}
+            nullable
+        >
+            <div>
                 <Combobox.Input
-                    // type="search"
                     className="w-full rounded-md bg-white py-1.5 pl-3 pr-10 text-neutrals-dark-400 shadow-sm sm:text-sm sm:leading-6 focus:outline-none border-neutrals-light-300 border"
-                    onChange={ (event) => { updateQuery(state, query, name, event.target.value) } }
+                    onChange={(event) => {
+                        updateQuery(state, query, name, event.target.value);
+                    }}
                     placeholder="Start Typing..."
-                    displayValue={ () => selected.value.name ?? '' }
+                    displayValue={() => selected.value.name ?? ""}
                 />
-                {/* <button
-                    type="reset"
-                >
-                    Reset
-                </button> */}
+                {selected.value.name && (
+                    <button
+                        className="h-5 w-5 text-neutrals-light-500 absolute bottom-2 right-8"
+                    >
+                        <XCircleIcon />
+                    </button>
+                )}
                 <Transition
                     enter="transition duration-500 ease-out"
                     enterFrom="transform scale-95 opacity-0"
@@ -115,53 +123,57 @@ export default function SearchSelect({name, collection, state}) {
                     leaveTo="transform scale-95 opacity-0"
                 ></Transition>
                 <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2">
-                    <ChevronUpDownIcon className="h-5 w-5 text-neutrals-dark-400" aria-hidden="true" />
+                    <ChevronUpDownIcon
+                        className="h-5 w-5 text-neutrals-dark-400"
+                        aria-hidden="true"
+                    />
                 </Combobox.Button>
 
-                {
-                    items.value.length > 0 && (
-                        <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg sm:text-sm z-10">
-                            {
-                                items.value.map((item) => (
-                                    <Combobox.Option
-                                        key={ item.id }
-                                        value={ item.id }
-                                        className={ ({ active }) => bjoin(
-                                            'relative cursor-default select-none py-2 pl-8 pr-4',
-                                            active ? 'bg-eqos-400 text-white' : 'text-neutrals-dark-500'
-                                        )}
-                                    >
-                                        {
-                                            ({ active, selected }) => (
-                                                <>
-                                                    <span className={ bjoin('block truncate', selected && 'font-semibold') }>{ item.name }</span>
+                {items.value.length > 0 && (
+                    <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg sm:text-sm z-10">
+                        {items.value.map((item) => (
+                            <Combobox.Option
+                                key={item.id}
+                                value={item.id}
+                                className={({ active }) =>
+                                    bjoin(
+                                        "relative cursor-default select-none py-2 pl-8 pr-4",
+                                        active ? "bg-eqos-400 text-white" : "text-neutrals-dark-500"
+                                    )
+                                }
+                            >
+                                {({ active, selected }) => (
+                                    <>
+                                        <span
+                                            className={bjoin(
+                                                "block truncate",
+                                                selected && "font-semibold"
+                                            )}
+                                        >
+                                            {item.name}
+                                        </span>
 
-                                                    {
-                                                        selected && (
-                                                            <span
-                                                                className={ bjoin(
-                                                                'absolute inset-y-0 left-0 flex items-center pl-1.5',
-                                                                active ? 'text-white' : 'text-eqos-400'
-                                                                ) }
-                                                            >
-                                                                <CheckIcon className="h-5 w-5" aria-hidden="true" />
-                                                            </span>
-                                                        )
-                                                    }
-                                                </>
-                                            )
-                                        }
-                                    </Combobox.Option>
-                                ))
-                            }
-                        </Combobox.Options>
-                    )
-                }
+                                        {selected && (
+                                            <span
+                                                className={bjoin(
+                                                    "absolute inset-y-0 left-0 flex items-center pl-1.5",
+                                                    active ? "text-white" : "text-eqos-400"
+                                                )}
+                                            >
+                                                <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                                            </span>
+                                        )}
+                                    </>
+                                )}
+                            </Combobox.Option>
+                        ))}
+                    </Combobox.Options>
+                )}
             </div>
         </Combobox>
-    )
+    );
 }
 
 SearchSelect.defaultProps = {
-    state: signal({})
+    state: signal({}),
 };
