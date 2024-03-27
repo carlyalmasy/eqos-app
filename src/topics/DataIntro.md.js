@@ -1,5 +1,5 @@
 export default `
-### Title for Data Visualizations
+### A Look Into EQOS Quality Signal Data
 
-Insights discovered by our team when we queried the current EQOS data set.
+Insights discovered by our team when we queried the EQOS quality signal data set (Data source LinkedIn 2023).
 `

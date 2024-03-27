@@ -7,7 +7,7 @@ export default function ScoreBarGroup({ data, barHeight }) {
         <div>
         {Object.keys(data?.scores?.details).map((header, i) => (
         <React.Fragment key={i}>
-            <p className="mb-0">
+            <p className="leading-none text-xs">
             <span className={
                 data?.scores?.details[header] !== null
                     ? "font-bold text-neutrals-dark-600"

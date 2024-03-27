@@ -20,7 +20,7 @@ export default function Home() {
                     <Markdown>{Intro}</Markdown>
                 </div>
                 <div className="md:col-span-6 mb-12">
-                    <Card color="platinum-100">
+                    <Card color="neutrals-light-200">
                         <div className="p-8 px-8">
                             <SearchBox action="/credentials" />
                         </div>

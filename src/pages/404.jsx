@@ -11,7 +11,6 @@ export default function NotFound() {
             <p className="mt-6 text-base leading-7 text-neutrals-dark-100">Sorry, we couldn't find the page you're looking for.</p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <PrimaryButton link="/" text="Go back home"/>
-              <SecondaryButton link="#" text="Contact support &rarr;"/>
             </div>
           </div>
         </main>
