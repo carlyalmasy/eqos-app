@@ -1,6 +1,6 @@
 import { useSignal, useComputed, useSignalEffect, signal } from '@preact/signals-react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-import { Combobox } from '@headlessui/react'
+import { Combobox, Transition } from '@headlessui/react'
 import bjoin from '../../utilities/bjoin';
 import debug from '../../utilities/debug';
 import axios from 'axios';
@@ -92,22 +92,35 @@ export default function SearchSelect({name, collection, state}) {
     });
 
     return (
-        <Combobox as="div" value={ selected.value.id ?? null} name={ name } onChange={ (value) => { updateSelection(state, query, name, value) } }>
+        <Combobox as="div" value={ selected.value.id ?? null} name={ name } onChange={ (value) => { updateSelection(state, query, name, value) } } nullable>
             <div className="relative">
                 <Combobox.Input
-                    className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-neutrals-dark-600 shadow-sm ring-1 ring-inset ring-neutrals-dark-300 focus:ring-2 focus:ring-inset focus:ring-eqos-600 sm:text-sm sm:leading-6"
+                    // type="search"
+                    className="w-full rounded-md bg-white py-1.5 pl-3 pr-10 text-neutrals-dark-400 shadow-sm sm:text-sm sm:leading-6 focus:outline-none border-neutrals-light-300 border"
                     onChange={ (event) => { updateQuery(state, query, name, event.target.value) } }
                     placeholder="Start Typing..."
                     displayValue={ () => selected.value.name ?? '' }
                 />
-
-                <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
+                {/* <button
+                    type="reset"
+                >
+                    Reset
+                </button> */}
+                <Transition
+                    enter="transition duration-500 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-500 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                ></Transition>
+                <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2">
                     <ChevronUpDownIcon className="h-5 w-5 text-neutrals-dark-400" aria-hidden="true" />
                 </Combobox.Button>
 
                 {
                     items.value.length > 0 && (
-                        <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-10">
+                        <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg sm:text-sm z-10">
                             {
                                 items.value.map((item) => (
                                     <Combobox.Option
@@ -115,7 +128,7 @@ export default function SearchSelect({name, collection, state}) {
                                         value={ item.id }
                                         className={ ({ active }) => bjoin(
                                             'relative cursor-default select-none py-2 pl-8 pr-4',
-                                            active ? 'bg-eqos-600 text-neutrals-light-100' : 'text-neutrals-dark-500'
+                                            active ? 'bg-eqos-400 text-white' : 'text-neutrals-dark-500'
                                         )}
                                     >
                                         {
@@ -128,7 +141,7 @@ export default function SearchSelect({name, collection, state}) {
                                                             <span
                                                                 className={ bjoin(
                                                                 'absolute inset-y-0 left-0 flex items-center pl-1.5',
-                                                                active ? 'text-neutrals-light-100' : 'text-eqos-600'
+                                                                active ? 'text-white' : 'text-eqos-400'
                                                                 ) }
                                                             >
                                                                 <CheckIcon className="h-5 w-5" aria-hidden="true" />

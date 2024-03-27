@@ -8,9 +8,9 @@ export default function Header() {
       <header
       className="shadow sticky top-0 bg-white z-[999]"
       >
-        <PageContainer>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <PageBar items={navItems} />
-        </PageContainer>
+        </div>
       </header>
     </>
   )

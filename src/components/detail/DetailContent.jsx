@@ -31,7 +31,7 @@ export default function DetailContent({ itemId, split }) {
 
     return (
         <>
-            <Grid className="my-20" split={split} gapSize="2">
+            <Grid split={split} gapSize="2">
                 <div className="mr-32">
                     <DetailBlock>
                         <DetailEyebrow>{data.value.overview.type}</DetailEyebrow>

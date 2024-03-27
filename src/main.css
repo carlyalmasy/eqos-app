@@ -4,11 +4,11 @@
 
 @layer base {
     html {
-        @apply bg-white h-full;
+        @apply bg-white;
     }
 
     body {
-        @apply bg-white h-full;
+        @apply bg-white;
     }
 
     h1,h2,h3,h4,h5,h6 {

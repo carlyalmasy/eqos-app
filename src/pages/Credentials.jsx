@@ -2,7 +2,7 @@ import SearchResults from "../components/search/SearchResults.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
 import Markdown from "react-markdown";
 import CredentialsIntro from "../topics/CredentialsIntro.md.js";
-import Modal from "../components/Modal.jsx";
+import SlideOver from "../components/SlideOver.jsx";
 import DetailContent from "../components/detail/DetailContent.jsx";
 import { useSignal } from "@preact/signals-react";
 
@@ -20,17 +20,15 @@ export default function Credentials({}) {
 
     return (
         <>
-            <div className="my-10">
-                <Markdown>{CredentialsIntro}</Markdown>
-            </div>
+            <Markdown>{CredentialsIntro}</Markdown>
             <SearchBox action="/credentials" />
             <div className="mt-12">
                 <SearchResults onSelect={onSelect} />
             </div>
             {selectedItem.value && (
-                <Modal isActive={true} closeModal={onClose}>
+                <SlideOver isActive={true} closeSlideOver={onClose}>
                     <DetailContent itemId={selectedItem.value} split="8/4" />
-                </Modal>
+                </SlideOver>
             )}
         </>
     );

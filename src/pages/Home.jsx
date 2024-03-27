@@ -16,17 +16,17 @@ export default function Home() {
     return (
         <>
             <div className="grid lg:grid-cols-12 grid-rows-none gap-4">
-                <div className="md:col-span-6 mt-8 mr-12 flex shrink-1">
+                <div className="md:col-span-6 mr-12 flex shrink-1 mb-12">
                     <Markdown>{Intro}</Markdown>
                 </div>
-                <div className="md:col-span-6 mt-12">
+                <div className="md:col-span-6 mb-12">
                     <Card color="platinum-100">
                         <div className="p-8 px-8">
                             <SearchBox action="/credentials" />
                         </div>
                     </Card>
                 </div>
-                <div className="md:col-span-8">
+                <div className="md:col-span-8 mb-12 lg:mb-0">
                     <Markdown>{DataIntro}</Markdown>
                     <Grid split="2" gapSize="6">
                         <img src="https://placehold.co/600x335?text=1" />
