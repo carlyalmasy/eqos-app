@@ -17,13 +17,6 @@ export default function SearchResults({ onSelect }) {
 
     const [params, setParams] = useSearchParams();
 
-    //detail modals
-    const item = useSignal({});
-    const { id } = useParams();
-
-    const [getItemID, setGetItemID] = useState(null);
-    const [openModal, setOpenModal] = useState(false);
-
     useSignalEffect(() => {
         if (params.get("p") != currentPage.value) {
             debug("Setting page parameter");
@@ -40,13 +33,6 @@ export default function SearchResults({ onSelect }) {
             currentPage.value = meta.value.page;
         });
     }, [params]);
-
-    useEffect(() => {
-        debug("Getting credential details");
-        axios.get(new URL("/api/app/detail/credentials/" + id, baseUrl)).then((response) => {
-            item.value = response.data;
-        });
-    }, [id]);
 
     useLayoutEffect(() => {
         currentPage.value = params.get("p");

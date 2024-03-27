@@ -40,7 +40,11 @@
     }
 
     p, ul, ol {
-        @apply my-2 leading-7 text-neutrals-dark-100;
+        @apply my-2 leading-7;
+    }
+
+    p {
+        @apply text-neutrals-dark-100;
     }
 
     blockquote {
@@ -48,6 +52,8 @@
     }
 
     ul, ol {
+        @apply text-neutrals-dark-600;
+
         p {
             @apply my-0;
         }
