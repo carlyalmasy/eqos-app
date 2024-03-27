@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {signal} from '@preact/signals-react';
 import Markdown from '../components/Markdown';
+import intro from '../topics/SpecIntro.md';
 import axios from 'axios';
 
 //
@@ -30,9 +31,12 @@ export default function Spec() {
 
   return (
     <article className="spec">
-      <Markdown toc={{skip: 'specification'}}>
-        {data.value}
-      </Markdown>
+        <Markdown>
+            {intro}
+        </Markdown>
+        <Markdown toc={{skip: 'specification'}}>
+            {data.value}
+        </Markdown>
     </article>
   )
 }
