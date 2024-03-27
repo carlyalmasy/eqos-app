@@ -111,7 +111,9 @@ export default function SearchSelect({ name, collection, state }) {
                     <button
                         className="h-5 w-5 text-neutrals-light-500 absolute bottom-2 right-8"
                     >
-                        <XCircleIcon />
+                        <XCircleIcon onClick={() => {
+                            updateSelection(state, query, name, null);
+                        }} />
                     </button>
                 )}
                 <Transition
