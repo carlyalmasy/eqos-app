@@ -90,6 +90,26 @@
 
 @layer components {
 
+    .api {
+        p {
+            color: #1f2933;
+        }
+        table {
+            border: none;
+
+            tr, th, td {
+                border-right: none;
+                border-top: none;
+                border-bottom: none;
+            }
+
+            td:not(:first-child) {
+                border-left: none;
+            }
+
+        }
+    }
+
     /**
      * Specification Stuff
      */
