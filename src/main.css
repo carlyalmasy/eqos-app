@@ -45,6 +45,10 @@
 
     p {
         @apply text-neutrals-dark-100;
+
+        a {
+            @apply text-eqos-400 underline;
+        }
     }
 
     blockquote {
