@@ -25,7 +25,7 @@ export default {
             },
         },
         codeBlock: {
-            backgroundColor: '#1f2933',
+            backgroundColor: '#060b0f',
         },
         schema: {
             linesColor: '#1f2933',
