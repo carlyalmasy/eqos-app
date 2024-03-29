@@ -8,7 +8,7 @@ import { overallRating } from "../../utilities/RatingFunctions";
 export default function CredentialsCard({ data }) {
     return (
         <>
-            <Card color="white">
+            <Card color="white" maxWidth="500px">
                 <div
                     className="grid grid-cols-12 grid-rows-1 hover:bg-neutrals-light-100/75"
                 >

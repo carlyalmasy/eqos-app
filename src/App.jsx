@@ -9,10 +9,10 @@ import Detail from './pages/Detail';
 import Resources from './pages/Resources';
 import API from './pages/API';
 import Spec from './pages/Spec';
+import Developer from './pages/Developer';
 import NotFound from './pages/404';
-import KitchenSink from './pages/KitchenSink';
 
-function App() {
+function App({router}) {
   return (
     <Router>
       <Header />
@@ -20,12 +20,12 @@ function App() {
         <PageContainer>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/kitchen-sink" element={<KitchenSink />} />
+            <Route path="developer/api" element={<API />} />
+            <Route path="/developer" element={<Developer />} />
             <Route path="/credentials" element={<Credentials />} />
             <Route path="/credentials/:id" element={<Detail />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/api" element={<API />} />
-            <Route path="/spec" element={<Spec />} />
+            <Route path="/developer/spec" element={<Spec />} />
             <Route path='*' element={<NotFound />}/>
           </Routes>
         </PageContainer>

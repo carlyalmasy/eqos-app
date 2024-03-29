@@ -1,16 +1,16 @@
 import Markdown from "../components/Markdown.jsx";
-import Intro from "../topics/Intro.md.js";
-import DataIntro from "../topics/DataIntro.md.js";
+import Intro from "../topics/Home/Intro.md.js";
+import DataIntro from "../topics/Home/DataIntro.md.js";
 import Card from "../components/Card.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
 import Grid from "../components/layout/Grid.jsx";
 
 // Discovery Shorcuts Deps
 
-import ShortcutsIntro from "../topics/ShortcutsIntro.md.js";
+import ShortcutsIntro from "../topics/Home/ShortcutsIntro.md.js";
 import ShortcutsIcon from "../components/icons/ShortcutsIcon.jsx";
 import ShortcutGroup from "../components/lists/ShortcutGroup.jsx";
-import DiscoveryShortcuts from "../topics/DiscoveryShortcuts.js";
+import DiscoveryShortcuts from "../topics/Home/DiscoveryShortcuts.js";
 
 export default function Home() {
     return (

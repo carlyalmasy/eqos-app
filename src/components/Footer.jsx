@@ -19,8 +19,8 @@ export default function Footer() {
               >contact@EQOS.org</a>
             </p>
           </div>
-          <div className="mt-8 md md:mt-0">
-            <p className="md:text-right sm:text-center">
+          <div className="mt-0">
+            <p className="md:text-right text-center">
               &copy; {today.getFullYear()} EQOS
             </p>
           </div>

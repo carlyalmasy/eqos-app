@@ -1,13 +1,24 @@
-export default function Label({text, helpText}) {
-	return (
-		<div className="flex justify-between align-middle mt-2 mb-0">
-			<label className="text-neutrals-dark-400 mb-4">{ text }</label>
-			{
-				helpText &&
-				<p className="text-neutrals-dark-100 underline text-xs leading-7 mb-1">
-					<a href="" >{ helpText }</a>
-				</p>
-			}
-		</div>
-	);
-};
+import { Tooltip } from "react-tooltip";
+
+export default function Label({ text, helpText, id, content }) {
+    return (
+        <div className="flex justify-between items-center mt-4 mb-2">
+            <label className="text-neutrals-dark-400">{text}</label>
+            {helpText && (
+                <>
+                    <a
+                        className="text-silver-400 underline text-xs leading-7 hover:text-eqos-600 hover:no-underline cursor-help"
+                        data-tooltip-id={id}
+                    >
+                        {helpText}
+                    </a>
+                    <Tooltip id={id}>
+                        <div>
+                            <p className="text-white">{content}</p>
+                        </div>
+                    </Tooltip>
+                </>
+            )}
+        </div>
+    );
+}

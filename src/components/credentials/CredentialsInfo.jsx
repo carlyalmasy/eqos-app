@@ -8,12 +8,12 @@ export default function CredentialsInfo({ data }) {
                 const value = data.header[header];
                 return (
                     <React.Fragment key={`Header_${i}_${header}`}>
-                        <p className="text-2xs leading-none">{header}</p>
+                        <p className="text-2xs leading-none mb-0">{header}</p>
                         {Array.isArray(value) ? (
                             value.map((el, index) => (
                                 <span
                                     key={index}
-                                    className="text-neutrals-dark-600 text-xs"
+                                    className="text-neutrals-dark-600 text-xs mb-3 mt-0"
                                 >
                                     {(index ? ", " : "") + el.text}
                                 </span>
@@ -21,8 +21,8 @@ export default function CredentialsInfo({ data }) {
                         ) : (
                             <p className={
                                 i === 0
-                                ? "text-neutrals-dark-600 font-semibold text-sm"
-                                : "text-neutrals-dark-600 text-xs"
+                                ? "text-neutrals-dark-600 font-semibold text-sm mb-3 mt-0"
+                                : "text-neutrals-dark-600 text-xs mb-3 mt-0"
                                 }
                             >
                                 {value.text}

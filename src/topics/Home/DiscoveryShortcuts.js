@@ -1,34 +1,34 @@
 export default [
     {
-        title: "In-Demand Occupations",
+        title: "Frequently Aligned Occupations",
         items: [
           {
-            title: "Cyber Security",
+            title: "Chief Executives",
             url: "",
           },
           {
-            title: "Healthcare",
+            title: "General and Ops Managers",
             url: "",
           },
           {
-            title: "IT Support",
+            title: "Managers, All Others",
             url: "",
           },
         ],
     },
     {
-        title: "Most Popular Credentials",
+        title: "Top Credential Program Categories",
         items: [
           {
-            title: "Project Management",
+            title: "First Aid and Related Programs",
             url: "",
           },
           {
-            title: "UX Design",
+            title: "Computer / IT Admin and Management",
             url: "",
           },
           {
-            title: "Software Development",
+            title: "Leadership",
             url: "",
           },
         ],
@@ -37,15 +37,15 @@ export default [
         title: "Top Providers",
         items: [
           {
+            title: "Washington State University",
+            url: "",
+          },
+          {
             title: "Udemy",
             url: "",
           },
           {
-            title: "Coursera",
-            url: "",
-          },
-          {
-            title: "Microsoft",
+            title: "Texas A&M University - College Station",
             url: "",
           },
         ],

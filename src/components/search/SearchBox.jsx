@@ -1,6 +1,6 @@
 import Markdown from "../Markdown.jsx";
-import SearchIntro from "../../topics/SearchIntro.md.js";
-import SearchContent from "../../topics/SearchContent.md.js";
+import SearchIntro from "../../topics/Credentials/SearchIntro.md.js";
+import SearchContent from "../../topics/Credentials/SearchContent.md.js";
 import Label from "../forms/Label.jsx";
 import SearchSelect from "./SearchSelect.jsx";
 import { useSignal } from "@preact/signals-react";
@@ -53,11 +53,7 @@ export default function SearchBox({ action }) {
     return (
         <>
             <form onSubmit={onSubmit} action={action}>
-                <div className={
-                    pathName === "/credentials"
-                        ? "hidden" : ""
-                    }
-                >
+                <div className={pathName === "/credentials" ? "hidden" : ""}>
                     <Markdown>{SearchIntro}</Markdown>
                 </div>
                 <div
@@ -74,13 +70,13 @@ export default function SearchBox({ action }) {
                                 : "col-span-7 row-span-3"
                         }
                     >
-                        <div className=
-                            {pathName === "/credentials"
-                                ? "col-span-3"
-                                : ""
-                            }
-                        >
-                            <Label text="Occupation" helpText="SOC codes" />
+                        <div className={pathName === "/credentials" ? "col-span-3" : ""}>
+                            <Label
+                                text="Occupation"
+                                helpText="SOC codes"
+                                id="SOC-codes"
+                                content="Lorem ipsum"
+                            />
                             <SearchSelect
                                 name="occupation"
                                 collection="occupations"
@@ -89,28 +85,22 @@ export default function SearchBox({ action }) {
                         </div>
 
                         <div
-                            className={pathName === "/credentials"
-                                ? "col-span-3 col-start-4"
-                                : ""}
+                            className={pathName === "/credentials" ? "col-span-3 col-start-4" : ""}
                         >
-                            <Label text="Credential Category" helpText="CIP4 codes" />
-                            <SearchSelect
-                                name="category"
-                                collection="categories"
-                                state={state} />
+                            <Label
+                                text="Credential Category"
+                                helpText="CIP4 codes"
+                                id="CIP4-codes"
+                                content="Lorem ipsum"
+                            />
+                            <SearchSelect name="category" collection="categories" state={state} />
                         </div>
 
                         <div
-                            className={
-                                pathName === "/credentials"
-                                ? "col-span-3 col-start-7"
-                                : ""}
+                            className={pathName === "/credentials" ? "col-span-3 col-start-7" : ""}
                         >
                             <Label text="Training Provider" />
-                            <SearchSelect
-                                name="provider"
-                                collection="providers"
-                                state={state} />
+                            <SearchSelect name="provider" collection="providers" state={state} />
                         </div>
                     </div>
                     <div
@@ -120,11 +110,7 @@ export default function SearchBox({ action }) {
                                 : "col-span-5 row-span-3 col-start-8 ml-8"
                         }
                     >
-                        <div className={
-                            pathName === "/credentials"
-                                ? "hidden" : ""
-                            }
-                        >
+                        <div className={pathName === "/credentials" ? "hidden" : ""}>
                             <Markdown>{SearchContent}</Markdown>
                         </div>
                         <input type="hidden" name="p" value="1" />

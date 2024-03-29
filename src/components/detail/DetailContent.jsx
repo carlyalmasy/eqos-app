@@ -9,6 +9,7 @@ import DetailBlock from "./DetailBlock";
 import { useSignal, useSignalEffect } from "@preact/signals-react";
 import debug from "../../utilities/debug";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -57,9 +58,9 @@ export default function DetailContent({ itemId, split }) {
                         </div>
                     </Card>
                     <div className="mt-6 text-center">
-                        <a href="#" className="text-eqos-400 underline pt-4">
+                        <NavLink to="/resources" className="text-eqos-400 underline pt-4">
                             How does EQOS determine the quality score?
-                        </a>
+                        </NavLink>
                     </div>
                 </>
             </Grid>

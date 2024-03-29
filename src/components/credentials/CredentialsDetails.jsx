@@ -31,13 +31,13 @@ export default function CredentialsDetails({ data }) {
                 value.map((el) => (
                 <span
                     key={el?.text}
-                    className="text-neutrals-dark-600 leading-tight mt-1"
+                    className="text-neutrals-dark-600 leading-tight"
                 >
                     {el?.text}
                 </span>
                 ))
             ) : (
-                <p className="text-neutrals-dark-600 leading-tight mt-1">
+                <p className="text-neutrals-dark-600 leading-tight">
                 {value.text}
                 </p>
             )}

@@ -1,7 +1,7 @@
 import SearchResults from "../components/search/SearchResults.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
 import Markdown from "react-markdown";
-import CredentialsIntro from "../topics/CredentialsIntro.md.js";
+import CredentialsIntro from "../topics/Credentials/CredentialsIntro.md.js";
 import SlideOver from "../components/SlideOver.jsx";
 import DetailContent from "../components/detail/DetailContent.jsx";
 import { useSignal } from "@preact/signals-react";

@@ -4,11 +4,7 @@ export default [
         "link": "/resources",
     },
     {
-        "name": "API",
-        "link": "/api",
+        "name": "Developer",
+        "link": "/developer",
     },
-    {
-        "name": "Specification",
-        "link": "/spec",
-    }
 ];
