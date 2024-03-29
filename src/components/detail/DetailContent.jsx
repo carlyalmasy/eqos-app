@@ -10,6 +10,9 @@ import { useSignal, useSignalEffect } from "@preact/signals-react";
 import debug from "../../utilities/debug";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import bjoin from "../../utilities/bjoin";
+import { overallRating } from "../../utilities/RatingFunctions";
+
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -51,7 +54,7 @@ export default function DetailContent({ itemId, split }) {
                 </div>
 
                 <>
-                    <Card color={"white"}>
+                    <Card color="white" borderRadius="md" dropShadow="md">
                         <div className="grid content-center w-full py-3 px-9">
                             <ScoreGauge data={data.value} textSize="3xl" subtextSize="xl" />
                             <ScoreBarGroup data={data.value} barHeight="6px" />
@@ -70,7 +73,11 @@ export default function DetailContent({ itemId, split }) {
                         const title = data.value.alignments[alignment];
                         return (
                             <div key={alignment}>
-                                <div className="container bg-platinum-100 h-10 rounded-full flex justify-center">
+                                <div className={bjoin(
+                                        "container h-10 rounded-full flex justify-center",
+                                        "bg-" + overallRating(data.value) + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
+                                    )}
+                                >
                                     <p className="text-neutrals-dark-600 text-lg leading-6">
                                         {title.title}
                                     </p>

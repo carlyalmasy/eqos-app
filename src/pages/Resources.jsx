@@ -1,5 +1,6 @@
 import Markdown from "../components/Markdown.jsx";
 import EQOSQuality from "../topics/Resources/EQOSQuality.md.js";
+import Card from "../components/Card.jsx";
 import KeyDimension from "../components/KeyDimension.jsx"
 
 export default function Resources() {
@@ -9,7 +10,7 @@ export default function Resources() {
                 <div className="flex-1">
                     <Markdown>{EQOSQuality}</Markdown>
                 </div>
-                <div className="container rounded-md flex-1 bg-silver-100 m-14">
+                <Card color="silver-100" borderRadius="none" dropShadow="none" marginTop="14">
                     <div className="p-8">
                         <h4 className="mt-0 text-neutrals-dark-600">The Five Key Dimensions</h4>
                         <KeyDimension title="Employment">Indicates new or improved employment opportunities at a satisfactory pay level.</KeyDimension>
@@ -18,7 +19,7 @@ export default function Resources() {
                         <KeyDimension title="Access">Ensures inclusive participation across demographics, with a competitive time-to-completion cost.</KeyDimension>
                         <KeyDimension title="Demand">Validates that the attained skills align with the needs of high-demand occupational fields.</KeyDimension>
                     </div>
-                </div>
+                    </Card>
             </div>
         </>
     );
