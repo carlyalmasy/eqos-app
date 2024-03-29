@@ -62,7 +62,7 @@ export default function SearchResults({ onSelect }) {
 
     return (
         <>
-            <Grid split="3" gapSize="6">
+            <Grid split={{xl: '3', md: '2'}} gapSize="6">
                 {items.value.map((data) => (
                     <NavLink
                         key={data.id}
