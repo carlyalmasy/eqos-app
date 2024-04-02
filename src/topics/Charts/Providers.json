@@ -1,0 +1,16 @@
+{
+    "id": 2,
+    "overview": {
+        "header": "Top 5 Training Provider Credential Counts",
+        "description": "Providers with the most observed credentials in 2023. On average, the number per provider is between 9 and 10.",
+        "legend": "Total Observed Semi-Active Credentials"
+    },
+    "items": {
+        "Washington State University": 137,
+        "Udemy": 131,
+        "Texas A&M - College Station": 126,
+        "Coursera": 126,
+        "University of CA - Los Angeles": 116
+    },
+    "max": 137
+}

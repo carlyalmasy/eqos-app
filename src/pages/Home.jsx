@@ -1,9 +1,16 @@
 import Markdown from "../components/Markdown.jsx";
 import Intro from "../topics/Home/Intro.md.js";
-import DataIntro from "../topics/Home/DataIntro.md.js";
 import Card from "../components/Card.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
 import Grid from "../components/layout/Grid.jsx";
+
+// Data Visualization Deps
+import DataIntro from "../topics/Home/DataIntro.md.js";
+import Chart from "../components/Chart.jsx";
+import Occupations from "../topics/Charts/Occupations.json";
+import Categories from "../topics/Charts/Categories.json"
+import Providers from "../topics/Charts/Providers.json";
+import Skills from "../topics/Charts/Skills.json"
 
 // Discovery Shorcuts Deps
 
@@ -28,11 +35,11 @@ export default function Home() {
                 </div>
                 <div className="md:col-span-8 mb-12 lg:mb-0">
                     <Markdown>{DataIntro}</Markdown>
-                    <Grid split="2" gapSize="6">
-                        <img src="https://placehold.co/600x335?text=1" />
-                        <img src="https://placehold.co/600x335?text=2" />
-                        <img src="https://placehold.co/600x335?text=3" />
-                        <img src="https://placehold.co/600x335?text=4" />
+                    <Grid split={{xl: '2', xs: '1'}}  gapSize="12">
+                        <Chart data={Occupations}/>
+                        <Chart data={Categories}/>
+                        <Chart data={Providers}/>
+                        <Chart data={Skills}/>
                     </Grid>
                 </div>
                 <div className="md:col-span-4 ml-12">

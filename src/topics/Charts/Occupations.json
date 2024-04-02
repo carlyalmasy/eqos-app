@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "overview": {
+        "header": "5 Most Frequently Aligned Occupations",
+        "description": "The top occupations which are most frequently aligned with the observed credentials in our data.",
+        "legend": "Total Aligned Occupations"
+    },
+    "items": {
+        "Chief Executives": 3996,
+        "General and Ops Managers": 3724,
+        "Managers, All Other": 3437,
+        "Marketing Managers": 2988,
+        "Supr Office/Admin Support Wkr": 2962
+    },
+    "max": 3996
+}

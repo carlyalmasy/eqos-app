@@ -19,7 +19,7 @@ export default function Grid({split, gapSize, className, children}) {
         <>
             <div className={bjoin(
                 'grid grid-cols-12',
-                'gap-' + gapSize, // gap-2 gap-4 gap-6 gap-8
+                'gap-' + gapSize, // gap-2 gap-4 gap-6 gap-8 gap-10 gap-12
                 className,
             )}>
                 {

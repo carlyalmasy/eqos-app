@@ -1,0 +1,16 @@
+{
+    "id": 3,
+    "overview": {
+        "header": "Top 5 Credential Program Categories",
+        "description": "The average number of observed credentials for 4 digit CIP  categories is between 168 and 169.",
+        "legend": "Total Credentials by Category Name"
+    },
+    "items": {
+        "First Aid and Related Programs": 1544,
+        "Computer/IT Admin and Mgmt": 1476,
+        "Leadership": 1406,
+        "Business Admin, Mgmt, Ops": 1398,
+        "Supr Office/Admin Support Wkr": 1232
+    },
+    "max": 1544
+}

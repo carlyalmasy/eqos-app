@@ -1,0 +1,16 @@
+{
+    "id": 4,
+    "overview": {
+        "header": "5 Most Frequently Aligned Skills",
+        "description": "Most frequently aligned skills of the top 100 (least specialized) from the observed credentials in our data.",
+        "legend": "Total Aligned Skills"
+    },
+    "items": {
+        "Customer Service": 10995,
+        "Management": 9841,
+        "Leadership": 8349,
+        "Microsoft Office": 7365,
+        "Communications": 6345
+    },
+    "max": 10995
+}
