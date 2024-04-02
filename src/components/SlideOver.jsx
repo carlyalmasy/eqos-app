@@ -21,7 +21,7 @@ export default function SlideOver({ children, isActive, closeSlideOver }) {
 
         <div className="fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
-            <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full lg:pl-20">
               <Transition.Child
                 as={Fragment}
                 enter="transform transition ease-in-out duration-1000 sm:duration-700"

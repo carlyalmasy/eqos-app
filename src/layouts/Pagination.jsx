@@ -54,7 +54,7 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
     }
 
     return (
-        <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 md:px-6">
+        <div className="flex items-center justify-between border-t border-gray-200 bg-white py-8">
             <div className={
                 totalItems == 0
                 ? "invisible"
