@@ -56,7 +56,7 @@ export default function DetailContent({ itemId, split }) {
                 <>
                     <Card color="white" borderRadius="md" dropShadow="md">
                         <div className="grid content-center w-full py-3 px-9">
-                            <ScoreGauge data={data.value} textSize="3xl" subtextSize="xl" />
+                            <ScoreGauge data={data.value} textSize="2xl" subtextSize="text-base" />
                             <ScoreBarGroup data={data.value} barHeight="6px" />
                         </div>
                     </Card>

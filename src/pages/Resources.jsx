@@ -10,7 +10,7 @@ export default function Resources() {
                 <div className="flex-1">
                     <Markdown>{EQOSQuality}</Markdown>
                 </div>
-                <Card color="silver-100" borderRadius="none" dropShadow="none" marginTop="14">
+                <Card color="silver-100" borderRadius="md" dropShadow="none" marginTop="14" maxWidth="500px">
                     <div className="p-8">
                         <h4 className="mt-0 text-neutrals-dark-600">The Five Key Dimensions</h4>
                         <KeyDimension title="Employment">Indicates new or improved employment opportunities at a satisfactory pay level.</KeyDimension>

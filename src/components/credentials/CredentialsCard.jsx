@@ -14,7 +14,7 @@ export default function CredentialsCard({ data }) {
                     className="w-full flex hover:bg-neutrals-light-100/75"
                 >
                     <div className="w-[180px] p-4 flex-shrink-0 flex-grow-0">
-                        <ScoreGauge data={data} textSize="sm" subtextSize="2xs" />
+                        <ScoreGauge data={data} textSize="xs" subtextSize="2xs" />
                         <ScoreBarGroup data={data} barHeight="3px" />
                     </div>
                     <div

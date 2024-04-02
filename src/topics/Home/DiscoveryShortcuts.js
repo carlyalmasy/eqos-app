@@ -4,15 +4,15 @@ export default [
         items: [
           {
             title: "Chief Executives",
-            url: "",
+            url: "/credentials?occupation=1&p=1",
           },
           {
             title: "General and Ops Managers",
-            url: "",
+            url: "/credentials?occupation=3&p=1",
           },
           {
-            title: "Managers, All Others",
-            url: "",
+            title: "Managers, All Other",
+            url: "/credentials?occupation=53&p=1",
           },
         ],
     },
@@ -21,15 +21,15 @@ export default [
         items: [
           {
             title: "First Aid and Related Programs",
-            url: "",
+            url: "/credentials?category=2857&p=1",
           },
           {
             title: "Computer / IT Admin and Management",
-            url: "",
+            url: "/credentials?category=323&p=1",
           },
           {
             title: "Leadership",
-            url: "",
+            url: "/credentials?category=2855&p=1",
           },
         ],
     },
@@ -38,15 +38,15 @@ export default [
         items: [
           {
             title: "Washington State University",
-            url: "",
+            url: "/credentials?provider=1236939&p=1",
           },
           {
             title: "Udemy",
-            url: "",
+            url: "/credentials?provider=84&p=1",
           },
           {
             title: "Texas A&M University - College Station",
-            url: "",
+            url: "/credentials?provider=1228723&p=1",
           },
         ],
     },

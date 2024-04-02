@@ -3,7 +3,7 @@ import bjoin from "../utilities/bjoin"
 export default function Card({ children, color, maxWidth, borderRadius, dropShadow, marginTop }) {
     return (
         <div className={bjoin(
-            "min-h-full container flex flex-1 justify-center mx-auto",
+            "container",
             "bg-" + color, // bg-white bg-silver-100
             "max-w-[" + maxWidth + "]", // max-w-[500px]
             "rounded-" + borderRadius, // rounded-md rounded-sm

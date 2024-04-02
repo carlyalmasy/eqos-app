@@ -53,78 +53,63 @@ export default function SearchBox({ action }) {
     return (
         <>
             <form onSubmit={onSubmit} action={action}>
-                <div className={pathName === "/credentials" ? "hidden" : ""}>
+                <div className>
                     <Markdown>{SearchIntro}</Markdown>
+                    <Markdown>{SearchContent}</Markdown>
                 </div>
-                <div
-                    className={
-                        pathName === "/credentials"
-                            ? "grid grid-cols-12 grid-rows-1 gap-8 my-4 items-end"
-                            : "grid grid-cols-12 grid-rows-3 gap-4 my-4"
-                    }
-                >
-                    <div
-                        className={
-                            pathName === "/credentials"
-                                ? "grid grid-cols-subgrid col-span-9 gap-8 "
-                                : "col-span-7 row-span-3"
-                        }
-                    >
-                        <div className={pathName === "/credentials" ? "col-span-3" : ""}>
-                            <Label
-                                text="Occupation"
-                                helpText="SOC codes"
-                                id="SOC-codes"
-                                content="Lorem ipsum"
-                            />
-                            <SearchSelect
-                                name="occupation"
-                                collection="occupations"
-                                state={state}
-                            />
-                        </div>
+                <div className="@container">
+                    <div className="grid grid-cols-12 gap-6 @5xl:items-end">
+                        <div className="col-span-12 @lg:col-span-8">
+                            <div className="">
+                                <Label
+                                    text="Occupation"
+                                    helpText="SOC codes"
+                                    id="SOC-codes"
+                                    content="Lorem ipsum"
+                                />
+                                <SearchSelect
+                                    name="occupation"
+                                    collection="occupations"
+                                    state={state}
+                                />
+                            </div>
 
-                        <div
-                            className={pathName === "/credentials" ? "col-span-3 col-start-4" : ""}
-                        >
-                            <Label
-                                text="Credential Category"
-                                helpText="CIP4 codes"
-                                id="CIP4-codes"
-                                content="Lorem ipsum"
-                            />
-                            <SearchSelect name="category" collection="categories" state={state} />
-                        </div>
+                            <div className="">
+                                <Label
+                                    text="Credential Category"
+                                    helpText="CIP4 codes"
+                                    id="CIP4-codes"
+                                    content="Lorem ipsum"
+                                />
+                                <SearchSelect
+                                    name="category"
+                                    collection="categories"
+                                    state={state}
+                                />
+                            </div>
 
-                        <div
-                            className={pathName === "/credentials" ? "col-span-3 col-start-7" : ""}
-                        >
-                            <Label text="Training Provider" />
-                            <SearchSelect name="provider" collection="providers" state={state} />
+                            <div className="">
+                                <Label text="Training Provider" />
+                                <SearchSelect
+                                    name="provider"
+                                    collection="providers"
+                                    state={state}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        className={
-                            pathName === "/credentials"
-                                ? "col-span-3 col-start-10"
-                                : "col-span-5 row-span-3 col-start-8 ml-8"
-                        }
-                    >
-                        <div className={pathName === "/credentials" ? "hidden" : ""}>
-                            <Markdown>{SearchContent}</Markdown>
-                        </div>
-                        <input type="hidden" name="p" value="1" />
-                        <div>
-                            <button
-                                type="submit"
-                                className={
-                                    pathName === "/credentials"
-                                        ? "w-[50%] h-10 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-lg focus:shadow-outline hover:bg-eqos-500"
-                                        : "w-full h-10 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-lg focus:shadow-outline hover:bg-eqos-500"
-                                }
-                            >
-                                GO
-                            </button>
+                        <div className="col-span-12 @lg:col-span-3">
+                            <div className="hidden">
+                                <Markdown>{SearchContent}</Markdown>
+                            </div>
+                            <input type="hidden" name="p" value="1" />
+                            <div>
+                                <button
+                                    type="submit"
+                                    className="w-full @5xl:w-[50%] h-10 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-xl focus:shadow-outline hover:bg-eqos-500"
+                                >
+                                    GO
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

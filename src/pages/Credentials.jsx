@@ -21,7 +21,9 @@ export default function Credentials({}) {
     return (
         <>
             <Markdown>{CredentialsIntro}</Markdown>
-            <SearchBox action="/credentials" />
+            <div className="@container">
+                <SearchBox action="/credentials" />
+            </div>
             <div className="mt-12">
                 <SearchResults onSelect={onSelect} />
             </div>

@@ -54,11 +54,11 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
     }
 
     return (
-        <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+        <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 md:px-6">
             <div className={
                 totalItems == 0
                 ? "invisible"
-                : "flex flex-1 justify-between sm:hidden"}
+                : "flex flex-1 justify-between md:hidden"}
             >
                 <a
                     onClick={goToPrevPage}
@@ -86,7 +86,7 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                     Next
                 </a>
             </div>
-            <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+            <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
                 <div>
                     <SearchResultsInfo
                         firstPgResult={firstPgResult}
