@@ -68,7 +68,8 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                         : "relative inline-flex items-center rounded-md border border-neutrals-light-400 bg-white px-4 py-2 text-sm font-medium text-neutrals-dark-400 hover:bg-neutrals-light-100"
                     }
                 >
-                    Previous
+                    <span className="sr-only">Previous</span>
+                    <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
                 </a>
                 <SearchResultsInfo
                     firstPgResult={firstPgResult}
@@ -83,7 +84,8 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                         : "relative inline-flex items-center rounded-md border border-neutrals-light-400 bg-white px-4 py-2 text-sm font-medium text-neutrals-dark-400 hover:bg-neutrals-light-100"
                     }
                 >
-                    Next
+                    <span className="sr-only">Next</span>
+                    <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
                 </a>
             </div>
             <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
