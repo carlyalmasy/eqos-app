@@ -100,7 +100,7 @@ export default function SearchSelect({ name, collection, state }) {
         >
             <div>
                 <Combobox.Input
-                    className="w-full rounded-md bg-white py-1.5 pl-3 pr-10 text-neutrals-dark-400 shadow-sm sm:text-sm sm:leading-6 focus:outline-none border-neutrals-light-300 border"
+                    className="text-ellipsis w-full rounded-md bg-white py-1.5 pl-3 pr-16 text-neutrals-dark-400 shadow-sm sm:text-sm sm:leading-6 focus:outline-none border-neutrals-light-300 border"
                     onChange={(event) => {
                         updateQuery(state, query, name, event.target.value);
                     }}
