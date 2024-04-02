@@ -1,4 +1,5 @@
 import React from "react";
+import bjoin from "../../utilities/bjoin";
 
 export default function CredentialsInfo({ data }) {
 
@@ -8,26 +9,16 @@ export default function CredentialsInfo({ data }) {
                 const value = data.header[header];
                 return (
                     <React.Fragment key={`Header_${i}_${header}`}>
-                        <p className="text-2xs leading-none mb-0">{header}</p>
-                        {Array.isArray(value) ? (
-                            value.map((el, index) => (
-                                <span
-                                    key={index}
-                                    className="text-neutrals-dark-600 text-xs mb-3 mt-0"
-                                >
-                                    {(index ? ", " : "") + el.text}
-                                </span>
-                            ))
-                        ) : (
-                            <p className={
-                                i === 0
-                                ? "text-neutrals-dark-600 font-semibold text-sm mb-3 mt-0"
-                                : "text-neutrals-dark-600 text-xs mb-3 mt-0"
-                                }
-                            >
-                                {value.text}
-                            </p>
-                        )}
+                        <p className="text-2xs leading-4 mb-0">{header}</p>
+                        <p className={ bjoin(
+                            "leading-5 text-neutrals-dark-600 mb-3 mt-0",
+                            i == 0 ? "font-semibold text-sm" : "text-xs"
+                        )}>
+                            { Array.isArray(value)
+                                ? value.map((value) => value.text).join(', ')
+                                : value.text
+                            }
+                        </p>
                     </React.Fragment>
                 );
             })}
