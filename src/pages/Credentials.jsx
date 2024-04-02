@@ -1,6 +1,5 @@
 import SearchResults from "../components/search/SearchResults.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
-import Markdown from "react-markdown";
 import CredentialsIntro from "../topics/Credentials/CredentialsIntro.md.js";
 import SlideOver from "../components/SlideOver.jsx";
 import DetailContent from "../components/detail/DetailContent.jsx";
@@ -20,7 +19,6 @@ export default function Credentials({}) {
 
     return (
         <>
-            <Markdown>{CredentialsIntro}</Markdown>
             <div className="@container">
                 <SearchBox action="/credentials" />
             </div>

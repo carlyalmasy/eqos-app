@@ -8,7 +8,7 @@ import { overallRating } from "../../utilities/RatingFunctions";
 export default function CredentialsCard({ data }) {
     return (
         <>
-            <Card color="white" maxWidth="500px" borderRadius="md" dropShadow="md" marginTop="0" //max-w-[500px] border-md drop-shadow-md mt-0
+            <Card color="white" maxWidth="" borderRadius="md" dropShadow="md" marginTop="0" //max-w-[500px] border-md drop-shadow-md mt-0
             >
                 <div
                     className="w-full flex hover:bg-neutrals-light-100/75"

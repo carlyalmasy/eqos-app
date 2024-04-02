@@ -53,14 +53,16 @@ export default function SearchBox({ action }) {
     return (
         <>
             <form onSubmit={onSubmit} action={action}>
-                <div className>
-                    <Markdown>{SearchIntro}</Markdown>
-                    <Markdown>{SearchContent}</Markdown>
-                </div>
                 <div className="@container">
-                    <div className="grid grid-cols-12 gap-6 @5xl:items-end">
-                        <div className="col-span-12 @lg:col-span-8">
-                            <div className="">
+                    <div className>
+                        <Markdown>{SearchIntro}</Markdown>
+                        <div className="@xl:hidden @3xl:grid">
+                            <Markdown>{SearchContent}</Markdown>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-12 gap-8 @3xl:content-center">
+                        <div className="grid col-span-12 @xl:col-span-8 @3xl:col-span-9 @3xl:gap-8 mr-1">
+                            <div className="grid @3xl:col-span-3">
                                 <Label
                                     text="Occupation"
                                     helpText="SOC codes"
@@ -74,7 +76,7 @@ export default function SearchBox({ action }) {
                                 />
                             </div>
 
-                            <div className="">
+                            <div className="grid @3xl:col-span-3 @3xl:col-start-4">
                                 <Label
                                     text="Credential Category"
                                     helpText="CIP4 codes"
@@ -88,7 +90,7 @@ export default function SearchBox({ action }) {
                                 />
                             </div>
 
-                            <div className="">
+                            <div className="grid @3xl:col-span-3 @3xl:col-start-7 mt-2">
                                 <Label text="Training Provider" />
                                 <SearchSelect
                                     name="provider"
@@ -97,19 +99,17 @@ export default function SearchBox({ action }) {
                                 />
                             </div>
                         </div>
-                        <div className="col-span-12 @lg:col-span-3">
-                            <div className="hidden">
+                        <div className="grid col-span-12 @xl:col-span-4 @3xl:col-span-3">
+                            <div className="@xs:hidden @xl:grid @3xl:hidden mt-4">
                                 <Markdown>{SearchContent}</Markdown>
                             </div>
                             <input type="hidden" name="p" value="1" />
-                            <div>
-                                <button
-                                    type="submit"
-                                    className="w-full @5xl:w-[50%] h-10 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-xl focus:shadow-outline hover:bg-eqos-500"
-                                >
-                                    GO
-                                </button>
-                            </div>
+                            <button
+                                type="submit"
+                                className="self-end w-full @5xl:w-[50%] h-9 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-xl focus:shadow-outline hover:bg-eqos-500"
+                            >
+                                GO
+                            </button>
                         </div>
                     </div>
                 </div>
