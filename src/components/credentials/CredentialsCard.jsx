@@ -2,16 +2,14 @@ import bjoin from "../../utilities/bjoin";
 import ScoreBarGroup from "../score/ScoreBarGroup";
 import ScoreGauge from "../score/ScoreGauge";
 import CredentialsInfo from "./CredentialsInfo";
-import Card from "../Card";
 import { overallRating } from "../../utilities/RatingFunctions";
 
 export default function CredentialsCard({ data }) {
     return (
         <>
-            <Card color="white" borderRadius="md" dropShadow="md" marginTop="0" //max-w-[500px] border-md drop-shadow-md mt-0
-            >
+            <div className="md:h-full bg-white rounded-md shadow-md">
                 <div
-                    className="w-full flex hover:bg-neutrals-light-100/75"
+                    className="md:h-full w-full flex hover:bg-neutrals-light-100/75"
                 >
                     <div className="w-[180px] p-4 flex-shrink-0 flex-grow-0">
                         <ScoreGauge data={data} textSize="xs" subtextSize="2xs" />
@@ -26,7 +24,7 @@ export default function CredentialsCard({ data }) {
                         <CredentialsInfo data={data} />
                     </div>
                 </div>
-            </Card>
+            </div>
         </>
     );
 }

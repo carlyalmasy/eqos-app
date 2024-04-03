@@ -1,6 +1,5 @@
 import Markdown from "../components/Markdown.jsx";
 import Intro from "../topics/Home/Intro.md.js";
-import Card from "../components/Card.jsx";
 import SearchBox from "../components/search/SearchBox.jsx";
 import Grid from "../components/layout/Grid.jsx";
 
@@ -25,12 +24,8 @@ export default function Home() {
                 <div className="col-span-12 lg:col-span-6 lg:mb-18 lg:mr-8">
                     <Markdown>{Intro}</Markdown>
                 </div>
-                <div className="col-span-12 lg:col-span-6">
-                    <Card color="neutrals-light-200" borderRadius="md" dropShadow="md">
-                        <div className="p-8 px-8">
-                            <SearchBox action="/credentials" />
-                        </div>
-                    </Card>
+                <div className="bg-neutrals-light-100 rounded-md drop-shadow-md p-8 col-span-12 lg:col-span-6">
+                    <SearchBox action="/credentials" />
                 </div>
                 <div className="col-span-12 md:col-span-6 lg:col-span-8 lg:mr-8">
                     <Markdown>{DataIntro}</Markdown>

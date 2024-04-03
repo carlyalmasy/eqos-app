@@ -57,8 +57,8 @@ export default function SearchBox({ action }) {
                             <Markdown>{SearchContent}</Markdown>
                         </div>
                     </div>
-                    <div className="grid gap-8 grid-cols-10 @3xl:items-end">
-                        <div className="col-span-10 @lg:col-span-5 @3xl:col-span-8 @3xl:grid @3xl:grid-cols-12 @3xl:gap-8">
+                    <div className="grid gap-y-8 @lg:gap-8 grid-cols-12">
+                        <div className="col-span-12 @lg:col-span-6 @3xl:col-span-9 @3xl:grid @3xl:grid-cols-12 @3xl:gap-8">
                             <div className="@3xl:col-span-4">
                                 <Label
                                     text="Occupation"
@@ -98,14 +98,14 @@ export default function SearchBox({ action }) {
                                 />
                             </div>
                         </div>
-                        <div className="col-span-10 @lg:col-span-5 @3xl:col-span-2">
+                        <div className="flex flex-col justify-between col-span-12 @lg:col-span-6 @3xl:col-span-3 @3xl:justify-end">
                             <input type="hidden" name="p" value="1" />
                             <div className="hidden mb-8 @lg:block @3xl:hidden">
                                 <Markdown>{SearchContent}</Markdown>
                             </div>
                             <button
                                 type="submit"
-                                className="w-full h-10 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-xl focus:shadow-outline hover:bg-eqos-500"
+                                className="h-10 px-6 text-white transition-colors duration-150 bg-eqos-400 rounded-xl focus:shadow-outline hover:bg-eqos-500"
                             >
                                 GO
                             </button>
