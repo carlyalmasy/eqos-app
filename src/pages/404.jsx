@@ -8,10 +8,12 @@ export default function NotFound() {
           <div className="text-center">
             <p className="text-lg font-semibold text-eqos-600">404</p>
             <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutrals-dark-500 sm:text-5xl">Page Not Found</h1>
-            <div className="group">
-                <p className="mt-6 text-base leading-7 text-neutrals-dark-100">Sorry, we couldn't find the page you're looking for.</p>
-                <img className="h-0 opacity-0 transition-all duration-1000 group-hover:h-auto group-hover:opacity-100 w-[100vw]" src={Fire} />
-            </div>
+            <p className="mt-6 text-base leading-7 text-neutrals-dark-100">Sorry, we couldn't find the page you're looking for
+                <span className="group">
+                    ...
+                    <img className="h-0 opacity-0 transition-all duration-1000 group-hover:h-auto group-hover:opacity-100 w-[100vw]" src={Fire} />
+                </span>
+            </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <PrimaryButton link="/" text="Go back home"/>
             </div>
