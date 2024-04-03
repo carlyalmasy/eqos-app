@@ -47,9 +47,6 @@ export default function SearchBox({ action }) {
         navigate(action.pathname + (params ? "?" + params : ""));
     };
 
-    const location = useLocation();
-    const pathName = location.pathname;
-
     return (
         <>
             <form onSubmit={onSubmit} action={action}>
@@ -66,8 +63,9 @@ export default function SearchBox({ action }) {
                                 <Label
                                     text="Occupation"
                                     helpText="SOC codes"
+                                    helpLink="https://www.bls.gov/oes/current/oes_stru.htm"
                                     id="SOC-codes"
-                                    content="Lorem ipsum"
+                                    content="O*NET Standard Occupational Classification"
                                 />
                                 <SearchSelect
                                     name="occupation"
@@ -80,8 +78,9 @@ export default function SearchBox({ action }) {
                                 <Label
                                     text="Credential Category"
                                     helpText="CIP4 codes"
+                                    helpLink="https://nces.ed.gov/ipeds/cipcode/browse.aspx?y=55"
                                     id="CIP4-codes"
-                                    content="Lorem ipsum"
+                                    content="Classification of Intructional Programs"
                                 />
                                 <SearchSelect
                                     name="category"

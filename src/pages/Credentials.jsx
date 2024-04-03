@@ -19,10 +19,10 @@ export default function Credentials({}) {
 
     return (
         <>
-            <div className="@container">
+            <div className="relative z-50">
                 <SearchBox action="/credentials" />
             </div>
-            <div className="mt-12">
+            <div className="z-25 mt-12">
                 <SearchResults onSelect={onSelect} />
             </div>
             {selectedItem.value && (

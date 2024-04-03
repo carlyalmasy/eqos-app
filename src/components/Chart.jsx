@@ -1,6 +1,4 @@
 export default function Chart({ data }) {
-    console.log(data.max);
-
     return (
         <>
             <div>

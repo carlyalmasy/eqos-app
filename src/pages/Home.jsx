@@ -13,7 +13,6 @@ import Providers from "../topics/Charts/Providers.json";
 import Skills from "../topics/Charts/Skills.json"
 
 // Discovery Shorcuts Deps
-
 import ShortcutsIntro from "../topics/Home/ShortcutsIntro.md.js";
 import ShortcutsIcon from "../components/icons/ShortcutsIcon.jsx";
 import ShortcutGroup from "../components/lists/ShortcutGroup.jsx";
@@ -22,27 +21,27 @@ import DiscoveryShortcuts from "../topics/Home/DiscoveryShortcuts.js";
 export default function Home() {
     return (
         <>
-            <div className="grid lg:grid-cols-12 grid-rows-none gap-4">
-                <div className="md:col-span-6 mr-12 flex shrink-1 mb-12">
+            <div className="grid grid-cols-12 gap-8 md:gap-12">
+                <div className="col-span-12 lg:col-span-6 lg:mb-18 lg:mr-8">
                     <Markdown>{Intro}</Markdown>
                 </div>
-                <div className="md:col-span-6 mb-12">
+                <div className="col-span-12 lg:col-span-6">
                     <Card color="neutrals-light-200" borderRadius="md" dropShadow="md">
                         <div className="p-8 px-8">
                             <SearchBox action="/credentials" />
                         </div>
                     </Card>
                 </div>
-                <div className="md:col-span-8 mb-12 lg:mb-0">
+                <div className="col-span-12 md:col-span-6 lg:col-span-8 lg:mr-8">
                     <Markdown>{DataIntro}</Markdown>
-                    <Grid split={{xl: '2', xs: '1'}}  gapSize="12">
+                    <Grid split={{xl: '2', xs: '1'}}  gapSize="8">
                         <Chart data={Occupations}/>
                         <Chart data={Categories}/>
                         <Chart data={Providers}/>
                         <Chart data={Skills}/>
                     </Grid>
                 </div>
-                <div className="md:col-span-4 ml-12">
+                <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <Markdown>{ShortcutsIntro}</Markdown>
                     <ShortcutGroup icon={ShortcutsIcon} groups={DiscoveryShortcuts} />
                 </div>
