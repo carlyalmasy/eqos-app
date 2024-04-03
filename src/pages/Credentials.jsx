@@ -19,14 +19,14 @@ export default function Credentials({}) {
 
     return (
         <>
-            <div className="relative z-50">
+            <div className="relative z-10">
                 <SearchBox action="/credentials" />
             </div>
-            <div className="z-25 mt-12">
+            <div className="z-0 mt-12">
                 <SearchResults onSelect={onSelect} />
             </div>
             {selectedItem.value && (
-                <SlideOver isActive={true} closeSlideOver={onClose}>
+                <SlideOver className="z-20" isActive={true} closeSlideOver={onClose}>
                     <DetailContent itemId={selectedItem.value} split="8/4" />
                 </SlideOver>
             )}
