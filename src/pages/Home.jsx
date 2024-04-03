@@ -34,7 +34,7 @@ export default function Home() {
                 </div>
                 <div className="col-span-12 md:col-span-6 lg:col-span-8 lg:mr-8">
                     <Markdown>{DataIntro}</Markdown>
-                    <Grid split={{xl: '2', xs: '1'}}  gapSize="8">
+                    <Grid split="2"  gapSize="8">
                         <Chart data={Occupations}/>
                         <Chart data={Categories}/>
                         <Chart data={Providers}/>
