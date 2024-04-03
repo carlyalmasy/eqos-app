@@ -24,7 +24,7 @@ export default function ScoreGauge({ data }) {
                 >
                     {overallRating(data)}
                 </p>
-                <p className="text-2xs @[13rem]:text-sm @[17rem]:text-base @[25rem]:text-lg @lg:text-xl mt-0 leading-tight"
+                <p className="text-2xs @[13rem]:text-sm @[17rem]:text-base @[25rem]:text-lg @lg:text-xl mt-0 leading-tight mb-0"
                 >
                     {overallQuality(data)}
                 </p>

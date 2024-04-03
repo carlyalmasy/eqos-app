@@ -11,14 +11,14 @@ export default function CredentialsCard({ data }) {
                 <div
                     className="md:h-full w-full flex hover:shadow-lg"
                 >
-                    <div className="w-[180px] p-4 flex-shrink-0 flex-grow-0">
+                    <div className="w-[180px] p-4 flex-shrink-0 flex-grow-0 space-around items-center justify-around">
                         <ScoreGauge data={data} />
                         <ScoreBarGroup data={data} barHeight="3px" />
                     </div>
                     <div
                         className={bjoin(
                             "min-h-full p-4 flex-grow",
-                            "bg-" + overallRating(data) + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
+                            "bg-" + overallRating(data) + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100
                         )}
                     >
                         <CredentialsInfo data={data} />

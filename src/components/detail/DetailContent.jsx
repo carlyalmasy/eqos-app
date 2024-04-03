@@ -70,9 +70,10 @@ export default function DetailContent({ itemId, split }) {
                         return (
                             <div key={alignment}>
                                 <div
-                                    className={bjoin(
-                                        "container h-10 rounded-full flex justify-center",
-                                        "bg-" + overallRating(data.value) + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
+                                    className={bjoin("container h-10 rounded-full flex justify-center",
+                                        overallRating(data.value) === "unrated"
+                                        ? "bg-neutrals-light-100"
+                                        : "bg-" + overallRating(data.value) + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
                                     )}
                                 >
                                     <p className="text-neutrals-dark-600 text-sm leading-6">
