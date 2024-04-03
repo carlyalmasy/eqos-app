@@ -1,5 +1,5 @@
 export default function DetailInfo({ children }) {
-    return <p className="text-2xl text-neutrals-dark-600">
+    return <p className="text-neutrals-dark-600 leading-tight">
         { children }
     </p>;
 }

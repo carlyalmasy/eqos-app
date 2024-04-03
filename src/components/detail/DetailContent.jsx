@@ -13,21 +13,18 @@ import { NavLink } from "react-router-dom";
 import bjoin from "../../utilities/bjoin";
 import { overallRating } from "../../utilities/RatingFunctions";
 
-
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
 export default function DetailContent({ itemId, split }) {
     const data = useSignal({});
 
     useSignalEffect(() => {
-        debug('Getting credential details');
+        debug("Getting credential details");
 
-        axios
-            .get(new URL("/api/app/detail/credentials/" + itemId, baseUrl))
-            .then((response) => {
-                data.value = response.data;
+        axios.get(new URL("/api/app/detail/credentials/" + itemId, baseUrl)).then((response) => {
+            data.value = response.data;
         });
-    })
+    });
 
     if (!Object.keys(data.value).length) {
         return <></>;
@@ -52,16 +49,15 @@ export default function DetailContent({ itemId, split }) {
                         <DetailInfo>{data.value.overview.provider.name}</DetailInfo>
                     </DetailBlock>
                 </div>
-
                 <>
-                    <Card color="white" borderRadius="md" dropShadow="md">
-                        <div className="grid content-center w-full py-3 px-9">
-                            <ScoreGauge data={data.value} textSize="2xl" subtextSize="text-base" />
+                    <Card color="white" borderRadius="md" dropShadow="md" marginTop="0" maxWidth="">
+                        <div className="grid content-center w-full py-9 px-9">
+                            <ScoreGauge data={data.value} textSize="2xl" subtextSize="base"/>
                             <ScoreBarGroup data={data.value} barHeight="6px" />
                         </div>
                     </Card>
                     <div className="mt-6 text-center">
-                        <NavLink to="/resources" className="text-eqos-400 underline pt-4">
+                        <NavLink to="/resources" className="text-eqos-400 underline pt-4 hover:no-underline hover:text-eqos-500">
                             How does EQOS determine the quality score?
                         </NavLink>
                     </div>
@@ -73,12 +69,13 @@ export default function DetailContent({ itemId, split }) {
                         const title = data.value.alignments[alignment];
                         return (
                             <div key={alignment}>
-                                <div className={bjoin(
+                                <div
+                                    className={bjoin(
                                         "container h-10 rounded-full flex justify-center",
                                         "bg-" + overallRating(data.value) + "-100" // bg-platinum-100 bg-gold-100 bg-silver-100 bg-bronze-100 bg-unrated-100
                                     )}
                                 >
-                                    <p className="text-neutrals-dark-600 text-lg leading-6">
+                                    <p className="text-neutrals-dark-600 text-sm leading-6">
                                         {title.title}
                                     </p>
                                 </div>
@@ -86,7 +83,7 @@ export default function DetailContent({ itemId, split }) {
                                     {Object.keys(title.items).map((listItem, i) => {
                                         const text = title.items[listItem];
                                         return (
-                                            <li className="text-xl leading-relaxed" key={i}>
+                                            <li className="text-xl leading-normal" key={i}>
                                                 {text.text}
                                             </li>
                                         );

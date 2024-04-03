@@ -38,9 +38,6 @@ export default {
                     500: "#c27438",
                     600: "#aa6631",
                 },
-                unrated: {
-                    100: "#f3f5f7",
-                },
                 "neutrals-dark": {
                     100: "#7b8794",
                     200: "#616e7c",

@@ -36,7 +36,7 @@ export default function Chart({ data }) {
                         );
                     })}
                 </div>
-                <div className="flex items-center justify-end mt-1">
+                <div className="flex items-center justify-center mt-1">
                     <div className="bg-eqos-400 h-3 w-2.5 mr-1"></div>
                     <p className="text-neutrals-dark-600 text-2xs leading-snug">
                         {data.overview.legend}

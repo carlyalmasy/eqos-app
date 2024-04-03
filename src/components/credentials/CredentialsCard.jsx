@@ -9,10 +9,10 @@ export default function CredentialsCard({ data }) {
         <>
             <div className="md:h-full bg-white rounded-md shadow-md">
                 <div
-                    className="md:h-full w-full flex hover:bg-neutrals-light-100/75"
+                    className="md:h-full w-full flex hover:shadow-lg"
                 >
                     <div className="w-[180px] p-4 flex-shrink-0 flex-grow-0">
-                        <ScoreGauge data={data} textSize="xs" subtextSize="2xs" />
+                        <ScoreGauge data={data} />
                         <ScoreBarGroup data={data} barHeight="3px" />
                     </div>
                     <div

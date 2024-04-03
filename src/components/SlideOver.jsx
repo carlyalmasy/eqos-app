@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XCircleIcon } from '@heroicons/react/24/outline'
 
 export default function SlideOver({ children, isActive, closeSlideOver }) {
 
@@ -43,7 +43,7 @@ export default function SlideOver({ children, isActive, closeSlideOver }) {
                           >
                             <span className="absolute -inset-2.5" />
                             <span className="sr-only">Close panel</span>
-                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                            <XCircleIcon className="h-9 w-9" aria-hidden="true" />
                           </button>
                         </div>
                       </div>
