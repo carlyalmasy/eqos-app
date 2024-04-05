@@ -1,8 +1,10 @@
 import Container  from "../../layouts/Container";
-import KeyDimension from "../../components/KeyDimension"
+import Dimension from "../../components/layout/Dimension";
 import Markdown from "../../components/Markdown";
 import Card from "../../components/Card";
 import EQOSQuality from "../../topics/Resources/EQOSQuality.md";
+
+import dimensions from "../../topics/Resources/Dimensions";
 
 export default function Resources() {
     return (
@@ -13,11 +15,11 @@ export default function Resources() {
             <Card color="silver-100" borderRadius="md" dropShadow="none" marginTop="14" maxWidth="500px">
                 <div className="p-8">
                     <h4 className="mt-0 text-neutrals-dark-600">The Five Key Dimensions</h4>
-                    <KeyDimension title="Employment">Indicates new or improved employment opportunities at a satisfactory pay level.</KeyDimension>
-                    <KeyDimension title="Opportunity">Reflects access to quality jobs with safe working conditions, attractive benefits, and potential for upward mobility.</KeyDimension>
-                    <KeyDimension title="Learning">Represents the acquisition of valuable skills relevant to one's career path.</KeyDimension>
-                    <KeyDimension title="Access">Ensures inclusive participation across demographics, with a competitive time-to-completion cost.</KeyDimension>
-                    <KeyDimension title="Demand">Validates that the attained skills align with the needs of high-demand occupational fields.</KeyDimension>
+                    {
+                        dimensions.map((dimension) => {
+                            return <Dimension title={ dimension.title }>{ dimension.text }</Dimension>
+                        })
+                    }
                 </div>
             </Card>
         </Container>

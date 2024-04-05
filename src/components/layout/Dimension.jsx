@@ -1,4 +1,4 @@
-export default function KeyDimension( {title, children }) {
+export default function Dimension( {title, children }) {
     return (
         <>
             <h5 className="text-silver-600" style={{ fontStyle: "normal" }}>
