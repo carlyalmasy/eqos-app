@@ -1,18 +1,18 @@
 import DetailEyebrow from "./DetailEyebrow";
 import DetailName from "./DetailName";
 import DetailInfo from "./DetailInfo";
-import Card from "../Card";
-import Grid from "../layout/Grid";
+import Card from "../../Card";
+import Grid from "../../layout/Grid";
 import ScoreGauge from "../score/ScoreGauge";
 import ScoreBarGroup from "../score/ScoreBarGroup";
 import DetailBlock from "./DetailBlock";
 import { useSignal, useSignalEffect } from "@preact/signals-react";
-import debug from "../../utilities/debug";
+import debug from "../../../utilities/debug";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import bjoin from "../../utilities/bjoin";
-import { overallRating } from "../../utilities/RatingFunctions";
-import Copy from "../actions/Copy";
+import bjoin from "../../../utilities/bjoin";
+import { overallRating } from "../../../utilities/RatingFunctions";
+import Copy from "../../actions/Copy";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -52,11 +52,11 @@ export default function DetailContent({ itemId, split }) {
                     <DetailEyebrow>Copy Link to Share</DetailEyebrow>
                     <DetailInfo>
                         <a
-                            href={location.origin + "/credentials/" + itemId}
+                            href={ location.origin + "/credentials/" + itemId }
                             className="align-middle"
                             id="detail-url"
                         >
-                            {location.origin + "/credentials/" + itemId}
+                            { location.origin + "/credentials/" + itemId }
                         </a>
                         <Copy
                             className="inline-block text-neutrals-dark-100 hover:text-neutrals-dark-500 ml-1 h-5 w-5 align-middle"

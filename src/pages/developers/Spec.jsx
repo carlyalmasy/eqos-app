@@ -1,8 +1,13 @@
-import {useEffect} from 'react';
-import {signal} from '@preact/signals-react';
-import Markdown from '../components/Markdown';
-import intro from '../topics/Developer/SpecIntro.md';
+import Container from '../../layouts/Container';
+import Markdown from '../../components/Markdown';
 import axios from 'axios';
+
+// Content
+import intro from '../../topics/Developer/SpecIntro.md';
+
+// Hooks
+import { signal } from '@preact/signals-react';
+import { useEffect } from 'react';
 
 //
 // Initialize our signal with an empty string.  On initial page load the <Markdown> component
@@ -30,13 +35,13 @@ export default function Spec() {
   }, []);
 
   return (
-    <article className="spec">
+    <Container className="spec">
         <Markdown>
             {intro}
         </Markdown>
         <Markdown toc={{skip: 'specification'}}>
             {data.value}
         </Markdown>
-    </article>
+    </Container>
   )
 }

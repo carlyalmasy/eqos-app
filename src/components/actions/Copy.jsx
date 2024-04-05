@@ -10,12 +10,12 @@ export default function Copy({ className, from }) {
         <button
             onClick={copy}
             className={className ? className : "inline-block bg-neutrals-light-100"}
-                   >
-        <a className="text-neutrals-dark-100 hover:text-neutrals-dark-500 active:text-neutrals-dark-100" data-tooltip-id="copy"><CopyIcon /></a>
+        >
+            <a className="text-neutrals-dark-100 hover:text-neutrals-dark-500 active:text-neutrals-dark-100" data-tooltip-id="copy"><CopyIcon /></a>
+
             <Tooltip className="hidden md:block" id="copy" openOnClick>
                 <p className="text-white">Copied!</p>
             </Tooltip>
-
         </button>
     );
 }

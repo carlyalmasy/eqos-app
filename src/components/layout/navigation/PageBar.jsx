@@ -2,7 +2,7 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import MobileItem from './MobileItem';
 import Item from './Item';
-import logo from '../../assets/images/EQOSLogo.png';
+import logo from '../../../assets/images/EQOSLogo.png';
 import { NavLink } from 'react-router-dom';
 
 export default function PageBar({items}) {

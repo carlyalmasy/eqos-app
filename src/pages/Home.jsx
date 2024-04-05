@@ -1,11 +1,12 @@
-import Markdown from "../components/Markdown.jsx";
+import Container from "../layouts/Container";
+import Grid from "../components/layout/Grid";
+import Markdown from "../components/Markdown";
+import SearchBox from "../components/credentials/search/SearchBox";
 import Intro from "../topics/Home/Intro.md.js";
-import SearchBox from "../components/search/SearchBox.jsx";
-import Grid from "../components/layout/Grid.jsx";
 
 // Data Visualization Deps
 import DataIntro from "../topics/Home/DataIntro.md.js";
-import Chart from "../components/Chart.jsx";
+import Chart from "../components/Chart";
 import Occupations from "../topics/Charts/Occupations.json";
 import Categories from "../topics/Charts/Categories.json"
 import Providers from "../topics/Charts/Providers.json";
@@ -13,13 +14,13 @@ import Skills from "../topics/Charts/Skills.json"
 
 // Discovery Shorcuts Deps
 import ShortcutsIntro from "../topics/Home/ShortcutsIntro.md.js";
-import ShortcutsIcon from "../components/icons/ShortcutsIcon.jsx";
-import ShortcutGroup from "../components/lists/ShortcutGroup.jsx";
+import ShortcutsIcon from "../components/icons/ShortcutsIcon";
+import ShortcutGroup from "../components/lists/ShortcutGroup";
 import DiscoveryShortcuts from "../topics/Home/DiscoveryShortcuts.js";
 
 export default function Home() {
     return (
-        <>
+        <Container>
             <div className="grid grid-cols-12 gap-8 md:gap-12">
                 <div className="col-span-12 lg:col-span-6 lg:mb-18 lg:mr-8">
                     <Markdown>{Intro}</Markdown>
@@ -41,6 +42,6 @@ export default function Home() {
                     <ShortcutGroup icon={ShortcutsIcon} groups={DiscoveryShortcuts} />
                 </div>
             </div>
-        </>
+        </Container>
     );
 }

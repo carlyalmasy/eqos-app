@@ -1,8 +1,8 @@
 import { useSignal, useComputed, useSignalEffect, signal } from "@preact/signals-react";
 import { CheckIcon, ChevronUpDownIcon, XCircleIcon } from "@heroicons/react/20/solid";
 import { Combobox, Transition } from "@headlessui/react";
-import bjoin from "../../utilities/bjoin";
-import debug from "../../utilities/debug";
+import bjoin from "../../../utilities/bjoin";
+import debug from "../../../utilities/debug";
 import axios from "axios";
 import _ from "lodash";
 

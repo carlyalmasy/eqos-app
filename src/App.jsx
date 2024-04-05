@@ -1,38 +1,40 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PageContainer from './layouts/PageContainer';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Container from './layouts/Container';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import Home from './pages/Home';
-import Credentials from './pages/Credentials';
-import Detail from './pages/Detail';
-import Resources from './pages/Resources';
-import API from './pages/API';
-import Spec from './pages/Spec';
-import Developer from './pages/Developer';
+import Credentials from './pages/credentials/Index';
+import Detail from './pages/credentials/Detail';
+import Resources from './pages/resources/Index';
+import API from './pages/developers/API';
+import Spec from './pages/developers/Spec';
+import Developer from './pages/developers/Index';
 import NotFound from './pages/404';
+import KitchenSink from './pages/KitchenSink';
 
 function App({router}) {
-  return (
-    <Router>
-      <Header />
-      <section>
-        <PageContainer>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="developer/api" element={<API />} />
-            <Route path="/developer" element={<Developer />} />
-            <Route path="/credentials" element={<Credentials />} />
-            <Route path="/credentials/:id" element={<Detail />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/developer/spec" element={<Spec />} />
-            <Route path='*' element={<NotFound />}/>
-          </Routes>
-        </PageContainer>
-      </section>
-      <Footer />
-    </Router>
-  );
+    return (
+        <Router>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/sink" element={<KitchenSink />} />
+
+                <Route path="/resources" element={<Resources />} />
+
+                <Route path="/developers" element={<Developer />} />
+                <Route path="/developers/api" element={<API />} />
+                <Route path="/developers/spec" element={<Spec />} />
+
+                <Route path="/credentials" element={<Credentials />} />
+                <Route path="/credentials/:id" element={<Detail />} />
+
+                <Route path='*' element={<NotFound />}/>
+            </Routes>
+            <Footer />
+        </Router>
+    );
 }
 
 export default App;

@@ -9,10 +9,10 @@ export default function Footer() {
                         href="https://eqos.org/"
                         target="_blank"
                     >
-                        EQOS.org
+                        eqos.org
                     </a>
-                    <a className=" text-neutrals-dark-100 hover:text-neutrals-dark-500 hover:underline" href="mailto:info@eqos.org" target="_blank">
-                        info@EQOS.org
+                    <a className=" text-neutrals-dark-100 hover:text-neutrals-dark-500 hover:underline" href="mailto:solutions@eqos.org" target="_blank">
+                        solutions@eqos.org
                     </a>
                 </div>
                 <div className="mt-0">

@@ -1,7 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import SearchResultsInfo from "../components/search/SearchResultsInfo.jsx";
+import PaginationInfo from "./PaginationInfo.jsx";
 import { Fragment } from "react";
-import debug from "../utilities/debug.js";
+import debug from "../../utilities/debug.js";
 
 export default function Pagination({ nPages, currentPage, totalItems, lastPgResult, firstPgResult }) {
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
@@ -71,7 +71,7 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
                     <span className="sr-only">Previous</span>
                     <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
                 </a>
-                <SearchResultsInfo
+                <PaginationInfo
                     firstPgResult={firstPgResult}
                     lastPgResult={lastPgResult}
                     totalItems={totalItems}
@@ -90,7 +90,7 @@ export default function Pagination({ nPages, currentPage, totalItems, lastPgResu
             </div>
             <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
                 <div>
-                    <SearchResultsInfo
+                    <PaginationInfo
                         firstPgResult={firstPgResult}
                         lastPgResult={lastPgResult}
                         totalItems={totalItems}

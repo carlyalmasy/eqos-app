@@ -1,5 +1,5 @@
-import bjoin from "../../utilities/bjoin";
-import { ratingImageSource, overallRating, overallQuality } from "../../utilities/RatingFunctions";
+import bjoin from "../../../utilities/bjoin";
+import { ratingImageSource, overallRating, overallQuality } from "../../../utilities/RatingFunctions";
 
 export default function ScoreGauge({ data }) {
     return (

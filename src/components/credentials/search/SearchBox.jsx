@@ -1,12 +1,12 @@
-import Markdown from "../Markdown.jsx";
-import SearchIntro from "../../topics/Credentials/SearchIntro.md.js";
-import SearchContent from "../../topics/Credentials/SearchContent.md.js";
-import Label from "../forms/Label.jsx";
+import Markdown from "../../Markdown.jsx";
+import SearchIntro from "../../../topics/Credentials/SearchIntro.md.js";
+import SearchContent from "../../../topics/Credentials/SearchContent.md.js";
+import Label from "../../forms/Label.jsx";
 import SearchSelect from "./SearchSelect.jsx";
 import { useSignal } from "@preact/signals-react";
 import { useNavigate, useSearchParams, useLocation } from "react-router-dom";
 import { useLayoutEffect } from "react";
-import debug from "../../utilities/debug.js";
+import debug from "../../../utilities/debug.js";
 
 export default function SearchBox({ action }) {
     const [params] = useSearchParams();

@@ -1,6 +1,6 @@
 import bjoin from "../../utilities/bjoin";
-import ScoreBarGroup from "../score/ScoreBarGroup";
-import ScoreGauge from "../score/ScoreGauge";
+import ScoreBarGroup from "./score/ScoreBarGroup";
+import ScoreGauge from "./score/ScoreGauge";
 import CredentialsInfo from "./CredentialsInfo";
 import { overallRating } from "../../utilities/RatingFunctions";
 

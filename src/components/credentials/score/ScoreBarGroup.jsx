@@ -1,6 +1,6 @@
 import React from "react";
-import bjoin from "../../utilities/bjoin";
-import { overallRating } from "../../utilities/RatingFunctions";
+import bjoin from "../../../utilities/bjoin";
+import { overallRating } from "../../../utilities/RatingFunctions";
 
 export default function ScoreBarGroup({ data, barHeight }) {
     return (

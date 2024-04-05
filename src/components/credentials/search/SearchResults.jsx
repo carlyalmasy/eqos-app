@@ -1,10 +1,10 @@
 import { useComputed, useSignal, useSignalEffect } from "@preact/signals-react";
 import axios from "axios";
-import CredentialsCard from "../credentials/CredentialsCard";
-import Grid from "../layout/Grid";
-import Pagination from "../../layouts/Pagination";
+import CredentialsCard from "../CredentialsCard";
+import Grid from "../../layout/Grid";
+import Pagination from "../../layout/Pagination";
 import { NavLink, useParams, useSearchParams } from "react-router-dom";
-import debug from "../../utilities/debug";
+import debug from "../../../utilities/debug";
 import { useEffect, useLayoutEffect, useState } from "react";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;

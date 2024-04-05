@@ -1,8 +1,8 @@
-import SearchResults from "../components/search/SearchResults.jsx";
-import SearchBox from "../components/search/SearchBox.jsx";
-import CredentialsIntro from "../topics/Credentials/CredentialsIntro.md.js";
-import SlideOver from "../components/SlideOver.jsx";
-import DetailContent from "../components/detail/DetailContent.jsx";
+import Container from "../../layouts/Container.jsx";
+import SearchResults from "../../components/credentials/search/SearchResults.jsx";
+import SearchBox from "../../components/credentials/search/SearchBox.jsx";
+import SlideOver from "../../components/layout/SlideOver.jsx";
+import DetailContent from "../../components/credentials/detail/DetailContent.jsx";
 import { useSignal } from "@preact/signals-react";
 
 export default function Credentials({}) {
@@ -18,7 +18,7 @@ export default function Credentials({}) {
     };
 
     return (
-        <>
+        <Container>
             <div className="relative z-10">
                 <SearchBox action="/credentials" />
             </div>
@@ -30,6 +30,6 @@ export default function Credentials({}) {
                     <DetailContent itemId={selectedItem.value} split="8/4" />
                 </SlideOver>
             )}
-        </>
+        </Container>
     );
 }

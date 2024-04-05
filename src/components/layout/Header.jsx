@@ -1,6 +1,6 @@
-import PageContainer from "../layouts/PageContainer";
+import PageContainer from "../../layouts/Container";
 import PageBar from "./navigation/PageBar";
-import navItems from "../topics/SiteNavigation";
+import navItems from "../../topics/SiteNavigation";
 
 export default function Header() {
   return (

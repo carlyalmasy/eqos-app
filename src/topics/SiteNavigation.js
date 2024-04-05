@@ -4,7 +4,7 @@ export default [
         "link": "/resources",
     },
     {
-        "name": "Developer",
-        "link": "/developer",
+        "name": "Developers",
+        "link": "/developers",
     },
 ];
