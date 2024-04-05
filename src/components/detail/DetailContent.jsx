@@ -84,7 +84,7 @@ export default function DetailContent({ itemId, split }) {
                                     {Object.keys(title.items).map((listItem, i) => {
                                         const text = title.items[listItem];
                                         return (
-                                            <li className="text-xl leading-normal" key={i}>
+                                            <li className="leading-normal" key={i}>
                                                 {text.text}
                                             </li>
                                         );

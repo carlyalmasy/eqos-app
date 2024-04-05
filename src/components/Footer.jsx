@@ -11,8 +11,8 @@ export default function Footer() {
                     >
                         EQOS.org
                     </a>
-                    <a className=" text-neutrals-dark-100 hover:text-neutrals-dark-500 hover:underline" href="" target="_blank">
-                        contact@EQOS.org
+                    <a className=" text-neutrals-dark-100 hover:text-neutrals-dark-500 hover:underline" href="mailto:info@eqos.org" target="_blank">
+                        info@EQOS.org
                     </a>
                 </div>
                 <div className="mt-0">

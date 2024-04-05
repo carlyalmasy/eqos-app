@@ -11,7 +11,7 @@ export default function PageBar({items}) {
       {({ open }) => (
         <>
           <div>
-            <div className="relative flex h-16 justify-between">
+            <div className="relative flex h-20 lg:h-16 justify-between">
 
               <div className="flex flex-grow-0 items-center lg:hidden">
                 {/* Mobile menu button */}
@@ -26,8 +26,8 @@ export default function PageBar({items}) {
                 </Disclosure.Button>
               </div>
 
-              <div className="flex flex-grow-1 items-center justify-between lg:w-full">
-                <div className="flex flex-grow-0 items-center">
+              <div className="flex flex-wrap my-auto flex-grow-1 items-center justify-between w-full">
+                <div className="flex flex-col space-y-1 flex-grow-0 items-center mx-auto lg:mx-0 lg:flex-row">
                   <NavLink to="/">
                     <img
                       className="h-8 w-auto"
@@ -35,7 +35,7 @@ export default function PageBar({items}) {
                       alt="EQOS"
                     />
                   </NavLink>
-                  <span className="hidden text-right mt-0 font-semibold text-eqos-400 uppercase ml-8 lg:block">EQOS Quality Signal</span>
+                  <span className="text-center lg:text-right font-semibold text-eqos-400 uppercase block mt-0 lg:ml-8">EQOS Quality Signal</span>
                 </div>
                 <div className="hidden flex-grow-1 space-x-8 text-sm lg:flex">
                     {
