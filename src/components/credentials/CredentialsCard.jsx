@@ -11,11 +11,11 @@ export default function CredentialsCard({ data }) {
                 <div
                     className={
                         overallRating(data) === "unrated"
-                            ? "md:h-full w-full flex hover:shadow-lg divide-x divide-neutrals-light-300 py-4"
-                            : "md:h-full w-full flex hover:shadow-lg py-4"
+                            ? "md:h-full w-full flex hover:shadow-lg divide-x divide-neutrals-light-300"
+                            : "md:h-full w-full flex hover:shadow-lg"
                     }
                 >
-                    <div className="w-[180px] px-4 flex-shrink-0 flex-grow-0 space-around items-center justify-around">
+                    <div className="w-[180px] p-4 flex-shrink-0 flex-grow-0 space-around items-center justify-around">
                         <ScoreGauge data={data} />
                         <ScoreBarGroup data={data} barHeight="3px" />
                     </div>
