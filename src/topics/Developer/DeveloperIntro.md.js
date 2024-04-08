@@ -28,7 +28,7 @@ well as the documentation are publicly available with limited restrictions.
 ### Bulk Data
 
 If APIs aren't your thing, we've got you covered.  Bulk data downloads enable you to
-get the latest and greatest quality signal information in both CSV and JSON formats.  Import them
+get the latest and greatest quality signal information in a CSV format.  Import them
 into your current infrastructure or analyze them in Jupyter Notebooks to gain insights into the
 current credential landscape.
 `

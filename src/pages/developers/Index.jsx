@@ -20,7 +20,7 @@ export default function Developer() {
                     <h4 className="mt-0 text-neutrals-dark-600">Quick Links</h4>
                     <p>
                         Use the links below to get started quickly and easily.  Got questions?
-                        Contact us at <a href="mailto:support@eqos.org">support@eqos.org</a>.
+                        Contact us at <a href="mailto:support@eqos.org">support@eqos.org</a>
                     </p>
                     <ul>
                         <li>
@@ -36,11 +36,6 @@ export default function Developer() {
                                         <NavLink to="/developers/spec">EQOS Specification</NavLink>
                                     </p>
                                 </li>
-                                <li>
-                                    <p>
-                                        <NavLink to="/devleopers/getting-started">Getting Started Guide</NavLink>
-                                    </p>
-                                </li>
                             </ul>
                         </li>
                         <li>
@@ -54,16 +49,6 @@ export default function Developer() {
                                 <li>
                                     <p>
                                         <a href={ baseUrl + '/ns/v1' }>EQOS Vocabulary (JSON)</a>
-                                    </p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Bulk Data
-                            <ul>
-                                <li>
-                                    <p>
-                                        <NavLink to="/devleopers/download">Download</NavLink>
                                     </p>
                                 </li>
                             </ul>

@@ -2,8 +2,8 @@
     "id": 4,
     "overview": {
         "header": "5 Most Frequently Aligned Skills",
-        "description": "Most frequently aligned skills of the top 100 (least specialized) from the observed credentials in our data.",
-        "legend": "Total Aligned Skills"
+        "description": "Most frequently aligned skills represent less specialized skills provided by a wide array of observed credentials.",
+        "legend": "Total Aligned Credentials"
     },
     "items": {
         "Customer Service": 10995,

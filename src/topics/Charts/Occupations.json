@@ -2,8 +2,8 @@
     "id": 1,
     "overview": {
         "header": "5 Most Frequently Aligned Occupations",
-        "description": "The top occupations which are most frequently aligned with the observed credentials in our data.",
-        "legend": "Total Aligned Occupations"
+        "description": "These occupations are associated with the highest number of credentials in our current data.",
+        "legend": "Total Aligned Credentials"
     },
     "items": {
         "Chief Executives": 3996,
