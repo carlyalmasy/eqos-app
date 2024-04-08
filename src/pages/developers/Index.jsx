@@ -20,7 +20,7 @@ export default function Developer() {
                     <h4 className="mt-0 text-neutrals-dark-600">Quick Links</h4>
                     <p>
                         Use the links below to get started quickly and easily.  Got questions?
-                        Contact us at <a href="mailto:support@eqos.org">support@eqos.org</a>
+                        Contact us at <a href="mailto:solutions@eqos.org">solutions@eqos.org</a>
                     </p>
                     <ul>
                         <li>
