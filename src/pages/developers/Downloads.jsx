@@ -2,12 +2,14 @@
 import Markdown from '../../components/Markdown';
 import { aside } from './Index';
 import axios from 'axios';
+import moment from 'moment';
 
 // Hooks
 import { signal } from "@preact/signals-react";
 import { useEffect } from 'react';
 import PrimaryButton from '../../components/buttons/PrimaryButton';
 import CardAside from '../../layouts/CardAside';
+import { Fragment } from 'react';
 
 //
 // Initialize our signal with an empty string.  On initial page load the <Markdown> component
@@ -16,11 +18,9 @@ import CardAside from '../../layouts/CardAside';
 const data    = signal([]);
 const baseUrl = import.meta.env.VITE_CORE_URL;
 const title   = function(path) {
-    let ldate = new Date();
     let match = path.match(/\d{4}-\d{2}-\d{2}/);
-    let rdate = new Date(match[0] + ' 00:00:00' + ldate.getTimezoneOffset());
 
-    return rdate.toDateString();
+    return moment(match[0] + ' 00:00:00').format('dddd, MMMM Do YYYY');
 };
 
 export default function Downloads() {
@@ -53,16 +53,16 @@ export default function Downloads() {
             {
                 data.value.map((item, key) => {
                     return (
-                        <>
+                        <Fragment key={ key }>
                             <hr className="mt-8" />
-                            <section key={key}>
+                            <section>
                                 <h3>{ title(item.path) }</h3>
                                 <div className="mb-8">
                                     <Markdown>{ item.desc }</Markdown>
                                 </div>
                                 <PrimaryButton text="Download"  link={ baseUrl + item.path } />
                             </section>
-                        </>
+                        </Fragment>
                     )
                 })
             }
