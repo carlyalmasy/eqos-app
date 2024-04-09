@@ -39,7 +39,7 @@ export default function Guide() {
         <Markdown>
             {intro}
         </Markdown>
-        <Markdown toc={{skip: 'specification'}}>
+        <Markdown toc={{skip: 'guide'}}>
             {data.value}
         </Markdown>
     </Container>
