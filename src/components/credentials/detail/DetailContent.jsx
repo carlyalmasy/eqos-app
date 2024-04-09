@@ -1,7 +1,6 @@
 import DetailEyebrow from "./DetailEyebrow";
 import DetailName from "./DetailName";
 import DetailInfo from "./DetailInfo";
-import Card from "../../Card";
 import Grid from "../../layout/Grid";
 import ScoreGauge from "../score/ScoreGauge";
 import ScoreBarGroup from "../score/ScoreBarGroup";
@@ -65,12 +64,12 @@ export default function DetailContent({ itemId, split }) {
                     </DetailInfo>
                 </div>
                 <>
-                    <Card color="white" borderRadius="md" dropShadow="md" marginTop="0" maxWidth="">
+                    <div className="bg-white rounded-md drop-shadow-md">
                         <div className="grid content-center w-full py-9 px-9">
                             <ScoreGauge data={data.value} textSize="2xl" subtextSize="base" />
                             <ScoreBarGroup data={data.value} barHeight="6px" />
                         </div>
-                    </Card>
+                    </div>
                     <div className="mt-6 text-center">
                         <NavLink
                             to="/resources"

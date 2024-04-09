@@ -12,6 +12,7 @@ import Spec from './pages/developers/Spec';
 import Developer from './pages/developers/Index';
 import NotFound from './pages/404';
 import KitchenSink from './pages/KitchenSink';
+import Downloads from './pages/developers/Downloads';
 
 function App({router}) {
     return (
@@ -26,6 +27,7 @@ function App({router}) {
                 <Route path="/developers" element={<Developer />} />
                 <Route path="/developers/api" element={<API />} />
                 <Route path="/developers/spec" element={<Spec />} />
+                <Route path="/developers/downloads" element={<Downloads />} />
 
                 <Route path="/credentials" element={<Credentials />} />
                 <Route path="/credentials/:id" element={<Detail />} />
