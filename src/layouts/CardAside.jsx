@@ -6,7 +6,7 @@ export default function CardAside({ children }) {
             <div className="flex-1">
                 { children[0] ?? '' }
             </div>
-            <div className="p-8 bg-silver-100 rounded-md  drop-shadow-none mt-14 max-w-[500px]">
+            <div className="p-8 bg-silver-100 rounded-md  drop-shadow-none mt-14 lg:max-w-[500px]">
                 { children[1] ?? '' }
             </div>
         </Container>
