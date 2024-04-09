@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Container from './layouts/Container';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
@@ -9,12 +8,13 @@ import Detail from './pages/credentials/Detail';
 import Resources from './pages/resources/Index';
 import API from './pages/developers/API';
 import Spec from './pages/developers/Spec';
+import Guide from './pages/developers/Guide';
 import Developer from './pages/developers/Index';
 import NotFound from './pages/404';
 import KitchenSink from './pages/KitchenSink';
 import Downloads from './pages/developers/Downloads';
 
-function App({router}) {
+function App() {
     return (
         <Router>
             <Header />
@@ -27,6 +27,7 @@ function App({router}) {
                 <Route path="/developers" element={<Developer />} />
                 <Route path="/developers/api" element={<API />} />
                 <Route path="/developers/spec" element={<Spec />} />
+                <Route path="/developers/guide" element={<Guide />} />
                 <Route path="/developers/downloads" element={<Downloads />} />
 
                 <Route path="/credentials" element={<Credentials />} />

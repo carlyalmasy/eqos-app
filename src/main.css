@@ -134,7 +134,7 @@
      */
 
     .spec {
-        @apply lg:grid gap-8 grid-cols-12 grid-rows-none;
+        @apply lg:grid gap-x-8 grid-cols-12;
 
         > * {
             @apply col-span-12;
