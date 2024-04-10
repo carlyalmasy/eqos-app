@@ -71,7 +71,7 @@
     }
 
     ul, ol {
-        @apply text-neutrals-dark-600;
+        @apply text-neutrals-dark-600 list-inside;
 
         p {
             @apply my-0;
@@ -138,6 +138,14 @@
 
         > * {
             @apply col-span-12;
+        }
+
+        ul li {
+            @apply list-disc;
+        }
+
+        ol li {
+            @apply list-decimal;
         }
 
         > section:nth-of-type(2) {
