@@ -21,6 +21,11 @@ export const aside = (
                 <ul>
                     <li>
                         <p>
+                            <NavLink to="/developers/guide">Developers Guide</NavLink>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
                             <NavLink to="/developers/api">API Documentation</NavLink>
                         </p>
                     </li>
