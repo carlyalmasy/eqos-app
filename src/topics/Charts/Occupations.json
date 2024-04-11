@@ -6,11 +6,11 @@
         "legend": "Total Aligned Credentials"
     },
     "items": {
-        "Chief Executives": 3996,
-        "General and Ops Managers": 3724,
-        "Managers, All Other": 3437,
-        "Marketing Managers": 2988,
-        "Supr Office/Admin Support Wkr": 2962
+        "Occupation A": 3996,
+        "Occupation B": 3724,
+        "Occupation C": 3437,
+        "Occupation D": 2988,
+        "Occupation E": 2962
     },
     "max": 3996
 }

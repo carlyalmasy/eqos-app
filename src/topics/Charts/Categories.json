@@ -6,11 +6,11 @@
         "legend": "Total Observed Credentials"
     },
     "items": {
-        "First Aid and Related Programs": 1544,
-        "Computer/IT Admin and Mgmt": 1476,
-        "Leadership": 1406,
-        "Business Admin, Mgmt, Ops": 1398,
-        "Bus Ops Support and Asst Svcs": 1232
+        "Credential Category A": 1544,
+        "Credential Category B": 1476,
+        "Credential Category C": 1406,
+        "Credential Category D": 1398,
+        "Credential Category E": 1232
     },
     "max": 1544
 }

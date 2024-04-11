@@ -1,23 +1,23 @@
 export default [
     {
-        title: "Frequently Aligned Occupations",
+        title: "Occupations of Interest",
         items: [
           {
-            title: "Chief Executives",
-            url: "/credentials?occupation=1&p=1",
-          },
-          {
-            title: "General and Ops Managers",
+            title: "General and Operations Managers",
             url: "/credentials?occupation=3&p=1",
           },
           {
-            title: "Managers, All Other",
-            url: "/credentials?occupation=53&p=1",
+            title: "Registered Nurses",
+            url: "/credentials?occupation=436&p=1",
+          },
+          {
+            title: "Information Security Analysts",
+            url: "/credentials?occupation=112&p=1",
           },
         ],
     },
     {
-        title: "Top Credential Program Categories",
+        title: "Top Credential Categories",
         items: [
           {
             title: "First Aid and Related Programs",
@@ -34,12 +34,8 @@ export default [
         ],
     },
     {
-        title: "Top Providers",
+        title: "Providers of Interest",
         items: [
-          {
-            title: "Washington State University",
-            url: "/credentials?provider=1236939&p=1",
-          },
           {
             title: "Udemy",
             url: "/credentials?provider=84&p=1",
@@ -47,6 +43,10 @@ export default [
           {
             title: "Texas A&M University - College Station",
             url: "/credentials?provider=1228723&p=1",
+          },
+          {
+            title: "edX",
+            url: "/credentials?provider=60&p=1",
           },
         ],
     },
