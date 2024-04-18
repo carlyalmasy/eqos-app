@@ -136,8 +136,6 @@ The debug helper is preferable to using `console.log` directly and does nothing 
 debug("Getting " + collection);
 ```
 
-
-
 ## Credentials Scoring
 
 This documents the ranges of scoring and their corresponding tier levels.  These tiers determine the gauges included for credential score displays and are implemented in the `utilities/RatingFunctions.js` file:
