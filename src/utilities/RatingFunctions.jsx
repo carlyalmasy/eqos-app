@@ -19,13 +19,14 @@ export function overallRating(data) {
     if (overallScore >= 4.01) return "platinum";
     return "unrated";
 }
-  export function overallQuality(data) {
+
+export function overallQuality(data) {
     const overallScore = data.scores.overall;
     if (overallScore === null ) return "";
     return "Overall Quality";
-  }
+}
 
-  export function ratingImageSource(data) {
+ export function ratingImageSource(data) {
     const overallScore = data.scores.overall;
     if (overallScore === null) return unrated;
     if (overallScore <= 0.5) return bronzeOne;
@@ -39,4 +40,4 @@ export function overallRating(data) {
     if (overallScore >= 4.01 && overallScore <= 4.5) return platinumOne;
     if (overallScore >= 4.51 && overallScore <= 5.0) return platinumTwo;
     return unrated;
-  }
+ }

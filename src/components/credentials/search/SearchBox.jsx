@@ -10,7 +10,7 @@ import debug from "../../../utilities/debug.js";
 
 export default function SearchBox({ action }) {
     const [params] = useSearchParams();
-    const state = useSignal({});
+    const state    = useSignal({});
 
     //
     // Initialize our state

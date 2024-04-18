@@ -1,10 +1,11 @@
+import _ from "lodash";
+import axios from "axios";
+import bjoin from "../../../utilities/bjoin";
+import debug from "../../../utilities/debug";
+
 import { useSignal, useComputed, useSignalEffect, signal } from "@preact/signals-react";
 import { CheckIcon, ChevronUpDownIcon, XCircleIcon } from "@heroicons/react/20/solid";
 import { Combobox, Transition } from "@headlessui/react";
-import bjoin from "../../../utilities/bjoin";
-import debug from "../../../utilities/debug";
-import axios from "axios";
-import _ from "lodash";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -42,15 +43,18 @@ const updateQuery = function (state, query, name, value) {
 };
 
 export default function SearchSelect({ name, collection, state }) {
-    const items = useSignal([]);
-    const query = useSignal("");
+    const items      = useSignal([]);
+    const query      = useSignal("");
     const getResults = _.debounce(function (params) {
         const url = "/api/app/search/" + collection;
 
         debug("Getting " + collection);
-        axios.get(new URL(url + (params.size ? "?" + params : ""), baseUrl)).then((response) => {
-            items.value = response.data;
-        });
+        axios
+            .get(new URL(url + (params.size ? "?" + params : ""), baseUrl))
+            .then((response) => {
+                items.value = response.data;
+            })
+        ;
     }, 500);
 
     //

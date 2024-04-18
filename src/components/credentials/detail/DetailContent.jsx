@@ -1,29 +1,35 @@
+import axios from "axios";
+import debug from "../../../utilities/debug";
+import bjoin from "../../../utilities/bjoin";
+
+import { overallRating } from "../../../utilities/RatingFunctions";
+
+import Grid from "../../layout/Grid";
 import DetailEyebrow from "./DetailEyebrow";
+import DetailBlock from "./DetailBlock";
 import DetailName from "./DetailName";
 import DetailInfo from "./DetailInfo";
-import Grid from "../../layout/Grid";
 import ScoreGauge from "../score/ScoreGauge";
 import ScoreBarGroup from "../score/ScoreBarGroup";
-import DetailBlock from "./DetailBlock";
-import { useSignal, useSignalEffect } from "@preact/signals-react";
-import debug from "../../../utilities/debug";
-import axios from "axios";
-import { NavLink } from "react-router-dom";
-import bjoin from "../../../utilities/bjoin";
-import { overallRating } from "../../../utilities/RatingFunctions";
 import Copy from "../../actions/Copy";
 
+import { NavLink } from "react-router-dom";
+
+import { signal, useSignalEffect } from "@preact/signals-react";
+
 const baseUrl = import.meta.env.VITE_CORE_URL;
+const data    = signal({});
 
 export default function DetailContent({ itemId, split }) {
-    const data = useSignal({});
-
     useSignalEffect(() => {
         debug("Getting credential details");
 
-        axios.get(new URL("/api/app/detail/credentials/" + itemId, baseUrl)).then((response) => {
-            data.value = response.data;
-        });
+        axios
+            .get(new URL("/api/app/detail/credentials/" + itemId, baseUrl))
+            .then((response) => {
+                data.value = response.data;
+            })
+        ;
     });
 
     if (!Object.keys(data.value).length) {
