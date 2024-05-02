@@ -1,5 +1,7 @@
-import PageContainer from "../../layouts/Container";
+// components
 import PageBar from "./navigation/PageBar";
+
+// content
 import navItems from "../../topics/SiteNavigation";
 
 export default function Header() {

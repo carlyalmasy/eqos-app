@@ -1,8 +1,11 @@
+// libraries / utilities
 import bjoin from "../../utilities/bjoin";
+import { overallRating } from "../../utilities/ratings";
+
+// components
+import CredentialsInfo from "./CredentialsInfo";
 import ScoreBarGroup from "./score/ScoreBarGroup";
 import ScoreGauge from "./score/ScoreGauge";
-import CredentialsInfo from "./CredentialsInfo";
-import { overallRating } from "../../utilities/RatingFunctions";
 
 export default function CredentialsCard({ data }) {
     return (

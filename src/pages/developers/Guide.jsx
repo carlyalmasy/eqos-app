@@ -1,14 +1,15 @@
+// libraries / utilities
 import axios from 'axios';
+
+// hooks
+import { signal, useSignalEffect } from '@preact/signals-react';
 
 // components
 import Container from '../../layouts/Container';
 import Markdown from '../../components/Markdown';
 
-// topics
+// content
 import intro from '../../topics/Developer/GuideIntro.md';
-
-// hooks
-import { signal, useSignalEffect } from '@preact/signals-react';
 
 const data = signal('');
 

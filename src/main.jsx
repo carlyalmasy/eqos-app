@@ -1,6 +1,11 @@
-import { React, StrictMode } from 'react'
+// libraries / utilites
 import { createRoot } from 'react-dom/client';
+
+// components
+import { React, StrictMode } from 'react'
 import App from './App.jsx'
+
+// styles
 import './main.css';
 
 

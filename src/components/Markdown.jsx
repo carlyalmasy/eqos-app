@@ -1,11 +1,16 @@
-import Parser from 'react-markdown';
+// libraries / utilities
+import jsonLang from 'react-syntax-highlighter/dist/esm/languages/prism/json';
+import {oneLight as theme} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
-import remarkToc from 'remark-toc';
 import remarkHID from 'remark-heading-id';
 import remarkSectionize from 'remark-sectionize';
+import remarkToc from 'remark-toc';
+
+// hooks
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
-import {oneLight as theme} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import jsonLang from 'react-syntax-highlighter/dist/esm/languages/prism/json';
+
+// components
+import Parser from 'react-markdown';
 
 SyntaxHighlighter.registerLanguage('json', jsonLang);
 

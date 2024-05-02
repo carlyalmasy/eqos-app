@@ -1,21 +1,22 @@
+// libraries / utilities
 import axios from "axios";
-import debug from "../../../utilities/debug";
+import { signal, useSignalEffect } from "@preact/signals-react";
+
 import bjoin from "../../../utilities/bjoin";
+import debug from "../../../utilities/debug";
+import { overallRating } from "../../../utilities/ratings";
 
-import { overallRating } from "../../../utilities/RatingFunctions";
-
-import Grid from "../../layout/Grid";
-import DetailEyebrow from "./DetailEyebrow";
-import DetailBlock from "./DetailBlock";
-import DetailName from "./DetailName";
-import DetailInfo from "./DetailInfo";
-import ScoreGauge from "../score/ScoreGauge";
-import ScoreBarGroup from "../score/ScoreBarGroup";
-import Copy from "../../actions/Copy";
-
+//components
 import { NavLink } from "react-router-dom";
 
-import { signal, useSignalEffect } from "@preact/signals-react";
+import Copy from "../../actions/Copy";
+import DetailBlock from "./DetailBlock";
+import DetailEyebrow from "./DetailEyebrow";
+import DetailInfo from "./DetailInfo";
+import DetailName from "./DetailName";
+import Grid from "../../layout/Grid";
+import ScoreBarGroup from "../score/ScoreBarGroup";
+import ScoreGauge from "../score/ScoreGauge";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 const data    = signal({});

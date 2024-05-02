@@ -1,5 +1,8 @@
+// components
 import Container from "../layouts/Container"
 import PrimaryButton from "../components/buttons/PrimaryButton"
+
+// images
 import Fire from "../assets/images/404.gif"
 
 export default function NotFound() {

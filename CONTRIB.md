@@ -119,7 +119,7 @@ The `bjoin` function is used for combining strings based on some boolean logic (
 >
 ```
 
-The example above shows a case where `block truncat` is always part of the `className` however, `font-semibold` will only appear if `selected` is true.  Another example using a ternary shows where values may differ depending on a state value:
+The example above shows a case where `block truncate1` is always part of the `className` however, `font-semibold` will only appear if `selected` is true.  Another example using a ternary shows where values may differ depending on a state value:
 
 ```javascript
 bjoin(
@@ -138,7 +138,7 @@ debug("Getting " + collection);
 
 ## Credentials Scoring
 
-This documents the ranges of scoring and their corresponding tier levels.  These tiers determine the gauges included for credential score displays and are implemented in the `utilities/RatingFunctions.js` file:
+This documents the ranges of scoring and their corresponding tier levels.  These tiers determine the gauges included for credential score displays and are implemented in the `utilities/ratings.jsx` file:
 
 | Tier       | Min   | Max   |
 | ---------- | ----- | ----- |

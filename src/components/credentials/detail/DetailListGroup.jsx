@@ -1,3 +1,4 @@
+// components
 import DetailListHeader from "./DetailListHeader";
 import DetailListItem from "./DetailListItem";
 import Grid from "../layout/Grid";

@@ -1,9 +1,13 @@
-import { Disclosure } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import MobileItem from './MobileItem';
-import Item from './Item';
-import logo from '../../../assets/images/EQOSLogo.png';
+//components
 import { NavLink } from 'react-router-dom';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Disclosure } from '@headlessui/react';
+
+import Item from './Item';
+import MobileItem from './MobileItem';
+
+// images
+import logo from '../../../assets/images/EQOSLogo.png';
 
 export default function PageBar({items}) {
   return (

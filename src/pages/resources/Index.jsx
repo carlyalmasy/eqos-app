@@ -1,9 +1,9 @@
 // components
 import CardAside from "../../layouts/CardAside";
-import Dimension from "../../components/layout/Dimension";
+import Dimension from "../../components/resources/Dimension";
 import Markdown from "../../components/Markdown";
 
-// topics
+// content
 import quality from "../../topics/Resources/EQOSQuality.md";
 import dimensions from "../../topics/Resources/Dimensions";
 

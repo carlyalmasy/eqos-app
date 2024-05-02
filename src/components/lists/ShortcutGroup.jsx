@@ -1,3 +1,4 @@
+// components
 import Shortcut from "./Shortcut";
 
 export default function ShortcutGroup({icon, groups}) {

@@ -1,14 +1,20 @@
+// libraries / utilities
 import axios from 'axios';
 import moment from 'moment';
 
-import Markdown from '../../components/Markdown';
-import { Fragment } from 'react';
-import { Aside } from './Index';
-
-// Hooks
+// hooks
 import { signal, useSignalEffect } from "@preact/signals-react";
-import PrimaryButton from '../../components/buttons/PrimaryButton';
+
+// components
+import { Fragment } from 'react';
+
+import Aside from '../../components/developer/Aside';
 import CardAside from '../../layouts/CardAside';
+import Markdown from '../../components/Markdown';
+import PrimaryButton from '../../components/buttons/PrimaryButton';
+
+//content
+import intro from '../../topics/Developer/DownloadsIntro.md';
 
 const data    = signal([]);
 const baseUrl = import.meta.env.VITE_CORE_URL;
@@ -31,11 +37,7 @@ export default function Downloads() {
   return (
     <CardAside>
         <>
-            <h2>EQOS Quality Signal Data</h2>
-            <p>
-                Download EQOS Quality Signal data in a bulk CSV format for custom import or
-                analysis.
-            </p>
+            <Markdown>{intro}</Markdown>
             {
                 data.value.map((item, key) => {
                     return (

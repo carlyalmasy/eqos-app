@@ -1,11 +1,15 @@
-import Container from "../../layouts/Container.jsx";
-import SearchResults from "../../components/credentials/search/SearchResults.jsx";
-import SearchBox from "../../components/credentials/search/SearchBox.jsx";
-import SlideOver from "../../components/layout/SlideOver.jsx";
-import DetailContent from "../../components/credentials/detail/DetailContent.jsx";
+// hooks
 import { useSignal } from "@preact/signals-react";
 
+// components
+import DetailContent from "../../components/credentials/detail/DetailContent.jsx";
+import SearchBox from "../../components/credentials/search/SearchBox.jsx";
+import SearchResults from "../../components/credentials/search/SearchResults.jsx";
+import SlideOver from "../../components/layout/SlideOver.jsx";
+import Container from "../../layouts/Container.jsx";
+
 export default function Credentials({}) {
+
     const selectedItem = useSignal(null);
 
     const onClose = function (e) {

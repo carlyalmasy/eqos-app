@@ -65,7 +65,8 @@ export default function SearchBox({ action }) {
                                     helpText="SOC codes"
                                     helpLink="https://www.bls.gov/oes/current/oes_stru.htm"
                                     id="SOC-codes"
-                                    content="O*NET Standard Occupational Classification"
+                                    lineOne="O*NET Standard Occupational Classification."
+                                    lineTwo="Follow this link to learn more."
                                 />
                                 <SearchSelect
                                     name="occupation"
@@ -80,7 +81,8 @@ export default function SearchBox({ action }) {
                                     helpText="CIP4 codes"
                                     helpLink="https://nces.ed.gov/ipeds/cipcode/browse.aspx?y=55"
                                     id="CIP4-codes"
-                                    content="Classification of Intructional Programs"
+                                    lineOne="Classification of Intructional Programs."
+                                    lineTwo="Follow this link to learn more."
                                 />
                                 <SearchSelect
                                     name="category"

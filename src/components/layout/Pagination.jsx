@@ -1,7 +1,11 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import PaginationInfo from "./PaginationInfo.jsx";
-import { Fragment } from "react";
+// libraries / utilities
 import debug from "../../utilities/debug.js";
+
+//components
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
+import { Fragment } from "react";
+
+import PaginationInfo from "./PaginationInfo.jsx";
 
 export default function Pagination({ nPages, currentPage, totalItems, lastPgResult, firstPgResult }) {
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1);

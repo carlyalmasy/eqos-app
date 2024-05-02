@@ -1,13 +1,15 @@
-import Container from '../../layouts/Container';
-import Markdown from '../../components/Markdown';
+// libraries / utilities
 import axios from 'axios';
 
-// Content
-import intro from '../../topics/Developer/SpecIntro.md';
-
-// Hooks
+// hooks
 import { signal, useSignalEffect } from '@preact/signals-react';
 
+// components
+import Container from '../../layouts/Container';
+import Markdown from '../../components/Markdown';
+
+// content
+import intro from '../../topics/Developer/SpecIntro.md';
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 const data    = signal('');

@@ -6,7 +6,7 @@ export default function SlideOver({ children, isActive, closeSlideOver }) {
 
   return (
     <Transition.Root show={ isActive ? true : false } as={Fragment}>
-      <Dialog as="div" className="relative z-10" open={ true } onClose={ (e) => closeSlideOver(e) }>
+      <Dialog as="div" className="relative z-[9999]" open={ true } onClose={ (e) => closeSlideOver(e) }>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-1000"
@@ -33,12 +33,12 @@ export default function SlideOver({ children, isActive, closeSlideOver }) {
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-7xl md:w-full">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                    <div className="px-4 sm:px-6 mt-16">
+                    <div className="px-4 sm:px-6 mt-2">
                       <div className="flex items-start justify-end">
                         <div className="ml-3 flex h-7 items-center">
                           <button
                             type="button"
-                            className="relative rounded-md bg-white text-neutrals-dark-200 hover:text-neutrals-dark-600 focus:outline-none"
+                            className="fixed end-6 rounded-md bg-white text-neutrals-dark-200 hover:text-neutrals-dark-600 focus:outline-none "
                             onClick={ (e) => closeSlideOver(e) }
                           >
                             <span className="absolute -inset-2.5" />
@@ -48,7 +48,7 @@ export default function SlideOver({ children, isActive, closeSlideOver }) {
                         </div>
                       </div>
                     </div>
-                    <div className="relative mb-20 flex-1 px-4 sm:px-6 lg:mx-20">{ children }</div>
+                    <div className="relative mt-10 mb-20 flex-1 px-4 sm:px-6 lg:mx-20">{ children }</div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

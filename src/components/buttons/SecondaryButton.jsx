@@ -1,3 +1,4 @@
+// components
 import { NavLink } from "react-router-dom";
 
 export default function PrimaryButton({ text, link }) {

@@ -1,4 +1,7 @@
+// react
 import React from "react";
+
+// libraries / utilites
 import bjoin from "../../utilities/bjoin";
 
 export default function CredentialsInfo({ data }) {
