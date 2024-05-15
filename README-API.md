@@ -51,6 +51,11 @@ This will return a number of credential objects in a `data` property (which is a
 | category   | integer | The `id` of the category for which to search credentials.  |
 | provider   | integer | The id of the provider for which to search credentials.    |
 | occupation | integer | The id of the occupation for which the search credentials. |
+| sort       | string  | Name of a dimension to sort by (instead of overall score)  |
+| scores     | string  | Comma separated list of overall score ranges to include    |
+| unrated    | boolean | Whether or not to include unrated results (default to 1)   |
+| skills     | string  | Comma separated list of skill IDs to filter by             |
+| titles     | string  | Comma separated list of title IDs to filter by             |
 
 The following would return page `2` of credential results with a limit of `25` for all credentials aligned with occupation `123`:
 
@@ -68,8 +73,8 @@ The result returned looks like:
 	"meta": [
 		"total": <integer>,
 		"limit": <integer>,
-		"page":  <integer
-	]
+		"page":  <integer>
+    ]
 }
 ```
 
