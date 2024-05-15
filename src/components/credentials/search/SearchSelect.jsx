@@ -1,8 +1,10 @@
+// libraries / utilities
 import _ from "lodash";
 import axios from "axios";
 import bjoin from "../../../utilities/bjoin";
 import debug from "../../../utilities/debug";
 
+// components
 import { useSignal, useComputed, useSignalEffect, signal } from "@preact/signals-react";
 import { CheckIcon, ChevronUpDownIcon, XCircleIcon } from "@heroicons/react/20/solid";
 import { Combobox, Transition } from "@headlessui/react";
@@ -104,7 +106,7 @@ export default function SearchSelect({ name, collection, state }) {
         >
             <div>
                 <Combobox.Input
-                    className="text-ellipsis w-full rounded-md bg-white py-1.5 pl-3 pr-16 text-neutrals-dark-400 shadow-sm sm:text-sm sm:leading-6 focus:outline-none border-neutrals-light-300 border"
+                    className="truncate w-full rounded-md bg-white py-1.5 pl-3 pr-16 text-neutrals-dark-400 shadow-sm sm:text-sm sm:leading-6 focus:outline-none border-neutrals-light-300 border"
                     onChange={(event) => {
                         updateQuery(state, query, name, event.target.value);
                     }}
@@ -152,7 +154,7 @@ export default function SearchSelect({ name, collection, state }) {
                                     <>
                                         <span
                                             className={bjoin(
-                                                "block truncate",
+                                                "block text-wrap ",
                                                 selected && "font-semibold"
                                             )}
                                         >

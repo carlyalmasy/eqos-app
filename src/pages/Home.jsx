@@ -5,25 +5,25 @@ import Markdown from "../components/Markdown";
 import SearchBox from "../components/credentials/search/SearchBox";
 
 // content
-import intro from "../topics/Home/Intro.md.js";
+import intro from "../topics/home/Intro.md.js";
 
 // Data Visualization Deps
 // components
 import Chart from "../components/Chart";
-import Occupations from "../topics/Charts/Occupations.json";
-import Categories from "../topics/Charts/Categories.json"
-import Providers from "../topics/Charts/Providers.json";
-import Skills from "../topics/Charts/Skills.json"
+import Occupations from "../topics/charts/Occupations.json";
+import Categories from "../topics/charts/Categories.json"
+import Providers from "../topics/charts/Providers.json";
+import Skills from "../topics/charts/Skills.json"
 //content
-import data from "../topics/Home/DataIntro.md.js";
+import data from "../topics/home/DataIntro.md.js";
 
 // Discovery Shorcuts Deps
 // components
 import ShortcutsIcon from "../components/icons/ShortcutsIcon";
 import ShortcutGroup from "../components/lists/ShortcutGroup";
-import DiscoveryShortcuts from "../topics/Home/DiscoveryShortcuts.js";
+import DiscoveryShortcuts from "../topics/home/DiscoveryShortcuts.js";
 // content
-import shortcuts from "../topics/Home/ShortcutsIntro.md.js";
+import shortcuts from "../topics/home/ShortcutsIntro.md.js";
 
 export default function Home() {
     return (

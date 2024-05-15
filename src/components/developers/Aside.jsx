@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Markdown from "../../components/Markdown";
 
 // content
-import links from "../../topics/Developer/QuickLinks.md";
+import links from "../../topics/developers/QuickLinks.md";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 

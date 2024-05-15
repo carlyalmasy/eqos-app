@@ -4,8 +4,8 @@ import Dimension from "../../components/resources/Dimension";
 import Markdown from "../../components/Markdown";
 
 // content
-import quality from "../../topics/Resources/EQOSQuality.md";
-import dimensions from "../../topics/Resources/Dimensions";
+import quality from "../../topics/resources/EQOSQuality.md";
+import dimensions from "../../topics/resources/Dimensions";
 
 export default function Resources() {
     return (

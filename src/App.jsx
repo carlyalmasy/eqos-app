@@ -1,24 +1,26 @@
 // components
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 // pages
-import Home from './pages/Home';
-import KitchenSink from './pages/KitchenSink';
-import Resources from './pages/resources/Index';
-import NotFound from './pages/404';
+import Home from "./pages/Home";
+import KitchenSink from "./pages/KitchenSink";
+import Resources from "./pages/resources/Index";
+import NotFound from "./pages/404";
+
 // developers
-import Developer from './pages/developers/Index';
-import API from './pages/developers/API';
-import Downloads from './pages/developers/Downloads';
-import Guide from './pages/developers/Guide';
-import Spec from './pages/developers/Spec';
+import Developer from "./pages/developers/Index";
+import API from "./pages/developers/API";
+import Downloads from "./pages/developers/Downloads";
+import Guide from "./pages/developers/Guide";
+import Spec from "./pages/developers/Spec";
+
 // credentials
-import Credentials from './pages/credentials/Index';
-import Detail from './pages/credentials/Detail';
+import Credentials from "./pages/credentials/Index";
+import Detail from "./pages/credentials/Detail";
 
 function App() {
     return (
@@ -39,7 +41,7 @@ function App() {
                 <Route path="/credentials" element={<Credentials />} />
                 <Route path="/credentials/:id" element={<Detail />} />
 
-                <Route path='*' element={<NotFound />}/>
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
         </Router>
