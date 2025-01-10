@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "overview": {
+        "header": "5 Most Frequently Aligned Occupations",
+        "description": "These occupations are associated with the highest number of credentials in our current data.",
+        "legend": "Total Aligned Credentials"
+    },
+    "items": {
+        "Occupation A": 3996,
+        "Occupation B": 3724,
+        "Occupation C": 3437,
+        "Occupation D": 2988,
+        "Occupation E": 2962
+    },
+    "max": 3996
+}

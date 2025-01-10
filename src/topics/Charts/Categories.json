@@ -1,0 +1,16 @@
+{
+    "id": 3,
+    "overview": {
+        "header": "Top 5 Credential Categories",
+        "description": "On average, the number of observed credentials for CIP-4 based credential categories is ~168.",
+        "legend": "Total Observed Credentials"
+    },
+    "items": {
+        "Credential Category A": 1544,
+        "Credential Category B": 1476,
+        "Credential Category C": 1406,
+        "Credential Category D": 1398,
+        "Credential Category E": 1232
+    },
+    "max": 1544
+}

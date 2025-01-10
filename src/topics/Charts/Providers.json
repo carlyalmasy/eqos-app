@@ -1,0 +1,16 @@
+{
+    "id": 2,
+    "overview": {
+        "header": "Top 5 Training Provider Credential Counts",
+        "description": "The average number of credentials observed across all training providers is between 9 and 10.",
+        "legend": "Total Observed Credentials"
+    },
+    "items": {
+        "Training Provider A": 137,
+        "Training Provider B": 131,
+        "Training Provider C": 126,
+        "Training Provider D": 126,
+        "Training Provider E": 116
+    },
+    "max": 137
+}

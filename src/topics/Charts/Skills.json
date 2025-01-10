@@ -1,0 +1,16 @@
+{
+    "id": 4,
+    "overview": {
+        "header": "5 Most Frequently Aligned Skills",
+        "description": "Most frequently aligned skills represent less specialized skills provided by a wide array of observed credentials.",
+        "legend": "Total Aligned Credentials"
+    },
+    "items": {
+        "Skill A": 10995,
+        "Skill B": 9841,
+        "Skill C": 8349,
+        "Skill D": 7365,
+        "Skill E": 6345
+    },
+    "max": 10995
+}
