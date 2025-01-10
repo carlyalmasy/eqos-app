@@ -1,6 +1,5 @@
 // components
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
-
 import { Tooltip } from "react-tooltip";
 
 const copy = function (from) {

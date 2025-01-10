@@ -11,6 +11,7 @@ import { useEffect, useLayoutEffect } from "react";
 import CredentialsCard from "../CredentialsCard";
 import Grid from "../../layout/Grid";
 import Pagination from "../../layout/Pagination";
+import PaginationInfo from "../../layout/PaginationInfo";
 
 const baseUrl = import.meta.env.VITE_CORE_URL;
 
@@ -67,7 +68,14 @@ export default function SearchResults({ onSelect }) {
 
     return (
         <>
-            <Grid split={{xl: '3', md: '2'}} gapSize="6">
+            <div className="text-left">
+                <PaginationInfo
+                    firstPgResult={firstPgResult}
+                    lastPgResult={lastPgResult}
+                    totalItems={totalItems}
+                />
+            </div>
+            <Grid split={{ xl: "3", md: "2" }} gapSize="6">
                 {items.value.map((data) => (
                     <NavLink
                         key={data.id}
